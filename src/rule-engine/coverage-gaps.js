@@ -30,7 +30,7 @@ window.OT = window.OT || {};
           "non-standard message lengths.",
       });
     }
-    if (assets.some((a) => /profinet/i.test(a.name) || /pn/i.test(a.type || ""))) {
+    if (assets.some((a) => /profinet/i.test(a.name) || /profinet/i.test(a.notes || a.type || ""))) {
       gaps.push({
         title: "PROFINET I/O modules present (L2 multicast, invisible to Suricata)",
         detail:

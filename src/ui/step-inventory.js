@@ -54,7 +54,7 @@ window.OT = window.OT || {};
         id: Math.random().toString(36).slice(2, 10),
         name: fields[0],
         ip: fields[1],
-        type: fields[2] || "",
+        notes: fields[2] || "",
         roles: [],
       });
     }
@@ -76,7 +76,7 @@ window.OT = window.OT || {};
         ...state,
         assets: [...state.assets, {
           id: Math.random().toString(36).slice(2, 10),
-          name: name.trim(), ip: ip.trim(), type: "", roles: [],
+          name: name.trim(), ip: ip.trim(), notes: "", roles: [],
         }],
       });
       setName("");
@@ -139,8 +139,8 @@ window.OT = window.OT || {};
     };
 
     const downloadCsv = () => {
-      const header = "name,ip,type";
-      const lines = state.assets.map((a) => [a.name, a.ip, a.type || ""].map((s) => /[,"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s).join(","));
+      const header = "name,ip,notes";
+      const lines = state.assets.map((a) => [a.name, a.ip, a.notes || a.type || ""].map((s) => /[,"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s).join(","));
       const csv = [header, ...lines].join("\n");
       const blob = new Blob([csv], { type: "text/csv" });
       const url = URL.createObjectURL(blob);
@@ -191,7 +191,7 @@ window.OT = window.OT || {};
         {pasting ? (
           <div style={{ marginBottom: 16, padding: 12, background: "var(--surface-2)", borderRadius: 8 }}>
             <div style={{ fontSize: 12, color: "var(--text-2)", marginBottom: 6 }}>
-              paste rows from a spreadsheet, or csv. one asset per line. format: <code>name,ip[,type]</code> (comma or tab separated). header row optional. <code>#</code> comments ok. multi-NIC: quote the IP field, e.g. <code>L81E,"10.20.0.3,10.20.0.7",PLC</code>.
+              paste rows from a spreadsheet, or csv. one asset per line. format: <code>name,ip[,notes]</code> (comma or tab separated). header row optional. <code>#</code> comments ok. notes is a free-form field; the tool does not interpret it. multi-NIC: quote the IP field, e.g. <code>node-1,"10.20.0.3,10.20.0.7",rack-A</code>.
               {" "}<a href="#" onClick={(e) => { e.preventDefault(); loadExample(); }}>load example csv</a>
             </div>
             <textarea
