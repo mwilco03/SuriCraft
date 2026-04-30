@@ -34,7 +34,7 @@ This is why the edge validator says "may trigger" not "will trigger": a document
 
 ## No live PCAP validation
 
-The tool generates rule text. It does not run Suricata, does not load a PCAP, and does not test the rule against captured traffic. Run `suricata -T -c suricata.yaml -S custom-ics.rules` (or equivalent on Malcolm) before relying on the output.
+The tool generates rule text. It does not run Suricata, does not load a PCAP, and does not test the rule against captured traffic. Run `suricata -T -c suricata.yaml -S custom-ics.rules` before relying on the output.
 
 ## Catalog is not exhaustive
 

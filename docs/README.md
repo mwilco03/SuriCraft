@@ -1,6 +1,6 @@
 # SuriCraft
 
-A single-page tool that takes an inventory of OT/ICS assets plus a documented data-flow diagram and produces a curated Suricata ruleset shaped for [Malcolm](https://github.com/idaholab/Malcolm).
+A single-page tool that takes an inventory of OT/ICS assets plus a documented data-flow diagram and produces a curated Suricata ruleset (rules + config overlay + threshold config) for any Suricata install.
 
 ## What it does
 
@@ -9,11 +9,11 @@ A single-page tool that takes an inventory of OT/ICS assets plus a documented da
 3. **Data flows**: document expected `from -> to` edges per protocol.
 4. **Detections**: pick from a curated catalog of write/program/lifecycle/recon/diag detections per protocol. Every detection ships with a comment explaining the threat model.
 5. **Review**: shows the generated rule text plus any documented edges that would alert on legitimate traffic.
-6. **Export**: download a Malcolm-shaped bundle as a single zip or as individual files.
+6. **Export**: download a Suricata bundle (rules + include overlay + threshold config) as a single zip or as individual files.
 
 ## Who it is for
 
-ICS/OT defenders running Malcolm (or Malcolm + Hedgehog sensors) who need to author site-specific Suricata rules and cannot rely on a generic public ruleset.
+ICS/OT defenders running Suricata anywhere who need site-specific rules and cannot rely on a generic public ruleset. No assumptions about which Suricata distribution you run, no required SIEM, no required database.
 
 ## What it is not
 
@@ -52,7 +52,7 @@ Then open `http://localhost:8000`.
 | `src/rule-engine/emitters/suricata.js` | per-protocol Suricata renderers |
 | `src/rule-engine/emitters/zeek.js` | stub (v2) |
 | `src/rule-engine/emitters/snort.js` | stub (v2) |
-| `src/bundle/malcolm.js` | builds the seven-file Malcolm bundle |
+| `src/bundle/build.js` | builds the seven-file Suricata bundle |
 | `src/bundle/zip.js` | JSZip wrapper |
 | `src/ui/*.js` | React step components |
 | `src/app.js` | top-level App |

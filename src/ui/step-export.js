@@ -1,11 +1,11 @@
-// requires: OT.suricataEmitter, OT.coverageGaps, OT.edgeValidator, OT.malcolmBundle, OT.zip
+// requires: OT.suricataEmitter, OT.coverageGaps, OT.edgeValidator, OT.bundle, OT.zip
 window.OT = window.OT || {};
 (function (OT) {
   const { useMemo, useState } = React;
   const { generateRules } = OT.suricataEmitter;
   const { computeCoverageGaps } = OT.coverageGaps;
   const { validateEdgesAgainstRules } = OT.edgeValidator;
-  const { generateBundle, bundleTargetPath } = OT.malcolmBundle;
+  const { generateBundle, bundleTargetPath } = OT.bundle;
   const { downloadFile, downloadZip } = OT.zip;
 
   function StepExport({ state, catalog }) {
@@ -49,8 +49,8 @@ window.OT = window.OT || {};
     return (
       <>
         <div className="panel">
-          <h2>export bundle (Malcolm-shaped)</h2>
-          <p className="lead">drop the files into the listed paths under your Malcolm install directory, then run the docker compose exec reload commands from README.md.</p>
+          <h2>export bundle</h2>
+          <p className="lead">drop the rules into wherever Suricata loads from, include the overlay yaml from suricata.yaml, point threshold-file at threshold.config, then validate with suricata -T and reload.</p>
           {showEmitterSelect ? (
             <div style={{ marginBottom: 12 }}>
               <label style={{ fontSize: 12, color: "var(--text-2)", marginRight: 8 }}>emitter:</label>

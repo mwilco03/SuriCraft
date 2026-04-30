@@ -79,7 +79,7 @@ window.OT = window.OT || {};
       <>
         <header>
           <h1>SuriCraft</h1>
-          <span className="sub">OT detection authoring · Suricata for Malcolm</span>
+          <span className="sub">OT detection authoring · Suricata rules for any install</span>
           <span className="right">
             <input
               value={state.siteName}
