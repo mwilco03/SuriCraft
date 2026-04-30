@@ -165,11 +165,11 @@ window.OT = window.OT || {};
             onKeyDown={(e) => { if (e.key === "Enter") addAsset(); }}
           />
           <input
-            placeholder="IP (or 1.1.1.1,1.1.1.2)"
+            placeholder="IP (multi-NIC: 10.0.0.1,10.0.0.2)"
             value={ip}
             onChange={(e) => setIp(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter") addAsset(); }}
-            style={{ maxWidth: 220 }}
+            style={{ maxWidth: 320 }}
           />
           <button className="primary" onClick={addAsset}>+ add</button>
           <button onClick={() => { setPasting(!pasting); setPasteErrors([]); }}>

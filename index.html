@@ -9,11 +9,11 @@
 <body>
 <div class="app" id="root"></div>
 
-<!-- vendor libs (CDN, no build step) -->
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.25.6/babel.min.js"></script>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<!-- vendor libs (locally hosted, air-gap friendly; no build step) -->
+<script src="vendor/react-18.3.1.production.min.js"></script>
+<script src="vendor/react-dom-18.3.1.production.min.js"></script>
+<script src="vendor/babel-standalone-7.25.6.min.js"></script>
+<script src="vendor/jszip-3.10.1.min.js"></script>
 
 <!-- application modules in dependency order; each attaches to window.OT -->
 <script type="text/babel" data-presets="env,react" src="src/state.js"></script>

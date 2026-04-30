@@ -28,6 +28,31 @@ window.OT = window.OT || {};
       ...rules.map((r) => r.comment + "\n" + r.rule + "\n"),
     ].join("\n");
 
+    // Only emit app-layer protocol blocks for protocols that actually have
+    // at least one (role, protocol) pair on a real asset. No point enabling
+    // the Modbus parser if nothing in this site speaks Modbus.
+    const usedProtocols = new Set();
+    for (const a of state.assets || []) {
+      for (const rp of a.roles || []) usedProtocols.add(rp.protocol);
+    }
+    const nativeProtos = Object.keys(catalog.protocols || {}).filter(
+      (p) => (catalog.protocols[p].parser === "native") && usedProtocols.has(p)
+    );
+
+    const appLayerLines = [];
+    if (nativeProtos.length > 0) {
+      appLayerLines.push("app-layer:");
+      appLayerLines.push("  protocols:");
+      for (const p of nativeProtos) {
+        const port = catalog.protocols[p].port;
+        appLayerLines.push("    " + p + ":");
+        appLayerLines.push("      enabled: yes");
+        appLayerLines.push("      detection-ports:");
+        appLayerLines.push("        dp: " + port);
+        if (p === "modbus") appLayerLines.push("      stream-depth: 0");
+      }
+    }
+
     const includeYaml = [
       "# " + state.siteName + " - Suricata config overlay",
       "#",
@@ -44,22 +69,7 @@ window.OT = window.OT || {};
       ...Object.entries(groupAddrs).sort().map(([k, v]) => "    " + k + ': "' + v + '"'),
       "",
       "# threshold-file: /path/to/threshold.config   # set this in suricata.yaml; point at where you placed threshold.config",
-      "",
-      "app-layer:",
-      "  protocols:",
-      "    modbus:",
-      "      enabled: yes",
-      "      detection-ports:",
-      "        dp: 502",
-      "      stream-depth: 0",
-      "    dnp3:",
-      "      enabled: yes",
-      "      detection-ports:",
-      "        dp: 20000",
-      "    enip:",
-      "      enabled: yes",
-      "      detection-ports:",
-      "        dp: 44818",
+      ...(appLayerLines.length > 0 ? ["", ...appLayerLines] : []),
     ].join("\n");
 
     const threshold = [

@@ -13,17 +13,16 @@ Found a bug or want a feature? [Open an issue](https://github.com/mwilco03/SuriC
 - [x] Generic Suricata bundle (no Malcolm / Security Onion / Hedgehog assumptions)
 - [x] Catalog-driven detections (40 entries across Modbus, DNP3, CIP, S7Comm, GE-SRTP)
 - [x] localStorage persistence; reset clears state
+- [x] Bulk role tagging (multi-select assets, apply / remove `(role, protocol)` pair to all selected)
+- [x] Hide detections without coverable target by default; toggle to show orphans
+- [x] Quick-filter presets in step 4: defaults, critical only, writes only, all on, all off
+- [x] Per-protocol app-layer overlay: only emit `app-layer.protocols.<p>` blocks for protocols actually used by an asset role
+- [x] Vendor cdnjs libs into `vendor/` so the SPA works air-gapped (React, ReactDOM, Babel-standalone, JSZip)
 
 ## Pending
 
-- [ ] **Validate generated rules.** Client-side syntax checker before export. Catch missing `sid`, unbalanced parens, unknown keywords, duplicate SIDs across the bundle. No server, no Suricata install assumed; pure regex/AST level.
-- [ ] **Bulk role tagging.** In step 2, multi-select assets and apply a `(role, protocol)` to all of them at once instead of clicking through each asset's dropdowns.
-- [ ] **Hide detections without coverable target.** Step 4 currently shows all 40 detections with a "no target asset" warning on orphans. Default to hiding them, with a toggle to show.
-- [ ] **Critical-only and writes-only quick filters.** Step 4 preset toggles to enable/disable subsets at once.
-- [ ] **Vendor CDN libs for air-gapped use.** React, ReactDOM, Babel, JSZip currently load from cdnjs. Ship them in `vendor/` so the SPA works on air-gapped workstations behind strict egress proxies.
+- [ ] **Validate generated rules.** Client-side syntax checker before export. Catch missing `sid`, unbalanced parens, unknown keywords, duplicate SIDs across the bundle. (Will be TDD'd on Linux; not for the Windows dev path.)
 - [ ] **Asset-model diff on import.** When importing an `asset-model.json`, show what changed (added / removed / modified assets, edges, detection toggles) before applying.
-- [ ] **Multi-NIC entry helper.** Step 1 toolbar accepts comma-separated IPs but the UX is awkward. Add a dedicated multi-NIC entry mode.
-- [ ] **Per-protocol app-layer overlay toggle.** The exported `custom-ics-include.yaml` always enables `modbus / dnp3 / enip` app-layer parsers. Let the user uncheck protocols they don't have on the wire.
 
 ## Non-goals (explicit)
 
