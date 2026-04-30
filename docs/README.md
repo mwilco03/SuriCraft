@@ -27,7 +27,7 @@ ICS/OT defenders running Malcolm (or Malcolm + Hedgehog sensors) who need to aut
 - Plain JSON catalog at `catalog/default-detections.json`.
 - Static hosting (GitHub Pages from `main`).
 
-## Live demo
+## Live URL
 
 Once you fork and enable Pages: `https://<your-user>.github.io/SuriCraft/`.
 
@@ -57,5 +57,4 @@ Then open `http://localhost:8000`.
 | `src/ui/*.js` | React step components |
 | `src/app.js` | top-level App |
 | `catalog/default-detections.json` | the single source of truth for protocols, roles, severities, stubs, detections |
-| `examples/reference-network.json` | sanitized 17-asset, 13-edge reference network |
 | `styles/app.css` | extracted styles |

@@ -2,7 +2,7 @@ window.OT = window.OT || {};
 (function (OT) {
   const { useState } = React;
 
-  function StepFlows({ state, setState, catalog, demoEdges, demoAssets }) {
+  function StepFlows({ state, setState, catalog }) {
     const PROTOCOLS = catalog.protocols || {};
     const STUBS = catalog.stubs || {};
     const protoOptions = [
@@ -32,18 +32,6 @@ window.OT = window.OT || {};
     };
     const removeEdge = (i) => setState({ ...state, edges: edges.filter((_, j) => j !== i) });
 
-    const loadDemoEdges = () => {
-      if (!demoEdges) return;
-      const demoIds = new Set((demoAssets || []).map((a) => a.id));
-      const referenced = demoEdges.flatMap((e) => [e.from, e.to]);
-      const allReferenced = referenced.every((id) => assets.some((a) => a.id === id));
-      if (!allReferenced && !referenced.every((id) => demoIds.has(id))) {
-        alert("demo edges reference demo asset IDs. load the reference network in step 1 first.");
-        return;
-      }
-      setState({ ...state, edges: demoEdges });
-    };
-
     return (
       <div className="panel">
         <h2>data flows</h2>
@@ -71,14 +59,7 @@ window.OT = window.OT || {};
           <button className="primary" onClick={addEdge} disabled={!from || !to || from === to}>+ add edge</button>
         </div>
         {edges.length === 0 ? (
-          <>
-            <div className="empty">no flows yet. add one above, or load reference flows.</div>
-            <div style={{ marginTop: 14 }}>
-              <button onClick={loadDemoEdges} disabled={!demoEdges}>
-                load reference flows ({demoEdges ? demoEdges.length : 0} edges)
-              </button>
-            </div>
-          </>
+          <div className="empty">no flows yet. add one above.</div>
         ) : (
           <>
             <div className="row head" style={{ gridTemplateColumns: "2fr 1fr 2fr 2fr 60px" }}>

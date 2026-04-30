@@ -2,7 +2,7 @@ window.OT = window.OT || {};
 (function (OT) {
   const { useState } = React;
 
-  function StepInventory({ state, setState, catalog, demoAssets, demoLoaded, setDemoLoaded }) {
+  function StepInventory({ state, setState, catalog }) {
     const [name, setName] = useState("");
     const [ip, setIp] = useState("");
     const [filter, setFilter] = useState("");
@@ -26,12 +26,6 @@ window.OT = window.OT || {};
     const visible = state.assets.filter(
       (a) => !filter || a.name.toLowerCase().includes(filter.toLowerCase()) || a.ip.includes(filter)
     );
-    const loadDemo = () => {
-      if (demoAssets) {
-        setState({ ...state, assets: demoAssets });
-        setDemoLoaded(true);
-      }
-    };
 
     return (
       <div className="panel">
@@ -61,14 +55,7 @@ window.OT = window.OT || {};
           />
         </div>
         {state.assets.length === 0 ? (
-          <>
-            <div className="empty">no assets yet. add one above, or load the reference network.</div>
-            <div style={{ marginTop: 14 }}>
-              <button onClick={loadDemo} disabled={!demoAssets}>
-                load reference network ({demoAssets ? demoAssets.length : 0} assets)
-              </button>
-            </div>
-          </>
+          <div className="empty">no assets yet. add one above, or import an asset-model.json.</div>
         ) : (
           <>
             <div className="row head" style={{ gridTemplateColumns: "1fr 1fr 1.5fr 60px" }}>

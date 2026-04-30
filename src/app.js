@@ -10,8 +10,6 @@ window.OT = window.OT || {};
   function App() {
     const [catalog, setCatalog] = useState(null);
     const [catalogError, setCatalogError] = useState(null);
-    const [demo, setDemo] = useState(null);
-    const [demoLoaded, setDemoLoaded] = useState(false);
     const [state, setStateRaw] = useState(null);
 
     useEffect(() => {
@@ -19,10 +17,6 @@ window.OT = window.OT || {};
         setCatalog(c);
         setStateRaw(loadState(c));
       }).catch((err) => setCatalogError(err.message));
-      fetch("./examples/reference-network.json")
-        .then((r) => (r.ok ? r.json() : null))
-        .then((d) => setDemo(d))
-        .catch(() => setDemo(null));
     }, []);
 
     if (catalogError) {
@@ -46,7 +40,6 @@ window.OT = window.OT || {};
       if (!confirm("clear all assets, settings, and detections?")) return;
       clearState();
       setStateRaw(defaultState(catalog));
-      setDemoLoaded(false);
     };
 
     const importJson = () => {
@@ -79,15 +72,7 @@ window.OT = window.OT || {};
       input.click();
     };
 
-    const stepProps = {
-      state,
-      setState,
-      catalog,
-      demoAssets: demo ? demo.assets : null,
-      demoEdges: demo ? demo.edges : null,
-      demoLoaded,
-      setDemoLoaded,
-    };
+    const stepProps = { state, setState, catalog };
     const StepView = [StepInventory, StepRoles, StepFlows, StepDetections, StepReview, StepExport][state.step];
 
     return (
