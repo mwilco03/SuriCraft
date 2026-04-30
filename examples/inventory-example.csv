@@ -1,0 +1,15 @@
+# Example inventory CSV for SuriCraft.
+# Format: name,ip,type
+#   - name: any string identifying the asset (PLC-North, HMI-Main, etc.).
+#   - ip:   single IP, or comma-separated for multi-NIC. Quote multi-NIC IPs
+#          with double quotes so the comma inside is not split (see L81E below).
+#   - type: optional descriptor (PLC, HMI, RTU, workstation, etc.). Free text.
+# Header row optional. Comma or tab separated. Lines starting with # ignored.
+name,ip,type
+PLC-North,10.20.0.5,PLC
+PLC-South,10.20.0.6,PLC
+L81E,"10.20.0.3,10.20.0.7,10.20.0.8",PLC
+HMI-Main,10.20.0.244,HMI
+RTU-Substation,10.20.1.40,RTU
+EngineeringWS-1,10.20.0.51,workstation
+ModbusSign-1,10.20.0.155,display

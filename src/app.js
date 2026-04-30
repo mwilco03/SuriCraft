@@ -75,6 +75,19 @@ window.OT = window.OT || {};
     const stepProps = { state, setState, catalog };
     const StepView = [StepInventory, StepRoles, StepFlows, StepDetections, StepReview, StepExport][state.step];
 
+    // Auto-derive issues URL from github.io hosting; fall back to canonical repo for local dev.
+    const issuesUrl = (() => {
+      const host = window.location.hostname || "";
+      const m = host.match(/^([^.]+)\.github\.io$/);
+      if (m) {
+        const user = m[1];
+        const path = window.location.pathname.split("/").filter(Boolean);
+        const repo = path[0] || "SuriCraft";
+        return "https://github.com/" + user + "/" + repo + "/issues";
+      }
+      return "https://github.com/mwilco03/SuriCraft/issues";
+    })();
+
     return (
       <>
         <header>
@@ -95,6 +108,10 @@ window.OT = window.OT || {};
             />
             <button onClick={importJson}>import</button>
             <button className="danger" onClick={reset}>reset</button>
+            <a href={issuesUrl} target="_blank" rel="noopener noreferrer"
+               style={{ fontSize: 12, marginLeft: 6, alignSelf: "center" }}>
+              report issue
+            </a>
           </span>
         </header>
         <Stepper

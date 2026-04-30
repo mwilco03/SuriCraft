@@ -2,10 +2,34 @@ window.OT = window.OT || {};
 (function (OT) {
   const { useState } = React;
 
+  // Split a single line into fields with proper handling of double-quoted
+  // fields (quotes can contain comma/tab; "" inside a quoted field is a literal ").
+  function splitCsvLine(line) {
+    const out = [];
+    let cur = "";
+    let inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (inQ) {
+        if (c === '"') {
+          if (line[i + 1] === '"') { cur += '"'; i++; }
+          else inQ = false;
+        } else cur += c;
+      } else {
+        if (c === '"') inQ = true;
+        else if (c === "," || c === "\t") { out.push(cur); cur = ""; }
+        else cur += c;
+      }
+    }
+    out.push(cur);
+    return out.map((s) => s.trim());
+  }
+
   // Parse CSV / TSV / paste-from-spreadsheet text into asset rows.
   // Accepted columns (in order): name, ip, type (type optional).
-  // Separators: comma or tab. # comment lines and blank lines are ignored.
-  // A first row whose first cell is "name", "asset", or "host" is treated as a header.
+  // Separators: comma or tab. Quoted fields preserve embedded commas/tabs.
+  // # comment lines and blank lines are ignored. A first row whose first cell
+  // is "name", "asset", "host", or "hostname" is treated as a header.
   function parseAssetText(text) {
     const out = [];
     const errors = [];
@@ -16,8 +40,8 @@ window.OT = window.OT || {};
       lineNum++;
       const line = raw.trim();
       if (!line || line.startsWith("#")) continue;
-      const fields = line.split(/[\t,]/).map((s) => s.trim()).filter((s, i, arr) => i < 3 || arr[i] !== undefined);
-      if (!headerSkipped && /^(name|asset|host|hostname)$/i.test(fields[0])) {
+      const fields = splitCsvLine(line);
+      if (!headerSkipped && /^(name|asset|host|hostname)$/i.test(fields[0] || "")) {
         headerSkipped = true;
         continue;
       }
@@ -74,6 +98,46 @@ window.OT = window.OT || {};
       setPasting(false);
     };
 
+    const importCsvFile = () => {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain";
+      input.onchange = (e) => {
+        const f = e.target.files[0];
+        if (!f) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const text = String(reader.result);
+          const { rows, errors } = parseAssetText(text);
+          setPasteErrors(errors);
+          if (rows.length === 0) {
+            alert(
+              "no rows parsed from " + f.name +
+              (errors.length > 0 ? " (" + errors.length + " parse error(s); open paste/csv import to see them)" : "")
+            );
+            if (errors.length > 0) setPasting(true);
+            return;
+          }
+          setState({ ...state, assets: [...state.assets, ...rows] });
+        };
+        reader.readAsText(f);
+      };
+      input.click();
+    };
+
+    const loadExample = async () => {
+      try {
+        const res = await fetch("./examples/inventory-example.csv");
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const text = await res.text();
+        setPasteText(text);
+        setPasting(true);
+        setPasteErrors([]);
+      } catch (err) {
+        alert("could not load example csv: " + err.message);
+      }
+    };
+
     const downloadCsv = () => {
       const header = "name,ip,type";
       const lines = state.assets.map((a) => [a.name, a.ip, a.type || ""].map((s) => /[,"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s).join(","));
@@ -111,6 +175,7 @@ window.OT = window.OT || {};
           <button onClick={() => { setPasting(!pasting); setPasteErrors([]); }}>
             {pasting ? "cancel paste" : "paste / csv import"}
           </button>
+          <button onClick={importCsvFile}>import csv file</button>
           {state.assets.length > 0 ? (
             <button onClick={downloadCsv} title="export current inventory as csv">export csv</button>
           ) : null}
@@ -126,7 +191,8 @@ window.OT = window.OT || {};
         {pasting ? (
           <div style={{ marginBottom: 16, padding: 12, background: "var(--surface-2)", borderRadius: 8 }}>
             <div style={{ fontSize: 12, color: "var(--text-2)", marginBottom: 6 }}>
-              paste rows from a spreadsheet, or csv. one asset per line. format: <code>name,ip[,type]</code> (comma or tab separated). header row optional. <code>#</code> comments ok. multi-NIC: <code>name,1.1.1.1,1.1.1.2,PLC</code> won't work — use <code>name,"1.1.1.1,1.1.1.2",PLC</code> with quoted IPs (or just join with commas inside the second field).
+              paste rows from a spreadsheet, or csv. one asset per line. format: <code>name,ip[,type]</code> (comma or tab separated). header row optional. <code>#</code> comments ok. multi-NIC: quote the IP field, e.g. <code>L81E,"10.20.0.3,10.20.0.7",PLC</code>.
+              {" "}<a href="#" onClick={(e) => { e.preventDefault(); loadExample(); }}>load example csv</a>
             </div>
             <textarea
               rows={6}
