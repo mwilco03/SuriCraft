@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SuriCraft - OT detection authoring</title>
+<link rel="stylesheet" href="styles/app.css" />
+</head>
+<body>
+<div class="app" id="root"></div>
+
+<!-- vendor libs (CDN, no build step) -->
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.25.6/babel.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<!-- application modules in dependency order; each attaches to window.OT -->
+<script type="text/babel" data-presets="env,react" src="src/state.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/catalog-loader.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/rule-engine/address-groups.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/rule-engine/coverage-gaps.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/rule-engine/edge-validator.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/rule-engine/emitters/suricata.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/rule-engine/emitters/zeek.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/rule-engine/emitters/snort.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/bundle/zip.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/bundle/malcolm.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/stepper.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/step-inventory.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/step-roles.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/step-flows.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/step-detections.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/step-review.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/ui/step-export.js"></script>
+<script type="text/babel" data-presets="env,react" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+  "version": 3,
+  "site": "REF-ICS",
+  "diagramRev": "v1.4",
+  "sidBase": 9500000,
+  "assets": [
+    { "id": "ews1", "name": "engineering ws 1", "ip": "10.20.0.51", "type": "workstation",
+      "roles": [
+        { "role": "allowed_eng", "protocol": "s7comm" },
+        { "role": "allowed_eng", "protocol": "enip" },
+        { "role": "allowed_eng", "protocol": "modbus" },
+        { "role": "allowed_eng", "protocol": "srtp" }
+      ]
+    },
+    { "id": "ews2", "name": "engineering ws 2", "ip": "10.20.0.52", "type": "workstation",
+      "roles": [
+        { "role": "allowed_eng", "protocol": "s7comm" },
+        { "role": "allowed_eng", "protocol": "enip" }
+      ]
+    },
+    { "id": "hmiov", "name": "HMI Vendor A Process Overview", "ip": "10.20.0.244", "type": "HMI",
+      "roles": [
+        { "role": "allowed_hmi", "protocol": "modbus" },
+        { "role": "allowed_hmi", "protocol": "s7comm" },
+        { "role": "allowed_hmi", "protocol": "srtp" },
+        { "role": "allowed_hmi", "protocol": "enip" }
+      ]
+    },
+    { "id": "hmiacs", "name": "HMI Vendor A hmi-site-b", "ip": "10.20.32.9", "type": "HMI",
+      "roles": [
+        { "role": "allowed_hmi", "protocol": "s7comm" },
+        { "role": "allowed_hmi", "protocol": "enip" }
+      ]
+    },
+    { "id": "rsv", "name": "HMI Vendor B hmi-site-a", "ip": "10.20.0.97", "type": "HMI",
+      "roles": [{ "role": "allowed_hmi", "protocol": "enip" }]
+    },
+    { "id": "hmiacd", "name": "HMI Vendor A hmi-site-c", "ip": "10.20.32.10", "type": "HMI",
+      "roles": [{ "role": "allowed_hmi", "protocol": "srtp" }]
+    },
+    { "id": "hmiapl", "name": "HMI Vendor A hmi-substation", "ip": "10.20.1.87", "type": "HMI",
+      "roles": [{ "role": "allowed_hmi", "protocol": "dnp3" }]
+    },
+    { "id": "ios", "name": "ioserver-substation", "ip": "10.20.1.23", "type": "server",
+      "roles": [{ "role": "allowed_ioserver", "protocol": "dnp3" }]
+    },
+    { "id": "delta", "name": "Modbus TCP Sign #1 (Site-A Cell)", "ip": "10.20.0.155", "type": "display",
+      "roles": [{ "role": "target_modbus_server", "protocol": "modbus" }]
+    },
+    { "id": "omega", "name": "Modbus TCP Sign #2", "ip": "10.20.0.156", "type": "display",
+      "roles": [{ "role": "target_modbus_server", "protocol": "modbus" }]
+    },
+    { "id": "s7315", "name": "Site-B S7-315 PLC", "ip": "10.20.32.102", "type": "PLC",
+      "roles": [{ "role": "target_plc_s7_classic", "protocol": "s7comm" }]
+    },
+    { "id": "s71515", "name": "Site-B S7-1515 PLC", "ip": "10.20.32.12", "type": "PLC",
+      "roles": [{ "role": "target_plc_s7_plus", "protocol": "s7plus" }]
+    },
+    { "id": "l81e", "name": "Site-A L81E PLC", "ip": "10.20.0.3,10.20.0.7,10.20.0.8", "type": "PLC",
+      "roles": [{ "role": "target_plc_logix", "protocol": "enip" }]
+    },
+    { "id": "l55", "name": "Site-A L55 PLC", "ip": "10.20.0.6", "type": "PLC",
+      "roles": [
+        { "role": "target_plc_logix", "protocol": "enip" },
+        { "role": "allowed_plc_peer", "protocol": "enip" }
+      ]
+    },
+    { "id": "acd", "name": "Site-C CPE330 PLC", "ip": "10.20.32.3", "type": "PLC",
+      "roles": [{ "role": "target_plc_ge", "protocol": "srtp" }]
+    },
+    { "id": "rtu1", "name": "Substation RTU (RTU Vendor X)", "ip": "10.20.1.40", "type": "RTU",
+      "roles": [{ "role": "target_modbus_server", "protocol": "modbus" }]
+    },
+    { "id": "rtu2", "name": "Substation RTU 2 (Siemens S7-1200)", "ip": "10.20.32.5", "type": "PLC/RTU",
+      "roles": [
+        { "role": "target_plc_s7_plus", "protocol": "s7plus" },
+        { "role": "allowed_ioserver", "protocol": "dnp3" }
+      ]
+    }
+  ],
+  "edges": [
+    { "from": "hmiov",  "to": "rtu1",   "protocol": "modbus", "note": "Site-B data flow: HMI Process Overview to Substation RTU" },
+    { "from": "hmiov",  "to": "s71515", "protocol": "s7plus", "note": "Site-B data flow: HMI to S7-1515 (S7CommPlus)" },
+    { "from": "hmiacs", "to": "s71515", "protocol": "s7plus", "note": "Site-B data flow: hmi-site-b to S7-1515" },
+    { "from": "s7315",  "to": "s71515", "protocol": "s7comm", "note": "Site-B data flow: system control signals (S7-315 only speaks classic)" },
+    { "from": "s71515", "to": "rtu2",   "protocol": "s7plus", "note": "Site-B data flow: S7-1515 to S7-1200 RTU 2" },
+    { "from": "hmiacs", "to": "l81e",   "protocol": "enip",   "note": "Site-A data flow: CIP I/O (Fails) - documented but failing" },
+    { "from": "hmiov",  "to": "acd",    "protocol": "srtp",   "note": "Site-C data flow: HMI Process Overview to CPE330" },
+    { "from": "hmiacd", "to": "acd",    "protocol": "srtp",   "note": "Site-C data flow: hmi-site-c to CPE330" },
+    { "from": "hmiov",  "to": "l55",    "protocol": "enip",   "note": "Site-A data flow: HMI Process Overview to L55 (Ethernet/IP)" },
+    { "from": "l55",    "to": "l81e",   "protocol": "enip",   "note": "Site-A data flow: CIP Explicit MSG (PLC peer)" },
+    { "from": "rsv",    "to": "l81e",   "protocol": "enip",   "note": "Site-A data flow: HMI Vendor B to L81E" },
+    { "from": "l81e",   "to": "delta",  "protocol": "modbus", "note": "Site-A data flow: L81E to Modbus sign #1" },
+    { "from": "l81e",   "to": "omega",  "protocol": "modbus", "note": "Site-A data flow: L81E to Modbus sign #2" }
+  ],
+  "detectionsOn": {},
+  "commentOverrides": {}
+}
