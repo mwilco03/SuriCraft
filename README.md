@@ -11,6 +11,7 @@ Static page, React via CDN, no build step. Publishes from `main` to GitHub Pages
 - See `docs/catalog-schema.md` to add or edit detections.
 - See `docs/known-limitations.md` before relying on the output for production.
 - See `docs/roadmap.md` for what's planned and what's explicitly out of scope.
+- See `docs/protocol-survey.md` for the GE-SRTP forensics and the survey of additional OT protocols (with ICSNPP / Wireshark / Suricata coverage status per protocol).
 
 Bugs / feature requests: [open an issue](https://github.com/mwilco03/SuriCraft/issues).
 

@@ -35,6 +35,12 @@ Found a bug or want a feature? [Open an issue](https://github.com/mwilco03/SuriC
 - [ ] **Phase 4: "browse all known codes" panel in step 4.** Show every function/service code Wireshark knows about for each protocol, mark which ones SuriCraft has detections for, click-to-add a starter detection for the rest.
 - [ ] **CI/CD for reference data.** GitHub Action that runs `scripts/regen_catalog.py` on a schedule (e.g. weekly) and opens a PR if `catalog/wireshark-tables/` or `catalog/suricata-parsers.json` change. Auto-tracks upstream Wireshark/Suricata releases without manual refresh. Pinning: action passes `--wireshark-branch` and `--suricata-branch` from a single config file checked into the repo.
 - [ ] **CVE-driven detection workstream.** Separate `catalog/cve-detections.json` schema for signatures pulled from CISA ICS advisories and Exploit-DB. Hand-curated, no auto-extraction (advisory text is unstructured). Out of scope for Phase 1.
+- [ ] **Add Synchrophasor (IEEE C37.118).** Wireshark has `packet-synphasor.c`; ICSNPP has a parser. Byte-rule renderer. Top recommendation from the protocol survey. See `docs/protocol-survey.md`.
+- [ ] **Add IEC 61850 GOOSE as a stub.** Wireshark `packet-goose.c` exists. L2 multicast — coverage requires a TAP that preserves L2; add a coverage-gap note like the PROFINET one.
+- [ ] **Add Omron FINS as a native renderer.** Wireshark dissector exists; ICSNPP has a parser. Common in non-Siemens factory automation.
+- [ ] **Promote HART-IP from stub to native renderer.** ICSNPP has a parser; Wireshark dissector exists; process industry SCADA.
+- [ ] **Promote OPC UA Binary from stub to native renderer.** Suricata has had partial app-layer support since 6.0 — investigate the keyword; fall back to byte rules. Modern convergent ICS protocol.
+- [ ] **GE-SRTP reference data (optional).** Vendor-import value tables from the [Palatis/packet-ge-srtp](https://github.com/Palatis/packet-ge-srtp) Lua dissector to populate `catalog/wireshark-tables/srtp.json`. Mainline Wireshark has no GE-SRTP dissector to extract from.
 
 ## Non-goals (explicit)
 

@@ -150,6 +150,9 @@ window.OT = window.OT || {};
           <a href={docsBase + "/roadmap.md"} target="_blank" rel="noopener noreferrer">
             roadmap
           </a>
+          <a href={docsBase + "/protocol-survey.md"} target="_blank" rel="noopener noreferrer">
+            protocol survey
+          </a>
           <span style={{ flex: 1 }} />
           <a href={issuesUrl} target="_blank" rel="noopener noreferrer">report issue</a>
           <a href={ghBase} target="_blank" rel="noopener noreferrer">source</a>
