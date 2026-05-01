@@ -75,18 +75,20 @@ window.OT = window.OT || {};
     const stepProps = { state, setState, catalog };
     const StepView = [StepInventory, StepRoles, StepFlows, StepDetections, StepReview, StepExport][state.step];
 
-    // Auto-derive issues URL from github.io hosting; fall back to canonical repo for local dev.
-    const issuesUrl = (() => {
+    // Auto-derive GitHub URLs from github.io hosting; fall back to canonical repo for local dev.
+    const ghBase = (() => {
       const host = window.location.hostname || "";
       const m = host.match(/^([^.]+)\.github\.io$/);
       if (m) {
         const user = m[1];
         const path = window.location.pathname.split("/").filter(Boolean);
         const repo = path[0] || "SuriCraft";
-        return "https://github.com/" + user + "/" + repo + "/issues";
+        return "https://github.com/" + user + "/" + repo;
       }
-      return "https://github.com/mwilco03/SuriCraft/issues";
+      return "https://github.com/mwilco03/SuriCraft";
     })();
+    const issuesUrl = ghBase + "/issues";
+    const docsBase = ghBase + "/blob/main/docs";
 
     return (
       <>
@@ -123,6 +125,35 @@ window.OT = window.OT || {};
         />
         <StepView {...stepProps} />
         <NavButtons step={state.step} setStep={setStep} last={STEPS.length - 1} />
+        <footer style={{
+          marginTop: 32,
+          paddingTop: 16,
+          borderTop: "0.5px solid var(--border)",
+          fontSize: 12,
+          color: "var(--text-2)",
+          display: "flex",
+          gap: 16,
+          flexWrap: "wrap",
+        }}>
+          <a href={docsBase + "/how-this-works.md"} target="_blank" rel="noopener noreferrer">
+            how this works
+          </a>
+          <a href={docsBase + "/suricata-deployment.md"} target="_blank" rel="noopener noreferrer">
+            deployment guide
+          </a>
+          <a href={docsBase + "/catalog-schema.md"} target="_blank" rel="noopener noreferrer">
+            catalog schema
+          </a>
+          <a href={docsBase + "/known-limitations.md"} target="_blank" rel="noopener noreferrer">
+            known limitations
+          </a>
+          <a href={docsBase + "/roadmap.md"} target="_blank" rel="noopener noreferrer">
+            roadmap
+          </a>
+          <span style={{ flex: 1 }} />
+          <a href={issuesUrl} target="_blank" rel="noopener noreferrer">report issue</a>
+          <a href={ghBase} target="_blank" rel="noopener noreferrer">source</a>
+        </footer>
       </>
     );
   }

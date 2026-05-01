@@ -2,7 +2,7 @@ window.OT = window.OT || {};
 (function (OT) {
   const STEPS = [
     { id: 0, label: "inventory" },
-    { id: 1, label: "roles" },
+    { id: 1, label: "access" },
     { id: 2, label: "flows" },
     { id: 3, label: "detections" },
     { id: 4, label: "review" },

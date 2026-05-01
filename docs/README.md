@@ -31,6 +31,10 @@ ICS/OT defenders running Suricata anywhere who need site-specific rules and cann
 
 Once you fork and enable Pages: `https://<your-user>.github.io/SuriCraft/`.
 
+## How the model works
+
+See `docs/how-this-works.md`. Short version: per protocol on the wire, you fill in four allow-lists (targets / operator / engineering / peer). Detections in the catalog declare which allow-lists they honor. The rule generator joins assets to detections through those allow-lists.
+
 ## Quick start (local)
 
 ```sh
