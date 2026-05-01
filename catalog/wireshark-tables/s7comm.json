@@ -1,0 +1,4708 @@
+{
+  "protocol": "s7comm",
+  "wireshark_branch": "master",
+  "sources": [
+    {
+      "file": "packet-s7comm.c",
+      "url": "https://raw.githubusercontent.com/wireshark/wireshark/master/epan/dissectors/packet-s7comm.c",
+      "size_bytes": 483085
+    }
+  ],
+  "extracted_at_utc": "2026-05-01T14:07:23+00:00",
+  "table_count": 44,
+  "entry_count": 1151,
+  "tables": {
+    "rosctr_names": [
+      {
+        "code": 1,
+        "name": "Job"
+      },
+      {
+        "code": 2,
+        "name": "Ack"
+      },
+      {
+        "code": 3,
+        "name": "Ack_Data"
+      },
+      {
+        "code": 7,
+        "name": "Userdata"
+      }
+    ],
+    "errcls_names": [
+      {
+        "code": 0,
+        "name": "No error"
+      },
+      {
+        "code": 129,
+        "name": "Application relationship"
+      },
+      {
+        "code": 130,
+        "name": "Object definition"
+      },
+      {
+        "code": 131,
+        "name": "No resources available"
+      },
+      {
+        "code": 132,
+        "name": "Error on service processing"
+      },
+      {
+        "code": 133,
+        "name": "Error on supplies"
+      },
+      {
+        "code": 135,
+        "name": "Access error"
+      }
+    ],
+    "param_errcode_names": [
+      {
+        "code": 0,
+        "name": "No error"
+      },
+      {
+        "code": 272,
+        "name": "Invalid block number"
+      },
+      {
+        "code": 273,
+        "name": "Invalid request length"
+      },
+      {
+        "code": 274,
+        "name": "Invalid parameter"
+      },
+      {
+        "code": 275,
+        "name": "Invalid block type"
+      },
+      {
+        "code": 276,
+        "name": "Block not found"
+      },
+      {
+        "code": 277,
+        "name": "Block already exists"
+      },
+      {
+        "code": 278,
+        "name": "Block is write-protected"
+      },
+      {
+        "code": 279,
+        "name": "The block/operating system update is too large"
+      },
+      {
+        "code": 280,
+        "name": "Invalid block number"
+      },
+      {
+        "code": 281,
+        "name": "Incorrect password entered"
+      },
+      {
+        "code": 282,
+        "name": "PG resource error"
+      },
+      {
+        "code": 283,
+        "name": "PLC resource error"
+      },
+      {
+        "code": 284,
+        "name": "Protocol error"
+      },
+      {
+        "code": 285,
+        "name": "Too many blocks (module-related restriction)"
+      },
+      {
+        "code": 286,
+        "name": "There is no longer a connection to the database, or S7DOS handle is invalid"
+      },
+      {
+        "code": 287,
+        "name": "Result buffer too small"
+      },
+      {
+        "code": 288,
+        "name": "End of block list"
+      },
+      {
+        "code": 320,
+        "name": "Insufficient memory available"
+      },
+      {
+        "code": 321,
+        "name": "Job cannot be processed because of a lack of resources"
+      },
+      {
+        "code": 32769,
+        "name": "The requested service cannot be performed while the block is in the current status"
+      },
+      {
+        "code": 32771,
+        "name": "S7 protocol error: Error occurred while transferring the block"
+      },
+      {
+        "code": 33024,
+        "name": "Application, general error: Service unknown to remote module"
+      },
+      {
+        "code": 33028,
+        "name": "This service is not implemented on the module or a frame error was reported"
+      },
+      {
+        "code": 33284,
+        "name": "The type specification for the object is inconsistent"
+      },
+      {
+        "code": 33285,
+        "name": "A copied block already exists and is not linked"
+      },
+      {
+        "code": 33537,
+        "name": "Insufficient memory space or work memory on the module, or specified storage medium not accessible"
+      },
+      {
+        "code": 33538,
+        "name": "Too few resources available or the processor resources are not available"
+      },
+      {
+        "code": 33540,
+        "name": "No further parallel upload possible. There is a resource bottleneck"
+      },
+      {
+        "code": 33541,
+        "name": "Function not available"
+      },
+      {
+        "code": 33542,
+        "name": "Insufficient work memory (for copying, linking, loading AWP)"
+      },
+      {
+        "code": 33543,
+        "name": "Not enough retentive work memory (for copying, linking, loading AWP)"
+      },
+      {
+        "code": 33793,
+        "name": "S7 protocol error: Invalid service sequence (for example, loading or uploading a block)"
+      },
+      {
+        "code": 33794,
+        "name": "Service cannot execute owing to status of the addressed object"
+      },
+      {
+        "code": 33796,
+        "name": "S7 protocol: The function cannot be performed"
+      },
+      {
+        "code": 33797,
+        "name": "Remote block is in DISABLE state (CFB). The function cannot be performed"
+      },
+      {
+        "code": 34048,
+        "name": "S7 protocol error: Wrong frames"
+      },
+      {
+        "code": 34051,
+        "name": "Alarm from the module: Service canceled prematurely"
+      },
+      {
+        "code": 34561,
+        "name": "Error addressing the object on the communications partner (for example, area length error)"
+      },
+      {
+        "code": 34562,
+        "name": "The requested service is not supported by the module"
+      },
+      {
+        "code": 34563,
+        "name": "Access to object refused"
+      },
+      {
+        "code": 34564,
+        "name": "Access error: Object damaged"
+      },
+      {
+        "code": 53249,
+        "name": "Protocol error: Illegal job number"
+      },
+      {
+        "code": 53250,
+        "name": "Parameter error: Illegal job variant"
+      },
+      {
+        "code": 53251,
+        "name": "Parameter error: Debugging function not supported by module"
+      },
+      {
+        "code": 53252,
+        "name": "Parameter error: Illegal job status"
+      },
+      {
+        "code": 53253,
+        "name": "Parameter error: Illegal job termination"
+      },
+      {
+        "code": 53254,
+        "name": "Parameter error: Illegal link disconnection ID"
+      },
+      {
+        "code": 53255,
+        "name": "Parameter error: Illegal number of buffer elements"
+      },
+      {
+        "code": 53256,
+        "name": "Parameter error: Illegal scan rate"
+      },
+      {
+        "code": 53257,
+        "name": "Parameter error: Illegal number of executions"
+      },
+      {
+        "code": 53258,
+        "name": "Parameter error: Illegal trigger event"
+      },
+      {
+        "code": 53259,
+        "name": "Parameter error: Illegal trigger condition"
+      },
+      {
+        "code": 53265,
+        "name": "Parameter error in path of the call environment: Block does not exist"
+      },
+      {
+        "code": 53266,
+        "name": "Parameter error: Wrong address in block"
+      },
+      {
+        "code": 53268,
+        "name": "Parameter error: Block being deleted/overwritten"
+      },
+      {
+        "code": 53269,
+        "name": "Parameter error: Illegal tag address"
+      },
+      {
+        "code": 53270,
+        "name": "Parameter error: Test jobs not possible, because of errors in user program"
+      },
+      {
+        "code": 53271,
+        "name": "Parameter error: Illegal trigger number"
+      },
+      {
+        "code": 53285,
+        "name": "Parameter error: Invalid path"
+      },
+      {
+        "code": 53286,
+        "name": "Parameter error: Illegal access type"
+      },
+      {
+        "code": 53287,
+        "name": "Parameter error: This number of data blocks is not permitted"
+      },
+      {
+        "code": 53297,
+        "name": "Internal protocol error"
+      },
+      {
+        "code": 53298,
+        "name": "Parameter error: Wrong result buffer length"
+      },
+      {
+        "code": 53299,
+        "name": "Protocol error: Wrong job length"
+      },
+      {
+        "code": 53311,
+        "name": "Coding error: Error in parameter section (for example, reserve bytes not equal to 0)"
+      },
+      {
+        "code": 53313,
+        "name": "Data error: Illegal status list ID"
+      },
+      {
+        "code": 53314,
+        "name": "Data error: Illegal tag address"
+      },
+      {
+        "code": 53315,
+        "name": "Data error: Referenced job not found, check job data"
+      },
+      {
+        "code": 53316,
+        "name": "Data error: Illegal tag value, check job data"
+      },
+      {
+        "code": 53317,
+        "name": "Data error: Exiting the ODIS control is not allowed in HOLD"
+      },
+      {
+        "code": 53318,
+        "name": "Data error: Illegal measuring stage during run-time measurement"
+      },
+      {
+        "code": 53319,
+        "name": "Data error: Illegal hierarchy in 'Read job list'"
+      },
+      {
+        "code": 53320,
+        "name": "Data error: Illegal deletion ID in 'Delete job'"
+      },
+      {
+        "code": 53321,
+        "name": "Invalid substitute ID in 'Replace job'"
+      },
+      {
+        "code": 53322,
+        "name": "Error executing 'program status'"
+      },
+      {
+        "code": 53343,
+        "name": "Coding error: Error in data section (for example, reserve bytes not equal to 0, ...)"
+      },
+      {
+        "code": 53345,
+        "name": "Resource error: No memory space for job"
+      },
+      {
+        "code": 53346,
+        "name": "Resource error: Job list full"
+      },
+      {
+        "code": 53347,
+        "name": "Resource error: Trigger event occupied"
+      },
+      {
+        "code": 53348,
+        "name": "Resource error: Not enough memory space for one result buffer element"
+      },
+      {
+        "code": 53349,
+        "name": "Resource error: Not enough memory space for several  result buffer elements"
+      },
+      {
+        "code": 53350,
+        "name": "Resource error: The timer available for run-time measurement is occupied by another job"
+      },
+      {
+        "code": 53351,
+        "name": "Resource error: Too many 'modify tag' jobs active (in particular multi-processor operation)"
+      },
+      {
+        "code": 53377,
+        "name": "Function not permitted in current mode"
+      },
+      {
+        "code": 53378,
+        "name": "Mode error: Cannot exit HOLD mode"
+      },
+      {
+        "code": 53409,
+        "name": "Function not permitted in current protection level"
+      },
+      {
+        "code": 53410,
+        "name": "Function not possible at present, because a function is running that modifies memory"
+      },
+      {
+        "code": 53411,
+        "name": "Too many 'modify tag' jobs active on the I/O (in particular multi-processor operation)"
+      },
+      {
+        "code": 53412,
+        "name": "'Forcing' has already been established"
+      },
+      {
+        "code": 53413,
+        "name": "Referenced job not found"
+      },
+      {
+        "code": 53414,
+        "name": "Job cannot be disabled/enabled"
+      },
+      {
+        "code": 53415,
+        "name": "Job cannot be deleted, for example because it is currently being read"
+      },
+      {
+        "code": 53416,
+        "name": "Job cannot be replaced, for example because it is currently being read or deleted"
+      },
+      {
+        "code": 53417,
+        "name": "Job cannot be read, for example because it is currently being deleted"
+      },
+      {
+        "code": 53418,
+        "name": "Time limit exceeded in processing operation"
+      },
+      {
+        "code": 53419,
+        "name": "Invalid job parameters in process operation"
+      },
+      {
+        "code": 53420,
+        "name": "Invalid job data in process operation"
+      },
+      {
+        "code": 53421,
+        "name": "Operating mode already set"
+      },
+      {
+        "code": 53422,
+        "name": "The job was set up over a different connection and can only be handled over this connection"
+      },
+      {
+        "code": 53441,
+        "name": "At least one error has been detected while accessing the tag(s)"
+      },
+      {
+        "code": 53442,
+        "name": "Change to STOP/HOLD mode"
+      },
+      {
+        "code": 53443,
+        "name": "At least one error was detected while accessing the tag(s). Mode change to STOP/HOLD"
+      },
+      {
+        "code": 53444,
+        "name": "Timeout during run-time measurement"
+      },
+      {
+        "code": 53445,
+        "name": "Display of block stack inconsistent, because blocks were deleted/reloaded"
+      },
+      {
+        "code": 53446,
+        "name": "Job was automatically deleted as the jobs it referenced have been deleted"
+      },
+      {
+        "code": 53447,
+        "name": "The job was automatically deleted because STOP mode was exited"
+      },
+      {
+        "code": 53448,
+        "name": "'Block status' aborted because of inconsistencies between test job and running program"
+      },
+      {
+        "code": 53449,
+        "name": "Exit the status area by resetting OB90"
+      },
+      {
+        "code": 53450,
+        "name": "Exiting the status range by resetting OB90 and access error reading tags before exiting"
+      },
+      {
+        "code": 53451,
+        "name": "The output disable for the peripheral outputs has been activated again"
+      },
+      {
+        "code": 53452,
+        "name": "The amount of data for the debugging functions is restricted by the time limit"
+      },
+      {
+        "code": 53761,
+        "name": "Syntax error in block name"
+      },
+      {
+        "code": 53762,
+        "name": "Syntax error in function parameters"
+      },
+      {
+        "code": 53765,
+        "name": "Linked block already exists in RAM: Conditional copying is not possible"
+      },
+      {
+        "code": 53766,
+        "name": "Linked block already exists in EPROM: Conditional copying is not possible"
+      },
+      {
+        "code": 53768,
+        "name": "Maximum number of copied (not linked) blocks on module exceeded"
+      },
+      {
+        "code": 53769,
+        "name": "(At least) one of the given blocks not found on the module"
+      },
+      {
+        "code": 53770,
+        "name": "The maximum number of blocks that can be linked with one job was exceeded"
+      },
+      {
+        "code": 53771,
+        "name": "The maximum number of blocks that can be deleted with one job was exceeded"
+      },
+      {
+        "code": 53772,
+        "name": "OB cannot be copied because the associated priority class does not exist"
+      },
+      {
+        "code": 53773,
+        "name": "SDB cannot be interpreted (for example, unknown number)"
+      },
+      {
+        "code": 53774,
+        "name": "No (further) block available"
+      },
+      {
+        "code": 53775,
+        "name": "Module-specific maximum block size exceeded"
+      },
+      {
+        "code": 53776,
+        "name": "Invalid block number"
+      },
+      {
+        "code": 53778,
+        "name": "Incorrect header attribute (run-time relevant)"
+      },
+      {
+        "code": 53779,
+        "name": "Too many SDBs. Note the restrictions on the module being used"
+      },
+      {
+        "code": 53782,
+        "name": "Invalid user program - reset module"
+      },
+      {
+        "code": 53783,
+        "name": "Protection level specified in module properties not permitted"
+      },
+      {
+        "code": 53784,
+        "name": "Incorrect attribute (active/passive)"
+      },
+      {
+        "code": 53785,
+        "name": "Incorrect block lengths (for example, incorrect length of first section or of the whole block)"
+      },
+      {
+        "code": 53786,
+        "name": "Incorrect local data length or write-protection code faulty"
+      },
+      {
+        "code": 53787,
+        "name": "Module cannot compress or compression was interrupted early"
+      },
+      {
+        "code": 53789,
+        "name": "The volume of dynamic project data transferred is illegal"
+      },
+      {
+        "code": 53790,
+        "name": "Unable to assign parameters to a module (such as FM, CP). The system data could not be linked"
+      },
+      {
+        "code": 53792,
+        "name": "Invalid programming language. Note the restrictions on the module being used"
+      },
+      {
+        "code": 53793,
+        "name": "The system data for connections or routing are not valid"
+      },
+      {
+        "code": 53794,
+        "name": "The system data of the global data definition contain invalid parameters"
+      },
+      {
+        "code": 53795,
+        "name": "Error in instance data block for communication function block or maximum number of instance DBs exceeded"
+      },
+      {
+        "code": 53796,
+        "name": "The SCAN system data block contains invalid parameters"
+      },
+      {
+        "code": 53797,
+        "name": "The DP system data block contains invalid parameters"
+      },
+      {
+        "code": 53798,
+        "name": "A structural error occurred in a block"
+      },
+      {
+        "code": 53808,
+        "name": "A structural error occurred in a block"
+      },
+      {
+        "code": 53809,
+        "name": "At least one loaded OB cannot be copied because the associated priority class does not exist"
+      },
+      {
+        "code": 53810,
+        "name": "At least one block number of a loaded block is illegal"
+      },
+      {
+        "code": 53812,
+        "name": "Block exists twice in the specified memory medium or in the job"
+      },
+      {
+        "code": 53813,
+        "name": "The block contains an incorrect checksum"
+      },
+      {
+        "code": 53814,
+        "name": "The block does not contain a checksum"
+      },
+      {
+        "code": 53815,
+        "name": "You are about to load the block twice, i.e. a block with the same time stamp already exists on the CPU"
+      },
+      {
+        "code": 53816,
+        "name": "At least one of the blocks specified is not a DB"
+      },
+      {
+        "code": 53817,
+        "name": "At least one of the DBs specified is not available as a linked variant in the load memory"
+      },
+      {
+        "code": 53818,
+        "name": "At least one of the specified DBs is considerably different from the copied and linked variant"
+      },
+      {
+        "code": 53824,
+        "name": "Coordination rules violated"
+      },
+      {
+        "code": 53825,
+        "name": "The function is not permitted in the current protection level"
+      },
+      {
+        "code": 53826,
+        "name": "Protection violation while processing F blocks"
+      },
+      {
+        "code": 53840,
+        "name": "Update and module ID or version do not match"
+      },
+      {
+        "code": 53841,
+        "name": "Incorrect sequence of operating system components"
+      },
+      {
+        "code": 53842,
+        "name": "Checksum error"
+      },
+      {
+        "code": 53843,
+        "name": "No executable loader available; update only possible using a memory card"
+      },
+      {
+        "code": 53844,
+        "name": "Storage error in operating system"
+      },
+      {
+        "code": 53888,
+        "name": "Error compiling block in S7-300 CPU"
+      },
+      {
+        "code": 53921,
+        "name": "Another block function or a trigger on a block is active"
+      },
+      {
+        "code": 53922,
+        "name": "A trigger is active on a block. Complete the debugging function first"
+      },
+      {
+        "code": 53923,
+        "name": "The block is not active (linked), the block is occupied or the block is currently marked for deletion"
+      },
+      {
+        "code": 53924,
+        "name": "The block is already being processed by another block function"
+      },
+      {
+        "code": 53926,
+        "name": "It is not possible to save and change the user program simultaneously"
+      },
+      {
+        "code": 53927,
+        "name": "The block has the attribute 'unlinked' or is not processed"
+      },
+      {
+        "code": 53928,
+        "name": "An active debugging function is preventing parameters from being assigned to the CPU"
+      },
+      {
+        "code": 53929,
+        "name": "New parameters are being assigned to the CPU"
+      },
+      {
+        "code": 53930,
+        "name": "New parameters are currently being assigned to the modules"
+      },
+      {
+        "code": 53931,
+        "name": "The dynamic configuration limits are currently being changed"
+      },
+      {
+        "code": 53932,
+        "name": "A running active or deactivate assignment (SFC 12) is temporarily preventing R-KiR process"
+      },
+      {
+        "code": 53936,
+        "name": "An error occurred while configuring in RUN (CiR)"
+      },
+      {
+        "code": 53952,
+        "name": "The maximum number of technological objects has been exceeded"
+      },
+      {
+        "code": 53953,
+        "name": "The same technology data block already exists on the module"
+      },
+      {
+        "code": 53954,
+        "name": "Downloading the user program or downloading the hardware configuration is not possible"
+      },
+      {
+        "code": 54273,
+        "name": "Information function unavailable"
+      },
+      {
+        "code": 54274,
+        "name": "Information function unavailable"
+      },
+      {
+        "code": 54275,
+        "name": "Service has already been logged on/off (Diagnostics/PMC)"
+      },
+      {
+        "code": 54276,
+        "name": "Maximum number of nodes reached. No more logons possible for diagnostics/PMC"
+      },
+      {
+        "code": 54277,
+        "name": "Service not supported or syntax error in function parameters"
+      },
+      {
+        "code": 54278,
+        "name": "Required information currently unavailable"
+      },
+      {
+        "code": 54279,
+        "name": "Diagnostics error occurred"
+      },
+      {
+        "code": 54280,
+        "name": "Update aborted"
+      },
+      {
+        "code": 54281,
+        "name": "Error on DP bus"
+      },
+      {
+        "code": 54785,
+        "name": "Syntax error in function parameter"
+      },
+      {
+        "code": 54786,
+        "name": "Incorrect password entered"
+      },
+      {
+        "code": 54787,
+        "name": "The connection has already been legitimized"
+      },
+      {
+        "code": 54788,
+        "name": "The connection has already been enabled"
+      },
+      {
+        "code": 54789,
+        "name": "Legitimization not possible because password does not exist"
+      },
+      {
+        "code": 55297,
+        "name": "At least one tag address is invalid"
+      },
+      {
+        "code": 55298,
+        "name": "Specified job does not exist"
+      },
+      {
+        "code": 55299,
+        "name": "Illegal job status"
+      },
+      {
+        "code": 55300,
+        "name": "Illegal cycle time (illegal time base or multiple)"
+      },
+      {
+        "code": 55301,
+        "name": "No more cyclic read jobs can be set up"
+      },
+      {
+        "code": 55302,
+        "name": "The referenced job is in a state in which the requested function cannot be performed"
+      },
+      {
+        "code": 55303,
+        "name": "Function aborted due to overload, meaning executing the read cycle takes longer than the set scan cycle time"
+      },
+      {
+        "code": 56321,
+        "name": "Date and/or time invalid"
+      },
+      {
+        "code": 57857,
+        "name": "CPU is already the master"
+      },
+      {
+        "code": 57858,
+        "name": "Connect and update not possible due to different user program in flash module"
+      },
+      {
+        "code": 57859,
+        "name": "Connect and update not possible due to different firmware"
+      },
+      {
+        "code": 57860,
+        "name": "Connect and update not possible due to different memory configuration"
+      },
+      {
+        "code": 57861,
+        "name": "Connect/update aborted due to synchronization error"
+      },
+      {
+        "code": 57862,
+        "name": "Connect/update denied due to coordination violation"
+      },
+      {
+        "code": 61185,
+        "name": "S7 protocol error: Error at ID2; only 00H permitted in job"
+      },
+      {
+        "code": 61186,
+        "name": "S7 protocol error: Error at ID2; set of resources does not exist"
+      }
+    ],
+    "param_functionnames": [
+      {
+        "code": 0,
+        "name": "CPU services"
+      },
+      {
+        "code": 1,
+        "name": "Mode transition"
+      },
+      {
+        "code": 240,
+        "name": "Setup communication"
+      },
+      {
+        "code": 4,
+        "name": "Read Var"
+      },
+      {
+        "code": 5,
+        "name": "Write Var"
+      },
+      {
+        "code": 26,
+        "name": "Request download"
+      },
+      {
+        "code": 27,
+        "name": "Download block"
+      },
+      {
+        "code": 28,
+        "name": "Download ended"
+      },
+      {
+        "code": 29,
+        "name": "Start upload"
+      },
+      {
+        "code": 30,
+        "name": "Upload"
+      },
+      {
+        "code": 31,
+        "name": "End upload"
+      },
+      {
+        "code": 40,
+        "name": "PI-Service"
+      },
+      {
+        "code": 41,
+        "name": "PLC Stop"
+      }
+    ],
+    "item_areanames": [
+      {
+        "code": 1,
+        "name": "Data record"
+      },
+      {
+        "code": 3,
+        "name": "System info of 200 family"
+      },
+      {
+        "code": 5,
+        "name": "System flags of 200 family"
+      },
+      {
+        "code": 6,
+        "name": "Analog inputs of 200 family"
+      },
+      {
+        "code": 7,
+        "name": "Analog outputs of 200 family"
+      },
+      {
+        "code": 128,
+        "name": "Direct peripheral access (P)"
+      },
+      {
+        "code": 129,
+        "name": "Inputs (I)"
+      },
+      {
+        "code": 130,
+        "name": "Outputs (Q)"
+      },
+      {
+        "code": 131,
+        "name": "Flags (M)"
+      },
+      {
+        "code": 132,
+        "name": "Data blocks (DB)"
+      },
+      {
+        "code": 133,
+        "name": "Instance data blocks (DI)"
+      },
+      {
+        "code": 134,
+        "name": "Local data (L)"
+      },
+      {
+        "code": 135,
+        "name": "Unknown yet (V)"
+      },
+      {
+        "code": 28,
+        "name": "S7 counters (C)"
+      },
+      {
+        "code": 29,
+        "name": "S7 timers (T)"
+      },
+      {
+        "code": 30,
+        "name": "IEC counters (200 family)"
+      },
+      {
+        "code": 31,
+        "name": "IEC timers (200 family)"
+      }
+    ],
+    "item_areanames_short": [
+      {
+        "code": 1,
+        "name": "RECORD"
+      },
+      {
+        "code": 3,
+        "name": "SI200"
+      },
+      {
+        "code": 5,
+        "name": "SF200"
+      },
+      {
+        "code": 6,
+        "name": "AI200"
+      },
+      {
+        "code": 7,
+        "name": "AO"
+      },
+      {
+        "code": 128,
+        "name": "P"
+      },
+      {
+        "code": 129,
+        "name": "I"
+      },
+      {
+        "code": 130,
+        "name": "Q"
+      },
+      {
+        "code": 131,
+        "name": "M"
+      },
+      {
+        "code": 132,
+        "name": "DB"
+      },
+      {
+        "code": 133,
+        "name": "DI"
+      },
+      {
+        "code": 134,
+        "name": "L"
+      },
+      {
+        "code": 135,
+        "name": "V"
+      },
+      {
+        "code": 28,
+        "name": "C"
+      },
+      {
+        "code": 29,
+        "name": "T"
+      },
+      {
+        "code": 30,
+        "name": "C200"
+      },
+      {
+        "code": 31,
+        "name": "T200"
+      }
+    ],
+    "item_transportsizenames": [
+      {
+        "code": 1,
+        "name": "BIT"
+      },
+      {
+        "code": 2,
+        "name": "BYTE"
+      },
+      {
+        "code": 3,
+        "name": "CHAR"
+      },
+      {
+        "code": 4,
+        "name": "WORD"
+      },
+      {
+        "code": 5,
+        "name": "INT"
+      },
+      {
+        "code": 6,
+        "name": "DWORD"
+      },
+      {
+        "code": 7,
+        "name": "DINT"
+      },
+      {
+        "code": 8,
+        "name": "REAL"
+      },
+      {
+        "code": 10,
+        "name": "TOD"
+      },
+      {
+        "code": 11,
+        "name": "TIME"
+      },
+      {
+        "code": 12,
+        "name": "S5TIME"
+      },
+      {
+        "code": 15,
+        "name": "DATE_AND_TIME"
+      },
+      {
+        "code": 28,
+        "name": "COUNTER"
+      },
+      {
+        "code": 29,
+        "name": "TIMER"
+      },
+      {
+        "code": 30,
+        "name": "IEC TIMER"
+      },
+      {
+        "code": 31,
+        "name": "IEC COUNTER"
+      },
+      {
+        "code": 32,
+        "name": "HS COUNTER"
+      }
+    ],
+    "item_syntaxid_names": [
+      {
+        "code": 16,
+        "name": "S7ANY"
+      },
+      {
+        "code": 17,
+        "name": "ParameterShort"
+      },
+      {
+        "code": 18,
+        "name": "ParameterExtended"
+      },
+      {
+        "code": 19,
+        "name": "PBC-R_ID"
+      },
+      {
+        "code": 21,
+        "name": "ALARM_LOCKFREE"
+      },
+      {
+        "code": 22,
+        "name": "ALARM_IND"
+      },
+      {
+        "code": 25,
+        "name": "ALARM_ACK"
+      },
+      {
+        "code": 26,
+        "name": "ALARM_QUERYREQ"
+      },
+      {
+        "code": 28,
+        "name": "NOTIFY_IND"
+      },
+      {
+        "code": 130,
+        "name": "NCK"
+      },
+      {
+        "code": 131,
+        "name": "NCK_M"
+      },
+      {
+        "code": 132,
+        "name": "NCK_I"
+      },
+      {
+        "code": 162,
+        "name": "DRIVEESANY"
+      },
+      {
+        "code": 178,
+        "name": "1200SYM"
+      },
+      {
+        "code": 176,
+        "name": "DBREAD"
+      }
+    ],
+    "data_transportsizenames": [
+      {
+        "code": 0,
+        "name": "NULL"
+      },
+      {
+        "code": 3,
+        "name": "BIT"
+      },
+      {
+        "code": 4,
+        "name": "BYTE/WORD/DWORD"
+      },
+      {
+        "code": 5,
+        "name": "INTEGER"
+      },
+      {
+        "code": 6,
+        "name": "DINTEGER"
+      },
+      {
+        "code": 7,
+        "name": "REAL"
+      },
+      {
+        "code": 9,
+        "name": "OCTET STRING"
+      },
+      {
+        "code": 17,
+        "name": "NCK ADDRESS1"
+      },
+      {
+        "code": 18,
+        "name": "NCK ADDRESS2"
+      }
+    ],
+    "blocktype_names": [
+      {
+        "code": 12344,
+        "name": "OB"
+      },
+      {
+        "code": 12345,
+        "name": "CMod"
+      },
+      {
+        "code": 12353,
+        "name": "DB"
+      },
+      {
+        "code": 12354,
+        "name": "SDB"
+      },
+      {
+        "code": 12355,
+        "name": "FC"
+      },
+      {
+        "code": 12356,
+        "name": "SFC"
+      },
+      {
+        "code": 12357,
+        "name": "FB"
+      },
+      {
+        "code": 12358,
+        "name": "SFB"
+      }
+    ],
+    "subblktype_names": [
+      {
+        "code": 0,
+        "name": "Not set"
+      },
+      {
+        "code": 8,
+        "name": "OB"
+      },
+      {
+        "code": 10,
+        "name": "DB"
+      },
+      {
+        "code": 11,
+        "name": "SDB"
+      },
+      {
+        "code": 12,
+        "name": "FC"
+      },
+      {
+        "code": 13,
+        "name": "SFC"
+      },
+      {
+        "code": 14,
+        "name": "FB"
+      },
+      {
+        "code": 15,
+        "name": "SFB"
+      }
+    ],
+    "blocksecurity_names": [
+      {
+        "code": 0,
+        "name": "None"
+      },
+      {
+        "code": 3,
+        "name": "Know How Protect"
+      }
+    ],
+    "blocklanguage_names": [
+      {
+        "code": 0,
+        "name": "Not defined"
+      },
+      {
+        "code": 1,
+        "name": "AWL"
+      },
+      {
+        "code": 2,
+        "name": "KOP"
+      },
+      {
+        "code": 3,
+        "name": "FUP"
+      },
+      {
+        "code": 4,
+        "name": "SCL"
+      },
+      {
+        "code": 5,
+        "name": "DB"
+      },
+      {
+        "code": 6,
+        "name": "GRAPH"
+      },
+      {
+        "code": 7,
+        "name": "SDB"
+      },
+      {
+        "code": 8,
+        "name": "CPU-DB"
+      },
+      {
+        "code": 17,
+        "name": "SDB (after overall reset)"
+      },
+      {
+        "code": 18,
+        "name": "SDB (Routing)"
+      },
+      {
+        "code": 41,
+        "name": "ENCRYPT"
+      }
+    ],
+    "userdata_ncprg_subfunc_names": [
+      {
+        "code": 1,
+        "name": "Request download"
+      },
+      {
+        "code": 2,
+        "name": "Download block"
+      },
+      {
+        "code": 3,
+        "name": "Continue download"
+      },
+      {
+        "code": 4,
+        "name": "Download ended"
+      },
+      {
+        "code": 6,
+        "name": "Start upload"
+      },
+      {
+        "code": 7,
+        "name": "Upload"
+      },
+      {
+        "code": 8,
+        "name": "Continue upload"
+      }
+    ],
+    "userdata_drr_subfunc_names": [
+      {
+        "code": 1,
+        "name": "DRR Init"
+      },
+      {
+        "code": 2,
+        "name": "DRR Finish"
+      },
+      {
+        "code": 3,
+        "name": "DRR Data"
+      }
+    ],
+    "userdata_lastdataunit_names": [
+      {
+        "code": 0,
+        "name": "Yes"
+      },
+      {
+        "code": 1,
+        "name": "No"
+      }
+    ],
+    "userdata_functiongroup_names": [
+      {
+        "code": 1,
+        "name": "Programmer commands"
+      },
+      {
+        "code": 2,
+        "name": "Cyclic services"
+      },
+      {
+        "code": 3,
+        "name": "Block functions"
+      },
+      {
+        "code": 4,
+        "name": "CPU functions"
+      },
+      {
+        "code": 5,
+        "name": "Security"
+      },
+      {
+        "code": 6,
+        "name": "PBC BSEND"
+      },
+      {
+        "code": 7,
+        "name": "Time functions"
+      },
+      {
+        "code": 63,
+        "name": "NC programming"
+      },
+      {
+        "code": 32,
+        "name": "DR Routing"
+      }
+    ],
+    "userdata_tis_varstat_area_names": [
+      {
+        "code": 0,
+        "name": "MX"
+      },
+      {
+        "code": 1,
+        "name": "MB"
+      },
+      {
+        "code": 2,
+        "name": "MW"
+      },
+      {
+        "code": 3,
+        "name": "MD"
+      },
+      {
+        "code": 17,
+        "name": "IB"
+      },
+      {
+        "code": 16,
+        "name": "IX"
+      },
+      {
+        "code": 18,
+        "name": "IW"
+      },
+      {
+        "code": 19,
+        "name": "ID"
+      },
+      {
+        "code": 32,
+        "name": "QX"
+      },
+      {
+        "code": 33,
+        "name": "QB"
+      },
+      {
+        "code": 34,
+        "name": "QW"
+      },
+      {
+        "code": 35,
+        "name": "QD"
+      },
+      {
+        "code": 49,
+        "name": "PIB"
+      },
+      {
+        "code": 50,
+        "name": "PIW"
+      },
+      {
+        "code": 51,
+        "name": "PID"
+      },
+      {
+        "code": 112,
+        "name": "DBX"
+      },
+      {
+        "code": 113,
+        "name": "DBB"
+      },
+      {
+        "code": 114,
+        "name": "DBW"
+      },
+      {
+        "code": 115,
+        "name": "DBD"
+      },
+      {
+        "code": 84,
+        "name": "TIMER"
+      },
+      {
+        "code": 100,
+        "name": "COUNTER"
+      }
+    ],
+    "userdata_tis_subfunc_names": [
+      {
+        "code": 1,
+        "name": "Block status"
+      },
+      {
+        "code": 2,
+        "name": "Variable status"
+      },
+      {
+        "code": 3,
+        "name": "Output ISTACK"
+      },
+      {
+        "code": 4,
+        "name": "Output BSTACK"
+      },
+      {
+        "code": 5,
+        "name": "Output LSTACK"
+      },
+      {
+        "code": 6,
+        "name": "Time measurement from to"
+      },
+      {
+        "code": 7,
+        "name": "Force selection"
+      },
+      {
+        "code": 8,
+        "name": "Modify variable"
+      },
+      {
+        "code": 9,
+        "name": "Force"
+      },
+      {
+        "code": 10,
+        "name": "Breakpoint"
+      },
+      {
+        "code": 11,
+        "name": "Exit HOLD"
+      },
+      {
+        "code": 12,
+        "name": "Memory reset"
+      },
+      {
+        "code": 13,
+        "name": "Disable job"
+      },
+      {
+        "code": 14,
+        "name": "Enable job"
+      },
+      {
+        "code": 15,
+        "name": "Delete job"
+      },
+      {
+        "code": 16,
+        "name": "Read job list"
+      },
+      {
+        "code": 17,
+        "name": "Read job"
+      },
+      {
+        "code": 18,
+        "name": "Replace job"
+      },
+      {
+        "code": 19,
+        "name": "Block status v2"
+      },
+      {
+        "code": 22,
+        "name": "Flash LED"
+      }
+    ],
+    "userdata_varstat_trgevent_names": [
+      {
+        "code": 0,
+        "name": "Immediately"
+      },
+      {
+        "code": 256,
+        "name": "System Trigger"
+      },
+      {
+        "code": 512,
+        "name": "System checkpoint main cycle start"
+      },
+      {
+        "code": 768,
+        "name": "System checkpoint main cycle end"
+      },
+      {
+        "code": 1024,
+        "name": "Mode transition RUN-STOP"
+      },
+      {
+        "code": 1280,
+        "name": "After code address"
+      },
+      {
+        "code": 1536,
+        "name": "Code address area"
+      },
+      {
+        "code": 1537,
+        "name": "Code address area with call environment"
+      },
+      {
+        "code": 1792,
+        "name": "Data address"
+      },
+      {
+        "code": 2048,
+        "name": "Data address area"
+      },
+      {
+        "code": 2304,
+        "name": "Local data address"
+      },
+      {
+        "code": 2560,
+        "name": "Local data address area"
+      },
+      {
+        "code": 2816,
+        "name": "Range trigger"
+      },
+      {
+        "code": 3072,
+        "name": "Before code address"
+      }
+    ],
+    "userdata_cyclic_subfunc_names": [
+      {
+        "code": 1,
+        "name": "Cyclic transfer"
+      },
+      {
+        "code": 4,
+        "name": "Unsubscribe"
+      },
+      {
+        "code": 5,
+        "name": "Change driven transfer"
+      },
+      {
+        "code": 7,
+        "name": "Change driven transfer modify"
+      },
+      {
+        "code": 8,
+        "name": "RDREC"
+      }
+    ],
+    "cycl_interval_timebase_names": [
+      {
+        "code": 0,
+        "name": "100 milliseconds"
+      },
+      {
+        "code": 1,
+        "name": "1 second"
+      },
+      {
+        "code": 2,
+        "name": "10 seconds"
+      }
+    ],
+    "userdata_block_subfunc_names": [
+      {
+        "code": 1,
+        "name": "List blocks"
+      },
+      {
+        "code": 2,
+        "name": "List blocks of type"
+      },
+      {
+        "code": 3,
+        "name": "Get block info"
+      }
+    ],
+    "userdata_cpu_subfunc_names": [
+      {
+        "code": 9,
+        "name": "SCAN indication"
+      },
+      {
+        "code": 16,
+        "name": "AR_SEND indication"
+      }
+    ],
+    "userdata_sec_subfunc_names": [
+      {
+        "code": 1,
+        "name": "PLC password"
+      }
+    ],
+    "userdata_time_subfunc_names": [
+      {
+        "code": 1,
+        "name": "Read clock"
+      },
+      {
+        "code": 2,
+        "name": "Set clock"
+      },
+      {
+        "code": 3,
+        "name": "Read clock (following)"
+      },
+      {
+        "code": 4,
+        "name": "Set clock"
+      }
+    ],
+    "weekdaynames": [
+      {
+        "code": 0,
+        "name": "Undefined"
+      },
+      {
+        "code": 1,
+        "name": "Sunday"
+      },
+      {
+        "code": 2,
+        "name": "Monday"
+      },
+      {
+        "code": 3,
+        "name": "Tuesday"
+      },
+      {
+        "code": 4,
+        "name": "Wednesday"
+      },
+      {
+        "code": 5,
+        "name": "Thursday"
+      },
+      {
+        "code": 6,
+        "name": "Friday"
+      },
+      {
+        "code": 7,
+        "name": "Saturday"
+      }
+    ],
+    "tia1200_var_lid_flag_names": [
+      {
+        "code": 2,
+        "name": "Encapsulated LID"
+      },
+      {
+        "code": 3,
+        "name": "Encapsulated Index"
+      },
+      {
+        "code": 4,
+        "name": "Obtain by LID"
+      },
+      {
+        "code": 5,
+        "name": "Obtain by Index"
+      },
+      {
+        "code": 6,
+        "name": "Part Start Address"
+      },
+      {
+        "code": 7,
+        "name": "Part Length"
+      }
+    ],
+    "tia1200_var_item_area1_names": [
+      {
+        "code": 35342,
+        "name": "DB"
+      },
+      {
+        "code": 0,
+        "name": "IQMCT"
+      }
+    ],
+    "tia1200_var_item_area2_names": [
+      {
+        "code": 80,
+        "name": "Inputs (I)"
+      },
+      {
+        "code": 81,
+        "name": "Outputs (Q)"
+      },
+      {
+        "code": 82,
+        "name": "Flags (M)"
+      },
+      {
+        "code": 83,
+        "name": "Counter (C)"
+      },
+      {
+        "code": 84,
+        "name": "Timer (T)"
+      }
+    ],
+    "nck_area_names": [
+      {
+        "code": 0,
+        "name": "N - NCK"
+      },
+      {
+        "code": 1,
+        "name": "B - Mode group"
+      },
+      {
+        "code": 2,
+        "name": "C - Channel"
+      },
+      {
+        "code": 3,
+        "name": "A - Axis"
+      },
+      {
+        "code": 4,
+        "name": "T - Tool"
+      },
+      {
+        "code": 5,
+        "name": "V - Feed drive"
+      },
+      {
+        "code": 6,
+        "name": "M - Main drive"
+      },
+      {
+        "code": 7,
+        "name": "M - MMC"
+      }
+    ],
+    "nck_module_names": [
+      {
+        "code": 16,
+        "name": "Y - Global system data"
+      },
+      {
+        "code": 17,
+        "name": "YNCFL - NCK instruction groups"
+      },
+      {
+        "code": 18,
+        "name": "FU - NCU global settable frames"
+      },
+      {
+        "code": 19,
+        "name": "FA - Active NCU global frames"
+      },
+      {
+        "code": 20,
+        "name": "TO - Tool data"
+      },
+      {
+        "code": 21,
+        "name": "RP - Arithmetic parameters"
+      },
+      {
+        "code": 22,
+        "name": "SE - Setting data"
+      },
+      {
+        "code": 23,
+        "name": "SGUD - SGUD-Block"
+      },
+      {
+        "code": 24,
+        "name": "LUD - Local userdata"
+      },
+      {
+        "code": 25,
+        "name": "TC - Toolholder parameters"
+      },
+      {
+        "code": 26,
+        "name": "M - Machine data"
+      },
+      {
+        "code": 28,
+        "name": "WAL - Working area limitation"
+      },
+      {
+        "code": 30,
+        "name": "DIAG - Internal diagnostic data"
+      },
+      {
+        "code": 31,
+        "name": "CC - Unknown"
+      },
+      {
+        "code": 32,
+        "name": "FE - Channel-specific external frame"
+      },
+      {
+        "code": 33,
+        "name": "TD - Tool data: General data"
+      },
+      {
+        "code": 34,
+        "name": "TS - Tool edge data: Monitoring data"
+      },
+      {
+        "code": 35,
+        "name": "TG - Tool data: Grinding-specific data"
+      },
+      {
+        "code": 36,
+        "name": "TU - Tool data"
+      },
+      {
+        "code": 37,
+        "name": "TUE - Tool edge data, userdefined data"
+      },
+      {
+        "code": 38,
+        "name": "TV - Tool data, directory"
+      },
+      {
+        "code": 39,
+        "name": "TM - Magazine data: General data"
+      },
+      {
+        "code": 40,
+        "name": "TP - Magazine data: Location data"
+      },
+      {
+        "code": 41,
+        "name": "TPM - Magazine data: Multiple assignment of location data"
+      },
+      {
+        "code": 42,
+        "name": "TT - Magazine data: Location typ"
+      },
+      {
+        "code": 43,
+        "name": "TMV - Magazine data: Directory"
+      },
+      {
+        "code": 44,
+        "name": "TMC - Magazine data: Configuration data"
+      },
+      {
+        "code": 45,
+        "name": "MGUD - MGUD-Block"
+      },
+      {
+        "code": 46,
+        "name": "UGUD - UGUD-Block"
+      },
+      {
+        "code": 47,
+        "name": "GUD4 - GUD4-Block"
+      },
+      {
+        "code": 48,
+        "name": "GUD5 - GUD5-Block"
+      },
+      {
+        "code": 49,
+        "name": "GUD6 - GUD6-Block"
+      },
+      {
+        "code": 50,
+        "name": "GUD7 - GUD7-Block"
+      },
+      {
+        "code": 51,
+        "name": "GUD8 - GUD8-Block"
+      },
+      {
+        "code": 52,
+        "name": "GUD9 - GUD9-Block"
+      },
+      {
+        "code": 53,
+        "name": "PA - Channel-specific protection zones"
+      },
+      {
+        "code": 54,
+        "name": "GD1 - SGUD-Block GD1"
+      },
+      {
+        "code": 55,
+        "name": "NIB - State data: Nibbling"
+      },
+      {
+        "code": 56,
+        "name": "ETP - Types of events"
+      },
+      {
+        "code": 57,
+        "name": "ETPD - Data lists for protocolling"
+      },
+      {
+        "code": 58,
+        "name": "SYNACT - Channel-specific synchronous actions"
+      },
+      {
+        "code": 59,
+        "name": "DIAGN - Diagnostic data"
+      },
+      {
+        "code": 60,
+        "name": "VSYN - Channel-specific user variables for synchronous actions"
+      },
+      {
+        "code": 61,
+        "name": "TUS - Tool data: user monitoring data"
+      },
+      {
+        "code": 62,
+        "name": "TUM - Tool data: user magazine data"
+      },
+      {
+        "code": 63,
+        "name": "TUP - Tool data: user magazine place data"
+      },
+      {
+        "code": 64,
+        "name": "TF - Parameterizing, return parameters of _N_TMGETT, _N_TSEARC"
+      },
+      {
+        "code": 65,
+        "name": "FB - Channel-specific base frames"
+      },
+      {
+        "code": 66,
+        "name": "SSP2 - State data: Spindle"
+      },
+      {
+        "code": 67,
+        "name": "PUD - programmglobale Benutzerdaten"
+      },
+      {
+        "code": 68,
+        "name": "TOS - Edge-related location-dependent fine total offsets"
+      },
+      {
+        "code": 69,
+        "name": "TOST - Edge-related location-dependent fine total offsets, transformed"
+      },
+      {
+        "code": 70,
+        "name": "TOE - Edge-related coarse total offsets, setup offsets"
+      },
+      {
+        "code": 71,
+        "name": "TOET - Edge-related coarse total offsets, transformed setup offsets"
+      },
+      {
+        "code": 72,
+        "name": "AD - Adapter data"
+      },
+      {
+        "code": 73,
+        "name": "TOT - Edge data: Transformed offset data"
+      },
+      {
+        "code": 74,
+        "name": "AEV - Working offsets: Directory"
+      },
+      {
+        "code": 75,
+        "name": "YFAFL - NCK instruction groups (Fanuc)"
+      },
+      {
+        "code": 76,
+        "name": "FS - System-Frame"
+      },
+      {
+        "code": 77,
+        "name": "SD - Servo data"
+      },
+      {
+        "code": 78,
+        "name": "TAD - Application-specific data"
+      },
+      {
+        "code": 79,
+        "name": "TAO - Application-specific cutting edge data"
+      },
+      {
+        "code": 80,
+        "name": "TAS - Application-specific monitoring data"
+      },
+      {
+        "code": 81,
+        "name": "TAM - Application-specific magazine data"
+      },
+      {
+        "code": 82,
+        "name": "TAP - Application-specific magazine location data"
+      },
+      {
+        "code": 83,
+        "name": "MEM - Unknown"
+      },
+      {
+        "code": 84,
+        "name": "SALUC - Alarm actions: List in reverse chronological order"
+      },
+      {
+        "code": 85,
+        "name": "AUXFU - Auxiliary functions"
+      },
+      {
+        "code": 86,
+        "name": "TDC - Tool/Tools"
+      },
+      {
+        "code": 87,
+        "name": "CP - Generic coupling"
+      },
+      {
+        "code": 110,
+        "name": "SDME - Unknown"
+      },
+      {
+        "code": 111,
+        "name": "SPARPI - Program pointer on interruption"
+      },
+      {
+        "code": 112,
+        "name": "SEGA - State data: Geometry axes in tool offset memory (extended)"
+      },
+      {
+        "code": 113,
+        "name": "SEMA - State data: Machine axes (extended)"
+      },
+      {
+        "code": 114,
+        "name": "SSP - State data: Spindle"
+      },
+      {
+        "code": 115,
+        "name": "SGA - State data: Geometry axes in tool offset memory"
+      },
+      {
+        "code": 116,
+        "name": "SMA - State data: Machine axes"
+      },
+      {
+        "code": 117,
+        "name": "SALAL - Alarms: List organized according to time"
+      },
+      {
+        "code": 118,
+        "name": "SALAP - Alarms: List organized according to priority"
+      },
+      {
+        "code": 119,
+        "name": "SALA - Alarms: List organized according to time"
+      },
+      {
+        "code": 120,
+        "name": "SSYNAC - Synchronous actions"
+      },
+      {
+        "code": 121,
+        "name": "SPARPF - Program pointers for block search and stop run"
+      },
+      {
+        "code": 122,
+        "name": "SPARPP - Program pointer in automatic operation"
+      },
+      {
+        "code": 123,
+        "name": "SNCF - Active G functions"
+      },
+      {
+        "code": 125,
+        "name": "SPARP - Part program information"
+      },
+      {
+        "code": 126,
+        "name": "SINF - Part-program-specific status data"
+      },
+      {
+        "code": 127,
+        "name": "S - State data"
+      },
+      {
+        "code": 128,
+        "name": "0x80 - Unknown"
+      },
+      {
+        "code": 129,
+        "name": "0x81 - Unknown"
+      },
+      {
+        "code": 130,
+        "name": "0x82 - Unknown"
+      },
+      {
+        "code": 131,
+        "name": "0x83 - Unknown"
+      },
+      {
+        "code": 132,
+        "name": "0x84 - Unknown"
+      },
+      {
+        "code": 133,
+        "name": "0x85 - Unknown"
+      },
+      {
+        "code": 253,
+        "name": "0 - Internal"
+      }
+    ],
+    "tis_param2_names": [
+      {
+        "code": 0,
+        "name": "Update Monitor Variables / Activate Modify Values"
+      },
+      {
+        "code": 1,
+        "name": "Monitor Variable / Modify Variable"
+      },
+      {
+        "code": 2,
+        "name": "Modify Variable permanent"
+      },
+      {
+        "code": 256,
+        "name": "Force immediately"
+      }
+    ],
+    "tis_param3_names": [
+      {
+        "code": 0,
+        "name": "Every cycle (permanent)"
+      },
+      {
+        "code": 1,
+        "name": "Once"
+      },
+      {
+        "code": 2,
+        "name": "Always (force)"
+      }
+    ],
+    "tis_p_callenv_names": [
+      {
+        "code": 0,
+        "name": "Specified call environment"
+      },
+      {
+        "code": 2,
+        "name": "Specified global and/or instance data block"
+      }
+    ],
+    "tis_p_callcond_names": [
+      {
+        "code": 0,
+        "name": "Not set"
+      },
+      {
+        "code": 1,
+        "name": "On block number"
+      },
+      {
+        "code": 257,
+        "name": "On block number with code address"
+      },
+      {
+        "code": 2560,
+        "name": "On DB1 (DB) content"
+      },
+      {
+        "code": 10,
+        "name": "On DB2 (DI) content"
+      },
+      {
+        "code": 2570,
+        "name": "On DB1 (DB) and DB2 (DI) content"
+      }
+    ],
+    "tis_exithold_until_names": [
+      {
+        "code": 0,
+        "name": "Next breakpoint"
+      },
+      {
+        "code": 1,
+        "name": "Next statement"
+      }
+    ],
+    "cpu_diag_msg_eventid_class_names": [
+      {
+        "code": 1,
+        "name": "Standard OB events"
+      },
+      {
+        "code": 2,
+        "name": "Synchronous errors"
+      },
+      {
+        "code": 3,
+        "name": "Asynchronous errors"
+      },
+      {
+        "code": 4,
+        "name": "Mode transitions"
+      },
+      {
+        "code": 5,
+        "name": "Run-time events"
+      },
+      {
+        "code": 6,
+        "name": "Communication events"
+      },
+      {
+        "code": 7,
+        "name": "Events for fail-safe and fault-tolerant systems"
+      },
+      {
+        "code": 8,
+        "name": "Standardized diagnostic data on modules"
+      },
+      {
+        "code": 9,
+        "name": "Predefined user events"
+      },
+      {
+        "code": 10,
+        "name": "Freely definable events"
+      },
+      {
+        "code": 11,
+        "name": "Freely definable events"
+      },
+      {
+        "code": 12,
+        "name": "Reserved"
+      },
+      {
+        "code": 13,
+        "name": "Reserved"
+      },
+      {
+        "code": 14,
+        "name": "Reserved"
+      },
+      {
+        "code": 15,
+        "name": "Events for modules other than CPUs"
+      }
+    ],
+    "cpu_diag_eventid_fix_names": [
+      {
+        "code": 4410,
+        "name": "Start request for cyclic interrupt OB with special handling (S7-300 only)"
+      },
+      {
+        "code": 4437,
+        "name": "Status alarm for PROFIBUS DP"
+      },
+      {
+        "code": 4438,
+        "name": "Update interrupt for PROFIBUS DP"
+      },
+      {
+        "code": 4439,
+        "name": "Manufacturer interrupt for PROFIBUS DP"
+      },
+      {
+        "code": 4440,
+        "name": "Status interrupt for PROFINET IO"
+      },
+      {
+        "code": 4441,
+        "name": "Update interrupt for PROFINET IO"
+      },
+      {
+        "code": 4442,
+        "name": "Manufacturer interrupt for PROFINET IO"
+      },
+      {
+        "code": 4443,
+        "name": "IO: Profile-specific interrupt"
+      },
+      {
+        "code": 4458,
+        "name": "Technology synchronization interrupt"
+      },
+      {
+        "code": 4993,
+        "name": "Request for manual warm restart"
+      },
+      {
+        "code": 4994,
+        "name": "Request for automatic warm restart"
+      },
+      {
+        "code": 4995,
+        "name": "Request for manual hot restart"
+      },
+      {
+        "code": 4996,
+        "name": "Request for automatic hot restart"
+      },
+      {
+        "code": 4997,
+        "name": "Request for manual cold restart"
+      },
+      {
+        "code": 4998,
+        "name": "Request for automatic cold restart"
+      },
+      {
+        "code": 4999,
+        "name": "Master CPU: request for manual cold restart"
+      },
+      {
+        "code": 5000,
+        "name": "Master CPU: request for automatic cold restart"
+      },
+      {
+        "code": 5002,
+        "name": "Master CPU: request for manual warm restart"
+      },
+      {
+        "code": 5003,
+        "name": "Master CPU: request for automatic warm restart"
+      },
+      {
+        "code": 5004,
+        "name": "Standby CPU: request for manual hot restart"
+      },
+      {
+        "code": 5005,
+        "name": "Standby CPU: request for automatic hot restart"
+      },
+      {
+        "code": 9505,
+        "name": "BCD conversion error"
+      },
+      {
+        "code": 9506,
+        "name": "Area length error when reading"
+      },
+      {
+        "code": 9507,
+        "name": "Area length error when writing"
+      },
+      {
+        "code": 9508,
+        "name": "Area error when reading"
+      },
+      {
+        "code": 9509,
+        "name": "Area error when writing"
+      },
+      {
+        "code": 9510,
+        "name": "Timer number error"
+      },
+      {
+        "code": 9511,
+        "name": "Counter number error"
+      },
+      {
+        "code": 9512,
+        "name": "Alignment error when reading"
+      },
+      {
+        "code": 9513,
+        "name": "Alignment error when writing"
+      },
+      {
+        "code": 9520,
+        "name": "Write error when accessing the DB"
+      },
+      {
+        "code": 9521,
+        "name": "Write error when accessing the DI"
+      },
+      {
+        "code": 9522,
+        "name": "Block number error when opening a DB"
+      },
+      {
+        "code": 9523,
+        "name": "Block number error when opening a DI"
+      },
+      {
+        "code": 9524,
+        "name": "Block number error when calling an FC"
+      },
+      {
+        "code": 9525,
+        "name": "Block number error when calling an FB"
+      },
+      {
+        "code": 9530,
+        "name": "DB not loaded"
+      },
+      {
+        "code": 9532,
+        "name": "FC not loaded"
+      },
+      {
+        "code": 9533,
+        "name": "SFC not loaded"
+      },
+      {
+        "code": 9534,
+        "name": "FB not loaded"
+      },
+      {
+        "code": 9535,
+        "name": "SFB not loaded"
+      },
+      {
+        "code": 10562,
+        "name": "I/O access error, reading"
+      },
+      {
+        "code": 10563,
+        "name": "I/O access error, writing"
+      },
+      {
+        "code": 12903,
+        "name": "End of module reconfiguration"
+      },
+      {
+        "code": 13159,
+        "name": "Start of module reconfiguration"
+      },
+      {
+        "code": 13476,
+        "name": "PROFInet Interface DB can be addressed again"
+      },
+      {
+        "code": 13569,
+        "name": "Cycle time exceeded"
+      },
+      {
+        "code": 13570,
+        "name": "User interface (OB or FRB) request error"
+      },
+      {
+        "code": 13571,
+        "name": "Delay too long processing a priority class"
+      },
+      {
+        "code": 13573,
+        "name": "Time-of-day interrupt(s) skipped due to new clock setting"
+      },
+      {
+        "code": 13574,
+        "name": "Time-of-day interrupt(s) skipped when changing to RUN after HOLD"
+      },
+      {
+        "code": 13575,
+        "name": "Multiple OB request errors caused internal buffer overflow"
+      },
+      {
+        "code": 13576,
+        "name": "Synchronous cycle interrupt-timing error"
+      },
+      {
+        "code": 13577,
+        "name": "Interrupt loss due to excess interrupt load"
+      },
+      {
+        "code": 13578,
+        "name": "Resume RUN mode after CiR"
+      },
+      {
+        "code": 13579,
+        "name": "Technology synchronization interrupt - timing error"
+      },
+      {
+        "code": 13681,
+        "name": "Nesting depth too high in nesting levels"
+      },
+      {
+        "code": 13682,
+        "name": "Nesting depth for Master Control Relays too high"
+      },
+      {
+        "code": 13683,
+        "name": "Nesting depth too high after synchronous errors"
+      },
+      {
+        "code": 13684,
+        "name": "Nesting depth for block calls (U stack) too high"
+      },
+      {
+        "code": 13685,
+        "name": "Nesting depth for block calls (B stack) too high"
+      },
+      {
+        "code": 13686,
+        "name": "Local data allocation error"
+      },
+      {
+        "code": 13688,
+        "name": "Unknown instruction"
+      },
+      {
+        "code": 13690,
+        "name": "Jump instruction to target outside of the block"
+      },
+      {
+        "code": 13698,
+        "name": "Memory error detected and corrected by operating system"
+      },
+      {
+        "code": 13699,
+        "name": "Accumulation of detected and corrected memo errors"
+      },
+      {
+        "code": 13701,
+        "name": "Error in the PC operating system (only for LC RTX)"
+      },
+      {
+        "code": 13703,
+        "name": "Multi-bit memory error detected and corrected"
+      },
+      {
+        "code": 13729,
+        "name": "User interface (OB or FRB) not found"
+      },
+      {
+        "code": 13730,
+        "name": "OB not loaded (started by SFC or operating system due to configuration)"
+      },
+      {
+        "code": 13731,
+        "name": "Error when operating system accesses a block"
+      },
+      {
+        "code": 13732,
+        "name": "PROFInet Interface DB cannot be addressed"
+      },
+      {
+        "code": 13778,
+        "name": "Diagnostic entries cannot be sent at present"
+      },
+      {
+        "code": 13779,
+        "name": "Synchronization frames cannot be sent"
+      },
+      {
+        "code": 13780,
+        "name": "Illegal time jump resulting from synchronization"
+      },
+      {
+        "code": 13781,
+        "name": "Error adopting the synchronization time"
+      },
+      {
+        "code": 13793,
+        "name": "Incorrect frame ID in GD"
+      },
+      {
+        "code": 13794,
+        "name": "GD packet status cannot be entered in DB"
+      },
+      {
+        "code": 13795,
+        "name": "Frame length error in GD"
+      },
+      {
+        "code": 13796,
+        "name": "Illegal GD packet number received"
+      },
+      {
+        "code": 13797,
+        "name": "Error accessing DB in communication SFBs for configured S7 connections"
+      },
+      {
+        "code": 13798,
+        "name": "GD total status cannot be entered in DB"
+      },
+      {
+        "code": 14369,
+        "name": "BATTF: failure on at least one backup battery of the central rack, problem eliminated"
+      },
+      {
+        "code": 14370,
+        "name": "BAF: failure of backup voltage on central rack, problem eliminated"
+      },
+      {
+        "code": 14371,
+        "name": "24 volt supply failure on central rack, problem eliminated"
+      },
+      {
+        "code": 14373,
+        "name": "BATTF: failure on at least one backup battery of the redundant central rack, problem eliminated"
+      },
+      {
+        "code": 14374,
+        "name": "BAF: failure of backup voltage on redundant central rack, problem eliminated"
+      },
+      {
+        "code": 14375,
+        "name": "24 volt supply failure on redundant central rack, problem eliminated"
+      },
+      {
+        "code": 14385,
+        "name": "BATTF: failure of at least one backup battery of the expansion rack, problem eliminated"
+      },
+      {
+        "code": 14386,
+        "name": "BAF: failure of backup voltage on expansion rack, problem eliminated"
+      },
+      {
+        "code": 14387,
+        "name": "24 volt supply failure on at least one expansion rack, problem eliminated"
+      },
+      {
+        "code": 14402,
+        "name": "Module OK"
+      },
+      {
+        "code": 14420,
+        "name": "PROFINET IO interface submodule/submodule and matches the configured interface submodule/submodule"
+      },
+      {
+        "code": 14421,
+        "name": "PROFINET IO interface submodule/submodule inserted, but does not match the configured interface submodule/submodule"
+      },
+      {
+        "code": 14422,
+        "name": "PROFINET IO interface submodule/submodule inserted, but error in module parameter assignment"
+      },
+      {
+        "code": 14424,
+        "name": "PROFINET IO interface submodule access error corrected"
+      },
+      {
+        "code": 14433,
+        "name": "Module/interface module inserted, module type OK"
+      },
+      {
+        "code": 14435,
+        "name": "Module/interface module plugged in, but wrong module type"
+      },
+      {
+        "code": 14436,
+        "name": "Module/interface module plugged in, but causing problem (type ID unreadable)"
+      },
+      {
+        "code": 14437,
+        "name": "Module plugged in, but error in module parameter assignment"
+      },
+      {
+        "code": 14438,
+        "name": "Module can be addressed again, load voltage error removed"
+      },
+      {
+        "code": 14465,
+        "name": "Interface error leaving state"
+      },
+      {
+        "code": 14468,
+        "name": "Interface module plugged in"
+      },
+      {
+        "code": 14515,
+        "name": "I/O access error when updating the process image input table"
+      },
+      {
+        "code": 14516,
+        "name": "I/O access error when transferring the process image to the output modules"
+      },
+      {
+        "code": 14529,
+        "name": "Expansion rack operational again (1 to 21), leaving state"
+      },
+      {
+        "code": 14530,
+        "name": "Expansion rack operational again but mismatch between setpoint and actual configuration"
+      },
+      {
+        "code": 14532,
+        "name": "Distributed I/Os: station failure, leaving state"
+      },
+      {
+        "code": 14533,
+        "name": "Distributed I/Os: station fault, leaving state"
+      },
+      {
+        "code": 14534,
+        "name": "Expansion rack operational again, but error(s) in module parameter assignment"
+      },
+      {
+        "code": 14535,
+        "name": "DP: station operational again, but error(s) in module parameter assignment"
+      },
+      {
+        "code": 14536,
+        "name": "DP: station operational again, but mismatch between setpoint and actual configuration"
+      },
+      {
+        "code": 14539,
+        "name": "PROFINET IO station operational again"
+      },
+      {
+        "code": 14540,
+        "name": "PROFINET IO station error corrected"
+      },
+      {
+        "code": 14625,
+        "name": "BATTF: failure on at least one backup battery of the central rack"
+      },
+      {
+        "code": 14626,
+        "name": "BAF: failure of backup voltage on central rack"
+      },
+      {
+        "code": 14627,
+        "name": "24 volt supply failure on central rack"
+      },
+      {
+        "code": 14629,
+        "name": "BATTF: failure on at least one backup battery of the redundant central rack"
+      },
+      {
+        "code": 14630,
+        "name": "BAF: failure of backup voltage on redundant central rack"
+      },
+      {
+        "code": 14631,
+        "name": "24 volt supply failure on redundant central rack"
+      },
+      {
+        "code": 14641,
+        "name": "BATTF: failure of at least one backup battery of the expansion rack"
+      },
+      {
+        "code": 14642,
+        "name": "BAF: failure of backup voltage on expansion rack"
+      },
+      {
+        "code": 14643,
+        "name": "24 volt supply failure on at least one expansion rack"
+      },
+      {
+        "code": 14658,
+        "name": "Module error"
+      },
+      {
+        "code": 14673,
+        "name": "PROFINET IO submodule removed"
+      },
+      {
+        "code": 14676,
+        "name": "PROFINET IO interface submodule/submodule removed"
+      },
+      {
+        "code": 14689,
+        "name": "Module/interface module removed, cannot be addressed"
+      },
+      {
+        "code": 14694,
+        "name": "Module cannot be addressed, load voltage error"
+      },
+      {
+        "code": 14696,
+        "name": "Module reconfiguration has ended with error"
+      },
+      {
+        "code": 14721,
+        "name": "Interface error entering state"
+      },
+      {
+        "code": 14724,
+        "name": "Interface module removed"
+      },
+      {
+        "code": 14726,
+        "name": "Performance of an H-Sync link negatively affected"
+      },
+      {
+        "code": 14769,
+        "name": "I/O access error when updating the process image input table"
+      },
+      {
+        "code": 14770,
+        "name": "I/O access error when transferring the process image to the output modules"
+      },
+      {
+        "code": 14771,
+        "name": "I/O access error when updating the process image input table"
+      },
+      {
+        "code": 14772,
+        "name": "I/O access error when transferring the process image to the output modules"
+      },
+      {
+        "code": 14785,
+        "name": "Expansion rack failure (1 to 21), entering state"
+      },
+      {
+        "code": 14787,
+        "name": "Distributed I/Os: master system failure entering state"
+      },
+      {
+        "code": 14788,
+        "name": "Distributed I/Os: station failure, entering state"
+      },
+      {
+        "code": 14789,
+        "name": "Distributed I/Os: station fault, entering state"
+      },
+      {
+        "code": 14794,
+        "name": "PROFINET IO system failure"
+      },
+      {
+        "code": 14795,
+        "name": "PROFINET IO station failure"
+      },
+      {
+        "code": 14796,
+        "name": "PROFINET IO station error"
+      },
+      {
+        "code": 14797,
+        "name": "PROFINET IO station operational again, but expected configuration does not match actual configuration"
+      },
+      {
+        "code": 14798,
+        "name": "PROFINET IO station operational again, but error(s) in module parameter assignment"
+      },
+      {
+        "code": 17139,
+        "name": "Checksum error detected and corrected by the operating system"
+      },
+      {
+        "code": 17140,
+        "name": "Standby CPU: connection/update via SFC90 is locked in the master CPU"
+      },
+      {
+        "code": 17152,
+        "name": "Backed-up power on"
+      },
+      {
+        "code": 17153,
+        "name": "Mode transition from STOP to STARTUP"
+      },
+      {
+        "code": 17154,
+        "name": "Mode transition from STARTUP to RUN"
+      },
+      {
+        "code": 17155,
+        "name": "STOP caused by stop switch being activated"
+      },
+      {
+        "code": 17156,
+        "name": "STOP caused by PG STOP operation or by SFB 20 STOP"
+      },
+      {
+        "code": 17157,
+        "name": "HOLD: breakpoint reached"
+      },
+      {
+        "code": 17158,
+        "name": "HOLD: breakpoint exited"
+      },
+      {
+        "code": 17159,
+        "name": "Memory reset started by PG operation"
+      },
+      {
+        "code": 17160,
+        "name": "Memory reset started by switch setting"
+      },
+      {
+        "code": 17161,
+        "name": "Memory reset started automatically (power on not backed up)"
+      },
+      {
+        "code": 17162,
+        "name": "HOLD exited, transition to STOP"
+      },
+      {
+        "code": 17165,
+        "name": "STOP caused by other CPU in multicomputing"
+      },
+      {
+        "code": 17166,
+        "name": "Memory reset executed"
+      },
+      {
+        "code": 17167,
+        "name": "STOP on the module due to STOP on a CPU"
+      },
+      {
+        "code": 17176,
+        "name": "Start of CiR"
+      },
+      {
+        "code": 17177,
+        "name": "CiR completed"
+      },
+      {
+        "code": 17239,
+        "name": "Module watchdog started"
+      },
+      {
+        "code": 17240,
+        "name": "All modules are ready for operation"
+      },
+      {
+        "code": 17328,
+        "name": "Firmware update was successful"
+      },
+      {
+        "code": 17332,
+        "name": "Error in firmware fuse"
+      },
+      {
+        "code": 17334,
+        "name": "Firmware updates canceled by redundant modules"
+      },
+      {
+        "code": 17363,
+        "name": "STOP on standby CPU"
+      },
+      {
+        "code": 17372,
+        "name": "Abort during link-up with switchover"
+      },
+      {
+        "code": 17374,
+        "name": "Updating aborted due to monitoring time being exceeded during the n-th attempt, new update attempt initiated"
+      },
+      {
+        "code": 17375,
+        "name": "Updating aborted for final time due to monitoring time being exceeded after completing the maximum amount of attempts. User intervention required"
+      },
+      {
+        "code": 17376,
+        "name": "Change from solo mode after link-up"
+      },
+      {
+        "code": 17377,
+        "name": "Change from link-up after updating"
+      },
+      {
+        "code": 17378,
+        "name": "Change from updating to redundant mode"
+      },
+      {
+        "code": 17379,
+        "name": "Master CPU: change from redundant mode to solo mode"
+      },
+      {
+        "code": 17380,
+        "name": "Standby CPU: change from redundant mode after error-search mode"
+      },
+      {
+        "code": 17381,
+        "name": "Standby CPU: change from error-search mode after link-up or STOP"
+      },
+      {
+        "code": 17382,
+        "name": "Link-up aborted on the standby CPU"
+      },
+      {
+        "code": 17383,
+        "name": "Updating aborted on the standby CPU"
+      },
+      {
+        "code": 17384,
+        "name": "Standby CPU: change from link-up after startup"
+      },
+      {
+        "code": 17385,
+        "name": "Standby CPU: change from startup after updating"
+      },
+      {
+        "code": 17393,
+        "name": "Reserve-master switchover"
+      },
+      {
+        "code": 17394,
+        "name": "Coupling of incompatible H-CPUs blocked by system program"
+      },
+      {
+        "code": 17680,
+        "name": "STOP violation of the CPU's data range"
+      },
+      {
+        "code": 17696,
+        "name": "DEFECTIVE: STOP not possible"
+      },
+      {
+        "code": 17697,
+        "name": "DEFECTIVE: failure of instruction processing processor"
+      },
+      {
+        "code": 17698,
+        "name": "DEFECTIVE: failure of clock chip"
+      },
+      {
+        "code": 17699,
+        "name": "DEFECTIVE: failure of clock pulse generator"
+      },
+      {
+        "code": 17700,
+        "name": "DEFECTIVE: failure of timer update function"
+      },
+      {
+        "code": 17701,
+        "name": "DEFECTIVE: failure of multicomputing synchronization"
+      },
+      {
+        "code": 17703,
+        "name": "DEFECTIVE: failure of I/O access monitoring"
+      },
+      {
+        "code": 17704,
+        "name": "DEFECTIVE: failure of scan time monitoring"
+      },
+      {
+        "code": 17712,
+        "name": "DEFECTIVE: memory test error in internal memory"
+      },
+      {
+        "code": 17714,
+        "name": "DEFECTIVE: failure of core resources"
+      },
+      {
+        "code": 17718,
+        "name": "DEFECTIVE: switch defective"
+      },
+      {
+        "code": 17728,
+        "name": "STOP: Memory expansion of the internal work memory has gaps. First memory expansion too small or missing"
+      },
+      {
+        "code": 17729,
+        "name": "STOP caused by priority class system"
+      },
+      {
+        "code": 17730,
+        "name": "STOP caused by object management system"
+      },
+      {
+        "code": 17731,
+        "name": "STOP caused by test functions"
+      },
+      {
+        "code": 17732,
+        "name": "STOP caused by diagnostic system"
+      },
+      {
+        "code": 17733,
+        "name": "STOP caused by communication system"
+      },
+      {
+        "code": 17734,
+        "name": "STOP caused by CPU memory management"
+      },
+      {
+        "code": 17735,
+        "name": "STOP caused by process image management"
+      },
+      {
+        "code": 17736,
+        "name": "STOP caused by I/O management"
+      },
+      {
+        "code": 17738,
+        "name": "STOP caused by configuration: an OB deselected with STEP 7 was being loaded into the CPU during STARTUP"
+      },
+      {
+        "code": 17744,
+        "name": "DEFECTIVE: internal system error"
+      },
+      {
+        "code": 17749,
+        "name": "No restart possible, monitoring time elapsed"
+      },
+      {
+        "code": 17750,
+        "name": "STOP: memory reset request from communication system / due to data inconsistency"
+      },
+      {
+        "code": 17762,
+        "name": "STOP caused by programming error (OB not loaded or not possible)"
+      },
+      {
+        "code": 17763,
+        "name": "STOP caused by I/O access error (OB not loaded or not possible)"
+      },
+      {
+        "code": 17767,
+        "name": "STOP caused by H event"
+      },
+      {
+        "code": 17768,
+        "name": "STOP caused by time error (OB not loaded or not possible)"
+      },
+      {
+        "code": 17770,
+        "name": "STOP caused by diagnostic interrupt (OB not loaded or not possible)"
+      },
+      {
+        "code": 17771,
+        "name": "STOP caused by removing/inserting module (OB not loaded or not possible)"
+      },
+      {
+        "code": 17772,
+        "name": "STOP caused by CPU hardware error (OB not loaded or not possible, or no FRB)"
+      },
+      {
+        "code": 17773,
+        "name": "STOP caused by program sequence error (OB not loaded or not possible)"
+      },
+      {
+        "code": 17774,
+        "name": "STOP caused by communication error (OB not loaded or not possible)"
+      },
+      {
+        "code": 17775,
+        "name": "STOP caused by rack failure OB (OB not loaded or not possible)"
+      },
+      {
+        "code": 17776,
+        "name": "STOP caused by process interrupt (OB not loaded or not possible)"
+      },
+      {
+        "code": 17777,
+        "name": "STOP caused by nesting stack error"
+      },
+      {
+        "code": 17778,
+        "name": "STOP caused by master control relay stack error"
+      },
+      {
+        "code": 17779,
+        "name": "STOP caused by exceeding the nesting depth for synchronous errors"
+      },
+      {
+        "code": 17780,
+        "name": "STOP caused by exceeding interrupt stack nesting depth in the priority class stack"
+      },
+      {
+        "code": 17781,
+        "name": "STOP caused by exceeding block stack nesting depth in the priority class stack"
+      },
+      {
+        "code": 17782,
+        "name": "STOP caused by error when allocating the local data"
+      },
+      {
+        "code": 17784,
+        "name": "STOP caused by unknown opcode"
+      },
+      {
+        "code": 17786,
+        "name": "STOP caused by code length error"
+      },
+      {
+        "code": 17787,
+        "name": "STOP caused by DB not being loaded on on-board I/Os"
+      },
+      {
+        "code": 17789,
+        "name": "Reset/clear request because the version of the internal interface to the integrated technology was changed"
+      },
+      {
+        "code": 17791,
+        "name": "STOP caused by STOP command"
+      },
+      {
+        "code": 17792,
+        "name": "STOP: back-up buffer contents inconsistent (no transition to RUN)"
+      },
+      {
+        "code": 17808,
+        "name": "STOP caused by overloading the internal functions"
+      },
+      {
+        "code": 17877,
+        "name": "LINK-UP rejected due to mismatched CPU memory configuration of the sub-PLC"
+      },
+      {
+        "code": 17878,
+        "name": "LINK-UP rejected due to mismatched system program of the sub-PLC"
+      },
+      {
+        "code": 17880,
+        "name": "DEFECTIVE: hardware fault detected due to other error"
+      },
+      {
+        "code": 17881,
+        "name": "STOP due to SYNC module error"
+      },
+      {
+        "code": 17882,
+        "name": "STOP due to synchronization error between H CPUs"
+      },
+      {
+        "code": 17885,
+        "name": "LINK-UP rejected due to running test or other online functions"
+      },
+      {
+        "code": 18726,
+        "name": "DEFECTIVE: failure of the watchdog for I/O access"
+      },
+      {
+        "code": 18737,
+        "name": "STOP or DEFECTIVE: memory test error in memory submodule"
+      },
+      {
+        "code": 18739,
+        "name": "Checksum error"
+      },
+      {
+        "code": 18740,
+        "name": "DEFECTIVE: memory not available"
+      },
+      {
+        "code": 18741,
+        "name": "DEFECTIVE: cancelled by watchdog/processor exceptions"
+      },
+      {
+        "code": 18761,
+        "name": "STOP caused by continuous hardware interrupt"
+      },
+      {
+        "code": 18765,
+        "name": "STOP caused by I/O error"
+      },
+      {
+        "code": 18766,
+        "name": "STOP caused by power failure"
+      },
+      {
+        "code": 18767,
+        "name": "STOP caused by configuration error"
+      },
+      {
+        "code": 18777,
+        "name": "One or more modules not ready for operation"
+      },
+      {
+        "code": 18812,
+        "name": "STOP caused by integrated technology"
+      },
+      {
+        "code": 18848,
+        "name": "STOP caused by parameter assignment error or non-permissible variation of setpoint and actual extension: Start-up blocked"
+      },
+      {
+        "code": 18849,
+        "name": "STOP caused by parameter assignment error: memory reset request"
+      },
+      {
+        "code": 18850,
+        "name": "STOP caused by error in parameter modification: startup disabled"
+      },
+      {
+        "code": 18851,
+        "name": "STOP caused by error in parameter modification: memory reset request"
+      },
+      {
+        "code": 18852,
+        "name": "STOP: inconsistency in configuration data"
+      },
+      {
+        "code": 18853,
+        "name": "STOP: distributed I/Os: inconsistency in the loaded configuration information"
+      },
+      {
+        "code": 18854,
+        "name": "STOP: distributed I/Os: invalid configuration information"
+      },
+      {
+        "code": 18855,
+        "name": "STOP: distributed I/Os: no configuration information"
+      },
+      {
+        "code": 18856,
+        "name": "STOP: error indicated by the interface module for the distributed I/Os"
+      },
+      {
+        "code": 18865,
+        "name": "Firmware update data incorrect"
+      },
+      {
+        "code": 18866,
+        "name": "Firmware update: hardware version does not match firmware"
+      },
+      {
+        "code": 18867,
+        "name": "Firmware update: module type does not match firmware"
+      },
+      {
+        "code": 18896,
+        "name": "LINK-UP aborted due to violation of coordination rules"
+      },
+      {
+        "code": 18897,
+        "name": "LINK-UP/UPDATE sequence aborted"
+      },
+      {
+        "code": 18898,
+        "name": "Standby CPU changed to STOP due to STOP on the master CPU during link-up"
+      },
+      {
+        "code": 18900,
+        "name": "STOP on a master, since partner CPU is also a master (link-up error)"
+      },
+      {
+        "code": 18903,
+        "name": "LINK-UP rejected due to change in user program or in configuration"
+      },
+      {
+        "code": 20751,
+        "name": "A problem as occurred with WinLC. This problem has caused the CPU to go into STOP mode or has caused a fault in the CPU"
+      },
+      {
+        "code": 21261,
+        "name": "New startup information in the STOP mode"
+      },
+      {
+        "code": 21265,
+        "name": "Startup despite Not Ready message from module(s)"
+      },
+      {
+        "code": 21361,
+        "name": "Distributed I/Os: end of the synchronization with a DP master"
+      },
+      {
+        "code": 21376,
+        "name": "Diagnostic buffer entries of interrupt and asynchronous errors disabled"
+      },
+      {
+        "code": 21397,
+        "name": "Distributed I/Os: reset of a DP master"
+      },
+      {
+        "code": 21410,
+        "name": "Download of technology firmware successful"
+      },
+      {
+        "code": 21412,
+        "name": "Download of technology DB not successful"
+      },
+      {
+        "code": 21503,
+        "name": "Reset to factory setting"
+      },
+      {
+        "code": 21573,
+        "name": "Start of System reconfiguration in RUN mode"
+      },
+      {
+        "code": 21633,
+        "name": "All licenses for runtime software are complete again"
+      },
+      {
+        "code": 21656,
+        "name": "No more inconsistency with DP master systems due to CiR"
+      },
+      {
+        "code": 21829,
+        "name": "Start of System reconfiguration in RUN mode"
+      },
+      {
+        "code": 21889,
+        "name": "One or several licenses for runtime software are missing"
+      },
+      {
+        "code": 21898,
+        "name": "Difference between the MLFB of the configured and inserted CPU"
+      },
+      {
+        "code": 21899,
+        "name": "Difference in the firmware version of the configured and inserted CPU"
+      },
+      {
+        "code": 21912,
+        "name": "Start of possible inconsistency with DP master systems due to CiR"
+      },
+      {
+        "code": 21925,
+        "name": "Version conflict: internal interface with integrated technology"
+      },
+      {
+        "code": 21926,
+        "name": "The maximum number of technology objects has been exceeded"
+      },
+      {
+        "code": 21927,
+        "name": "A technology DB of this type is already present"
+      },
+      {
+        "code": 22649,
+        "name": "Diagnostic message from DP interface: EXTF LED off"
+      },
+      {
+        "code": 22880,
+        "name": "Parameter assignment error when switching"
+      },
+      {
+        "code": 22881,
+        "name": "Parameter assignment error"
+      },
+      {
+        "code": 22882,
+        "name": "Parameter assignment error preventing startup"
+      },
+      {
+        "code": 22883,
+        "name": "Parameter assignment error with memory reset request"
+      },
+      {
+        "code": 22886,
+        "name": "Parameter assignment error when switching"
+      },
+      {
+        "code": 22889,
+        "name": "Parameter assignment error with startup blocked"
+      },
+      {
+        "code": 22890,
+        "name": "PROFINET IO: IP address of an IO device already present"
+      },
+      {
+        "code": 22891,
+        "name": "IP address of an Ethernet interface already exists"
+      },
+      {
+        "code": 22892,
+        "name": "Name of an Ethernet interface already exists"
+      },
+      {
+        "code": 22893,
+        "name": "The existing network configuration does not mach the system requirements or configuration"
+      },
+      {
+        "code": 22905,
+        "name": "Diagnostic message from DP interface: EXTF LED on"
+      },
+      {
+        "code": 22908,
+        "name": "DP Global Control command failed or moved"
+      },
+      {
+        "code": 22944,
+        "name": "The interrupt can not be associated in the CPU"
+      },
+      {
+        "code": 22945,
+        "name": "Configuration error in the integrated technology"
+      },
+      {
+        "code": 22947,
+        "name": "Error when downloading the integrated technology"
+      },
+      {
+        "code": 25171,
+        "name": "Firmware update: End of firmware download over the network"
+      },
+      {
+        "code": 25366,
+        "name": "Interface error when starting programmable controller"
+      },
+      {
+        "code": 25427,
+        "name": "Firmware update: Start of firmware download over the network"
+      },
+      {
+        "code": 25488,
+        "name": "Formatting of Micro Memory Card complete"
+      },
+      {
+        "code": 25856,
+        "name": "Connection ID exists twice on module"
+      },
+      {
+        "code": 25857,
+        "name": "Connection resources inadequate"
+      },
+      {
+        "code": 25858,
+        "name": "Error in the connection description"
+      },
+      {
+        "code": 25872,
+        "name": "CFB structure error detected in instance DB when evaluating EPROM"
+      },
+      {
+        "code": 25876,
+        "name": "GD packet number exists twice on the module"
+      },
+      {
+        "code": 25877,
+        "name": "Inconsistent length specifications in GD configuration information"
+      },
+      {
+        "code": 25889,
+        "name": "No memory submodule and no internal memory available"
+      },
+      {
+        "code": 25890,
+        "name": "Illegal memory submodule: replace submodule and reset memory"
+      },
+      {
+        "code": 25891,
+        "name": "Memory reset request due to error accessing submodule"
+      },
+      {
+        "code": 25892,
+        "name": "Memory reset request due to error in block header"
+      },
+      {
+        "code": 25894,
+        "name": "Memory reset request due to memory replacement"
+      },
+      {
+        "code": 25895,
+        "name": "Memory replaced, therefore restart not possible"
+      },
+      {
+        "code": 25896,
+        "name": "Object handling function in the STOP/HOLD mode, no restart possible"
+      },
+      {
+        "code": 25897,
+        "name": "No startup possible during the \\\"load user program\\\" function"
+      },
+      {
+        "code": 25898,
+        "name": "No startup because block exists twice in user memory"
+      },
+      {
+        "code": 25899,
+        "name": "No startup because block is too long for submodule - replace submodule"
+      },
+      {
+        "code": 25900,
+        "name": "No startup due to illegal OB on submodule"
+      },
+      {
+        "code": 25906,
+        "name": "No startup because illegal configuration information on submodule"
+      },
+      {
+        "code": 25907,
+        "name": "Memory reset request because of invalid submodule content"
+      },
+      {
+        "code": 25908,
+        "name": "No startup: block exists more than once on submodule"
+      },
+      {
+        "code": 25909,
+        "name": "No startup: not enough memory to transfer block from submodule"
+      },
+      {
+        "code": 25910,
+        "name": "No startup: submodule contains an illegal block number"
+      },
+      {
+        "code": 25911,
+        "name": "No startup: submodule contains a block with an illegal length"
+      },
+      {
+        "code": 25912,
+        "name": "Local data or write-protection ID (for DB) of a block illegal for CPU"
+      },
+      {
+        "code": 25913,
+        "name": "Illegal command in block (detected by compiler)"
+      },
+      {
+        "code": 25914,
+        "name": "Memory reset request because local OB data on submodule too short"
+      },
+      {
+        "code": 25923,
+        "name": "No startup: illegal block type"
+      },
+      {
+        "code": 25924,
+        "name": "No startup: attribute \\\"relevant for processing\\\" illegal"
+      },
+      {
+        "code": 25925,
+        "name": "Source language illegal"
+      },
+      {
+        "code": 25926,
+        "name": "Maximum amount of configuration information reached"
+      },
+      {
+        "code": 25927,
+        "name": "Parameter assignment error assigning parameters to modules (not on P bus, cancel download)"
+      },
+      {
+        "code": 25928,
+        "name": "Plausibility error during block check"
+      },
+      {
+        "code": 25929,
+        "name": "Structure error in block"
+      },
+      {
+        "code": 25936,
+        "name": "A block has an error in the CRC"
+      },
+      {
+        "code": 25937,
+        "name": "A block has no CRC"
+      },
+      {
+        "code": 25952,
+        "name": "SCAN overflow"
+      },
+      {
+        "code": 26629,
+        "name": "Resource problem on configured connections, eliminated"
+      },
+      {
+        "code": 26753,
+        "name": "Interface error leaving state"
+      },
+      {
+        "code": 26885,
+        "name": "Resource problem on configured connections"
+      },
+      {
+        "code": 27009,
+        "name": "Interface error entering state"
+      },
+      {
+        "code": 29346,
+        "name": "Failure of a DP master or a DP master system"
+      },
+      {
+        "code": 29347,
+        "name": "Redundancy restored on the DP slave"
+      },
+      {
+        "code": 29403,
+        "name": "Safety program: safety mode disabled"
+      },
+      {
+        "code": 29408,
+        "name": "Loss of redundancy in communication, problem eliminated"
+      },
+      {
+        "code": 29441,
+        "name": "Loss of redundancy (1 of 2) due to failure of a CPU"
+      },
+      {
+        "code": 29442,
+        "name": "Loss of redundancy (1 of 2) due to STOP on the standby triggered by user"
+      },
+      {
+        "code": 29443,
+        "name": "H system (1 of 2) changed to redundant mode"
+      },
+      {
+        "code": 29475,
+        "name": "Discrepancy found in operating system data"
+      },
+      {
+        "code": 29489,
+        "name": "Standby-master switchover due to master failure"
+      },
+      {
+        "code": 29491,
+        "name": "Standby-master switchover due to system modification during runtime"
+      },
+      {
+        "code": 29492,
+        "name": "Standby-master switchover due to communication error at the synchronization module"
+      },
+      {
+        "code": 29504,
+        "name": "Synchronization error in user program due to elapsed wait time"
+      },
+      {
+        "code": 29505,
+        "name": "Synchronization error in user program due to waiting at different synchronization points"
+      },
+      {
+        "code": 29506,
+        "name": "Synchronization error in operating system due to waiting at different synchronization points"
+      },
+      {
+        "code": 29507,
+        "name": "Synchronization error in operating system due to elapsed wait time"
+      },
+      {
+        "code": 29508,
+        "name": "Synchronization error in operating system due to incorrect data"
+      },
+      {
+        "code": 29514,
+        "name": "The \\\"Re-enable\\\" job triggered by SFC 90 \\\"H_CTRL\\\" was executed"
+      },
+      {
+        "code": 29603,
+        "name": "Loss of redundancy on the DP slave"
+      },
+      {
+        "code": 29633,
+        "name": "Update process canceled"
+      },
+      {
+        "code": 29634,
+        "name": "Updating aborted due to monitoring time being exceeded during the n-th attempt (1 = n = max. possible number of update attempts after abort due to excessive monitoring time)"
+      },
+      {
+        "code": 29656,
+        "name": "Safety mode disabled"
+      },
+      {
+        "code": 29659,
+        "name": "Safety program: safety mode enabled"
+      },
+      {
+        "code": 29664,
+        "name": "Loss of redundancy in communication"
+      },
+      {
+        "code": 29917,
+        "name": "Safety program: Shutdown of a fail-save runtime group disabled"
+      },
+      {
+        "code": 29918,
+        "name": "Safety program: Shutdown of the F program disabled"
+      },
+      {
+        "code": 29919,
+        "name": "Start of F program initialization"
+      },
+      {
+        "code": 29984,
+        "name": "Error in RAM comparison"
+      },
+      {
+        "code": 29985,
+        "name": "Error in comparison of process image output value"
+      },
+      {
+        "code": 29986,
+        "name": "Error in comparison of memory bits, timers, or counters"
+      },
+      {
+        "code": 30161,
+        "name": "Safety program: Internal CPU error"
+      },
+      {
+        "code": 30162,
+        "name": "Safety program error: Cycle time time-out"
+      },
+      {
+        "code": 30166,
+        "name": "Data corrupted in safety program prior to the output to F I/O"
+      },
+      {
+        "code": 30167,
+        "name": "Data corrupted in safety program prior to the output to partner F-CPU"
+      },
+      {
+        "code": 30169,
+        "name": "Invalid REAL number in a DB"
+      },
+      {
+        "code": 30170,
+        "name": "Safety program: Error in safety data format"
+      },
+      {
+        "code": 30172,
+        "name": "Runtime group, internal protocol error"
+      },
+      {
+        "code": 30173,
+        "name": "Safety program: Shutdown of a fail-save runtime group enabled"
+      },
+      {
+        "code": 30174,
+        "name": "Safety program: Shutdown of the F program enabled"
+      },
+      {
+        "code": 30175,
+        "name": "End of F program initialization"
+      },
+      {
+        "code": 30177,
+        "name": "Safety program: Error in FB \\\"F_PLK\\\" or \\\"F_PLK_O\\\" or \\\"F_CYC_CO\\\" or \\\"F_TEST\\\" or \\\"F_TESTC\\\""
+      },
+      {
+        "code": 30178,
+        "name": "Safety program: Area length error"
+      },
+      {
+        "code": 30802,
+        "name": "SYNC module inserted"
+      },
+      {
+        "code": 30805,
+        "name": "SYNC module eliminated"
+      },
+      {
+        "code": 30931,
+        "name": "Communication error between PROFIsafe and F I/O"
+      },
+      {
+        "code": 30932,
+        "name": "Error in safety relevant communication between F CPUs"
+      },
+      {
+        "code": 30933,
+        "name": "Error in safety relevant communication between F CPUs"
+      },
+      {
+        "code": 30947,
+        "name": "F-I/O device input channel depassivated"
+      },
+      {
+        "code": 30948,
+        "name": "F-I/O device output channel depassivated"
+      },
+      {
+        "code": 30949,
+        "name": "F-I/O device depassivated"
+      },
+      {
+        "code": 31028,
+        "name": "Standby-master switchover due to connection problem at the SYNC module"
+      },
+      {
+        "code": 31056,
+        "name": "Synchronization module missing"
+      },
+      {
+        "code": 31057,
+        "name": "Change at the SYNC module without Power On"
+      },
+      {
+        "code": 31058,
+        "name": "SYNC module removed"
+      },
+      {
+        "code": 31059,
+        "name": "Change at the SYNC-module without reset"
+      },
+      {
+        "code": 31060,
+        "name": "SYNC module: rack number assigned twice"
+      },
+      {
+        "code": 31061,
+        "name": "SYNC module error"
+      },
+      {
+        "code": 31062,
+        "name": "Illegal rack number set on SYNC module"
+      },
+      {
+        "code": 31072,
+        "name": "Redundant I/O: Time-out of discrepancy time at digital input, error is not yet localized"
+      },
+      {
+        "code": 31073,
+        "name": "Redundant I/O, digital input error: Signal change after expiration of the discrepancy time"
+      },
+      {
+        "code": 31074,
+        "name": "Redundant I/O: Digital input error"
+      },
+      {
+        "code": 31087,
+        "name": "Redundant I/O: The I/O was globally disabled"
+      },
+      {
+        "code": 31088,
+        "name": "Redundant I/O: Digital output error"
+      },
+      {
+        "code": 31104,
+        "name": "Redundant I/O: Time-out of discrepancy time at analog input"
+      },
+      {
+        "code": 31105,
+        "name": "Redundant I/O: Analog input error"
+      },
+      {
+        "code": 31120,
+        "name": "Redundant I/O: Analog output error"
+      },
+      {
+        "code": 31187,
+        "name": "Communication error between PROFIsafe and F I/O"
+      },
+      {
+        "code": 31188,
+        "name": "Error in safety relevant communication between F CPUs"
+      },
+      {
+        "code": 31189,
+        "name": "Error in safety relevant communication between F CPUs"
+      },
+      {
+        "code": 31203,
+        "name": "F-I/O device input channel passivated"
+      },
+      {
+        "code": 31204,
+        "name": "F-I/O device output channel passivated"
+      },
+      {
+        "code": 31205,
+        "name": "F-I/O device passivated"
+      },
+      {
+        "code": 31206,
+        "name": "Inconsistent safety program"
+      },
+      {
+        "code": 31207,
+        "name": "Simulation block (F system block) loaded"
+      }
+    ],
+    "cpu_diag_eventid_0x8_0x9_names": [
+      {
+        "code": 32768,
+        "name": "Module fault/OK"
+      },
+      {
+        "code": 32769,
+        "name": "Internal error"
+      },
+      {
+        "code": 32770,
+        "name": "External error"
+      },
+      {
+        "code": 32771,
+        "name": "Channel error"
+      },
+      {
+        "code": 32772,
+        "name": "No external auxiliary voltage"
+      },
+      {
+        "code": 32773,
+        "name": "No front connector"
+      },
+      {
+        "code": 32774,
+        "name": "No parameter assignment"
+      },
+      {
+        "code": 32775,
+        "name": "Incorrect parameters in module"
+      },
+      {
+        "code": 32816,
+        "name": "User submodule incorrect/not found"
+      },
+      {
+        "code": 32817,
+        "name": "Communication problem"
+      },
+      {
+        "code": 32818,
+        "name": "Operating mode: RUN/STOP (STOP: entering state, RUN: leaving state)"
+      },
+      {
+        "code": 32819,
+        "name": "Time monitoring responded (watchdog)"
+      },
+      {
+        "code": 32820,
+        "name": "Internal module power failure"
+      },
+      {
+        "code": 32821,
+        "name": "BATTF: battery exhausted"
+      },
+      {
+        "code": 32822,
+        "name": "Total backup failed"
+      },
+      {
+        "code": 32832,
+        "name": "Expansion rack failed"
+      },
+      {
+        "code": 32833,
+        "name": "Processor failure"
+      },
+      {
+        "code": 32834,
+        "name": "EPROM error"
+      },
+      {
+        "code": 32835,
+        "name": "RAM error"
+      },
+      {
+        "code": 32836,
+        "name": "ADC/DAC error"
+      },
+      {
+        "code": 32837,
+        "name": "Fuse blown"
+      },
+      {
+        "code": 32838,
+        "name": "Hardware interrupt lost Any"
+      },
+      {
+        "code": 32848,
+        "name": "Configuration/parameter assignment error"
+      },
+      {
+        "code": 32849,
+        "name": "Common mode error"
+      },
+      {
+        "code": 32850,
+        "name": "Short circuit to phase"
+      },
+      {
+        "code": 32851,
+        "name": "Short circuit to ground"
+      },
+      {
+        "code": 32852,
+        "name": "Wire break"
+      },
+      {
+        "code": 32853,
+        "name": "Reference channel error"
+      },
+      {
+        "code": 32854,
+        "name": "Below measuring range"
+      },
+      {
+        "code": 32855,
+        "name": "Above measuring range Analog input"
+      },
+      {
+        "code": 32864,
+        "name": "Configuration/parameter assignment error"
+      },
+      {
+        "code": 32865,
+        "name": "Common mode error"
+      },
+      {
+        "code": 32866,
+        "name": "Short circuit to phase"
+      },
+      {
+        "code": 32867,
+        "name": "Short circuit to ground"
+      },
+      {
+        "code": 32868,
+        "name": "Wire break"
+      },
+      {
+        "code": 32870,
+        "name": "No load voltage"
+      },
+      {
+        "code": 32880,
+        "name": "Configuration/parameter assignment error"
+      },
+      {
+        "code": 32881,
+        "name": "Chassis ground fault"
+      },
+      {
+        "code": 32882,
+        "name": "Short circuit to phase (sensor)"
+      },
+      {
+        "code": 32883,
+        "name": "Short circuit to ground (sensor)"
+      },
+      {
+        "code": 32884,
+        "name": "Wire break"
+      },
+      {
+        "code": 32885,
+        "name": "No sensor power supply Digital input"
+      },
+      {
+        "code": 32896,
+        "name": "Configuration/parameter assignment error"
+      },
+      {
+        "code": 32897,
+        "name": "Chassis ground fault"
+      },
+      {
+        "code": 32898,
+        "name": "Short circuit to phase"
+      },
+      {
+        "code": 32899,
+        "name": "Short circuit to ground"
+      },
+      {
+        "code": 32900,
+        "name": "Wire break"
+      },
+      {
+        "code": 32901,
+        "name": "Fuse tripped"
+      },
+      {
+        "code": 32902,
+        "name": "No load voltage"
+      },
+      {
+        "code": 32903,
+        "name": "Excess temperature Digital output"
+      },
+      {
+        "code": 32944,
+        "name": "Counter module, signal A faulty"
+      },
+      {
+        "code": 32945,
+        "name": "Counter module, signal B faulty"
+      },
+      {
+        "code": 32946,
+        "name": "Counter module, signal N faulty"
+      },
+      {
+        "code": 32947,
+        "name": "Counter module, incorrect value passed between the channels"
+      },
+      {
+        "code": 32948,
+        "name": "Counter module, 5.2 V sensor supply faulty"
+      },
+      {
+        "code": 32949,
+        "name": "Counter module, 24 V sensor supply faulty"
+      },
+      {
+        "code": 36865,
+        "name": "Automatic/Manual mode (coming=man,going=auto)"
+      },
+      {
+        "code": 36866,
+        "name": "OPEN/CLOSED, ON/OFF"
+      },
+      {
+        "code": 36867,
+        "name": "Manual command enable"
+      },
+      {
+        "code": 36868,
+        "name": "Unit protective command (OPEN/CLOSED)"
+      },
+      {
+        "code": 36869,
+        "name": "Process enable"
+      },
+      {
+        "code": 36870,
+        "name": "System protection command"
+      },
+      {
+        "code": 36871,
+        "name": "Process value monitoring responded"
+      },
+      {
+        "code": 36872,
+        "name": "Manipulated variable monitoring responded"
+      },
+      {
+        "code": 36873,
+        "name": "System deviation greater than permitted"
+      },
+      {
+        "code": 36874,
+        "name": "Limit position error"
+      },
+      {
+        "code": 36875,
+        "name": "Runtime error"
+      },
+      {
+        "code": 36876,
+        "name": "Command execution error (sequencer)"
+      },
+      {
+        "code": 36877,
+        "name": "Operating status running > OPEN"
+      },
+      {
+        "code": 36878,
+        "name": "Operating status running > CLOSED"
+      },
+      {
+        "code": 36879,
+        "name": "Command blocking"
+      },
+      {
+        "code": 36881,
+        "name": "Process status OPEN/ON"
+      },
+      {
+        "code": 36882,
+        "name": "Process status CLOSED/OFF"
+      },
+      {
+        "code": 36883,
+        "name": "Process status intermediate position"
+      },
+      {
+        "code": 36884,
+        "name": "Process status ON via AUTO"
+      },
+      {
+        "code": 36885,
+        "name": "Process status ON via manual"
+      },
+      {
+        "code": 36886,
+        "name": "Process status ON via protective command"
+      },
+      {
+        "code": 36887,
+        "name": "Process status OFF via AUTO"
+      },
+      {
+        "code": 36888,
+        "name": "Process status OFF via manual"
+      },
+      {
+        "code": 36889,
+        "name": "Process status OFF via protective command"
+      },
+      {
+        "code": 36897,
+        "name": "Function error on approach"
+      },
+      {
+        "code": 36898,
+        "name": "Function error on leaving"
+      },
+      {
+        "code": 36913,
+        "name": "Actuator (DE/WE) limit position OPEN"
+      },
+      {
+        "code": 36914,
+        "name": "Actuator (DE/WE) limit position not OPEN"
+      },
+      {
+        "code": 36915,
+        "name": "Actuator (DE/WE) limit position CLOSED"
+      },
+      {
+        "code": 36916,
+        "name": "Actuator (DE/WE) limit position not CLOSED"
+      },
+      {
+        "code": 36929,
+        "name": "Illegal status, tolerance time elapsed"
+      },
+      {
+        "code": 36930,
+        "name": "Illegal status, tolerance time not elapsed"
+      },
+      {
+        "code": 36931,
+        "name": "Interlock error, tolerance time = 0"
+      },
+      {
+        "code": 36932,
+        "name": "Interlock error, tolerance time > 0"
+      },
+      {
+        "code": 36933,
+        "name": "No reaction"
+      },
+      {
+        "code": 36934,
+        "name": "Final status exited illegally, tolerance time = 0"
+      },
+      {
+        "code": 36935,
+        "name": "Final status exited illegally, tolerance time > 0"
+      },
+      {
+        "code": 36944,
+        "name": "Upper limit of signal range USR"
+      },
+      {
+        "code": 36945,
+        "name": "Upper limit of measuring range UMR"
+      },
+      {
+        "code": 36946,
+        "name": "Lower limit of signal range LSR"
+      },
+      {
+        "code": 36947,
+        "name": "Lower limit of measuring range LMR"
+      },
+      {
+        "code": 36948,
+        "name": "Upper alarm limit UAL"
+      },
+      {
+        "code": 36949,
+        "name": "Upper warning limit UWL"
+      },
+      {
+        "code": 36950,
+        "name": "Upper tolerance limit UTL"
+      },
+      {
+        "code": 36951,
+        "name": "Lower tolerance limit LTL"
+      },
+      {
+        "code": 36952,
+        "name": "Lower warning limit LWL"
+      },
+      {
+        "code": 36953,
+        "name": "Lower alarm limit LAL"
+      },
+      {
+        "code": 36960,
+        "name": "GRAPH7 step entering/leaving"
+      },
+      {
+        "code": 36961,
+        "name": "GRAPH7 interlock error"
+      },
+      {
+        "code": 36962,
+        "name": "GRAPH7 execution error"
+      },
+      {
+        "code": 36963,
+        "name": "GRAPH7 error noted"
+      },
+      {
+        "code": 36964,
+        "name": "GRAPH7 error acknowledged"
+      },
+      {
+        "code": 36976,
+        "name": "Trend exceeded in positive direction"
+      },
+      {
+        "code": 36977,
+        "name": "Trend exceeded in negative direction"
+      },
+      {
+        "code": 36978,
+        "name": "No reaction"
+      },
+      {
+        "code": 36979,
+        "name": "Final state exited illegally"
+      },
+      {
+        "code": 36992,
+        "name": "Limit value exceeded, tolerance time = 0"
+      },
+      {
+        "code": 36993,
+        "name": "Limit value exceeded, tolerance time > 0"
+      },
+      {
+        "code": 36994,
+        "name": "Below limit value, tolerance time = 0"
+      },
+      {
+        "code": 36995,
+        "name": "Below limit value, tolerance time > 0"
+      },
+      {
+        "code": 36996,
+        "name": "Gradient exceeded, tolerance time = 0"
+      },
+      {
+        "code": 36997,
+        "name": "Gradient exceeded, tolerance time > 0"
+      },
+      {
+        "code": 36998,
+        "name": "Below gradient, tolerance time = 0"
+      },
+      {
+        "code": 36999,
+        "name": "Below gradient, tolerance time > 0"
+      },
+      {
+        "code": 37008,
+        "name": "User parameter assignment error entering/leaving"
+      },
+      {
+        "code": 37104,
+        "name": "Overflow"
+      },
+      {
+        "code": 37105,
+        "name": "Underflow"
+      },
+      {
+        "code": 37106,
+        "name": "Division by 0"
+      },
+      {
+        "code": 37107,
+        "name": "Illegal calculation operation"
+      }
+    ],
+    "alarm_message_querytype_names": [
+      {
+        "code": 1,
+        "name": "ByAlarmtype"
+      },
+      {
+        "code": 3,
+        "name": "ByEventID"
+      }
+    ],
+    "alarm_message_query_alarmtype_names": [
+      {
+        "code": 1,
+        "name": "SCAN"
+      },
+      {
+        "code": 2,
+        "name": "ALARM_8"
+      },
+      {
+        "code": 4,
+        "name": "ALARM_S"
+      }
+    ],
+    "cpu_msgservice_almtype_names": [
+      {
+        "code": 0,
+        "name": "SCAN_ABORT"
+      },
+      {
+        "code": 1,
+        "name": "SCAN_INITIATE"
+      },
+      {
+        "code": 4,
+        "name": "ALARM_ABORT"
+      },
+      {
+        "code": 5,
+        "name": "ALARM_INITIATE"
+      },
+      {
+        "code": 6,
+        "name": "AR_SEND_ABORT"
+      },
+      {
+        "code": 7,
+        "name": "AR_SEND_INITIATE"
+      },
+      {
+        "code": 8,
+        "name": "ALARM_S_ABORT"
+      },
+      {
+        "code": 9,
+        "name": "ALARM_S_INITIATE"
+      }
+    ],
+    "modetrans_param_mode_names": [
+      {
+        "code": 0,
+        "name": "STOP"
+      },
+      {
+        "code": 1,
+        "name": "Warm Restart"
+      },
+      {
+        "code": 2,
+        "name": "RUN"
+      },
+      {
+        "code": 3,
+        "name": "Hot Restart"
+      },
+      {
+        "code": 4,
+        "name": "HOLD"
+      },
+      {
+        "code": 6,
+        "name": "Cold Restart"
+      },
+      {
+        "code": 9,
+        "name": "RUN_R (H-System redundant)"
+      },
+      {
+        "code": 11,
+        "name": "LINK-UP"
+      },
+      {
+        "code": 12,
+        "name": "UPDATE"
+      }
+    ]
+  }
+}

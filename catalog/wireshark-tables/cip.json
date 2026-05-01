@@ -1,0 +1,8562 @@
+{
+  "protocol": "cip",
+  "wireshark_branch": "master",
+  "sources": [
+    {
+      "file": "packet-cip.c",
+      "url": "https://raw.githubusercontent.com/wireshark/wireshark/master/epan/dissectors/packet-cip.c",
+      "size_bytes": 513775
+    }
+  ],
+  "extracted_at_utc": "2026-05-01T14:07:23+00:00",
+  "table_count": 27,
+  "entry_count": 2123,
+  "tables": {
+    "cc_link_adr_type": [
+      {
+        "code": 0,
+        "name": "8-bit numeric link addresses"
+      },
+      {
+        "code": 1,
+        "name": "IPv4 addresses"
+      },
+      {
+        "code": 2,
+        "name": "Hostnames"
+      }
+    ],
+    "cc_packet_type_vals": [
+      {
+        "code": 0,
+        "name": "Invalid"
+      },
+      {
+        "code": 1,
+        "name": "Concurrent Connection Packet Format"
+      }
+    ],
+    "cip_charset_vals": [
+      {
+        "code": 4,
+        "name": "ISO-8859-1:1987"
+      },
+      {
+        "code": 5,
+        "name": "ISO-8859-2:1987"
+      },
+      {
+        "code": 6,
+        "name": "ISO-8859-3:1988"
+      },
+      {
+        "code": 7,
+        "name": "ISO-8859-4:1988 7"
+      },
+      {
+        "code": 8,
+        "name": "ISO-8859-5:1988 8"
+      },
+      {
+        "code": 9,
+        "name": "ISO-8859-6:1987 9"
+      },
+      {
+        "code": 10,
+        "name": "ISO-8859-7:1987 10"
+      },
+      {
+        "code": 11,
+        "name": "ISO-8859-8:1989 11"
+      },
+      {
+        "code": 12,
+        "name": "ISO-8859-9:1989 12"
+      },
+      {
+        "code": 1000,
+        "name": "ISO-10646-UCS-2"
+      },
+      {
+        "code": 1001,
+        "name": "ISO-10646-UCS-4"
+      }
+    ],
+    "cip_com_bit_vals": [
+      {
+        "code": 0,
+        "name": "Bit Cleared"
+      },
+      {
+        "code": 1,
+        "name": "Bit Set"
+      }
+    ],
+    "cip_con_owner_vals": [
+      {
+        "code": 0,
+        "name": "Non-Redundant"
+      },
+      {
+        "code": 1,
+        "name": "Redundant"
+      }
+    ],
+    "cip_con_vals": [
+      {
+        "code": 0,
+        "name": "Originator"
+      },
+      {
+        "code": 1,
+        "name": "Target"
+      }
+    ],
+    "cip_con_trigg_vals": [
+      {
+        "code": 0,
+        "name": "Cyclic"
+      },
+      {
+        "code": 1,
+        "name": "Change-Of-State"
+      },
+      {
+        "code": 2,
+        "name": "Application Object"
+      }
+    ],
+    "cip_con_class_vals": [
+      {
+        "code": 0,
+        "name": "0"
+      },
+      {
+        "code": 1,
+        "name": "1"
+      },
+      {
+        "code": 2,
+        "name": "2"
+      },
+      {
+        "code": 3,
+        "name": "3"
+      }
+    ],
+    "cip_con_last_action_vals": [
+      {
+        "code": 0,
+        "name": "No Owner"
+      },
+      {
+        "code": 1,
+        "name": "Owner Is Idle Mode"
+      },
+      {
+        "code": 2,
+        "name": "Owner Is Run Mode"
+      },
+      {
+        "code": 255,
+        "name": "Implementation not supported"
+      }
+    ],
+    "cip_con_rtf_vals": [
+      {
+        "code": 0,
+        "name": "32-bit Header"
+      },
+      {
+        "code": 1,
+        "name": "Zero data length idle mode"
+      },
+      {
+        "code": 2,
+        "name": "Modeless"
+      },
+      {
+        "code": 3,
+        "name": "Heartbeat"
+      },
+      {
+        "code": 4,
+        "name": "Reserved"
+      },
+      {
+        "code": 5,
+        "name": "Safety"
+      }
+    ],
+    "cip_id_status_extended_vals": [
+      {
+        "code": 0,
+        "name": "Self-Testing or Unknown"
+      },
+      {
+        "code": 1,
+        "name": "Firmware Update in Progress"
+      },
+      {
+        "code": 2,
+        "name": "At least one faulted I/O connection"
+      },
+      {
+        "code": 3,
+        "name": "No I/O connections established"
+      },
+      {
+        "code": 4,
+        "name": "Non-Volatile Configuration bad"
+      },
+      {
+        "code": 5,
+        "name": "Major Fault"
+      },
+      {
+        "code": 6,
+        "name": "At least one I/O connection in run modes"
+      },
+      {
+        "code": 7,
+        "name": "At least one I/O connection established, all in idle mode"
+      },
+      {
+        "code": 8,
+        "name": "The Status attribute is not applicable to this instance."
+      },
+      {
+        "code": 9,
+        "name": "Reserved"
+      },
+      {
+        "code": 10,
+        "name": "Vendor specific"
+      },
+      {
+        "code": 11,
+        "name": "Vendor specific"
+      },
+      {
+        "code": 12,
+        "name": "Vendor specific"
+      },
+      {
+        "code": 13,
+        "name": "Vendor specific"
+      },
+      {
+        "code": 14,
+        "name": "Vendor specific"
+      },
+      {
+        "code": 15,
+        "name": "Vendor specific"
+      }
+    ],
+    "cip_cco_change_type_vals": [
+      {
+        "code": 0,
+        "name": "Full"
+      },
+      {
+        "code": 1,
+        "name": "Incremental"
+      }
+    ],
+    "cip_time_sync_clock_class_vals": [
+      {
+        "code": 6,
+        "name": "Primary Reference"
+      },
+      {
+        "code": 7,
+        "name": "Primary Reference (Hold)"
+      },
+      {
+        "code": 52,
+        "name": "Degraded Reference A (Master only)"
+      },
+      {
+        "code": 187,
+        "name": "Degraded Reference B (Master/Slave)"
+      },
+      {
+        "code": 248,
+        "name": "Default"
+      },
+      {
+        "code": 255,
+        "name": "Slave Only"
+      }
+    ],
+    "cip_time_sync_time_accuracy_vals": [
+      {
+        "code": 32,
+        "name": "Accurate to within 25ns"
+      },
+      {
+        "code": 33,
+        "name": "Accurate to within 100ns"
+      },
+      {
+        "code": 34,
+        "name": "Accurate to within 250ns"
+      },
+      {
+        "code": 35,
+        "name": "Accurate to within 1us"
+      },
+      {
+        "code": 36,
+        "name": "Accurate to within 2.5us"
+      },
+      {
+        "code": 37,
+        "name": "Accurate to within 10us"
+      },
+      {
+        "code": 38,
+        "name": "Accurate to within 25us"
+      },
+      {
+        "code": 39,
+        "name": "Accurate to within 100us"
+      },
+      {
+        "code": 40,
+        "name": "Accurate to within 250us"
+      },
+      {
+        "code": 41,
+        "name": "Accurate to within 1ms"
+      },
+      {
+        "code": 42,
+        "name": "Accurate to within 2.5ms"
+      },
+      {
+        "code": 43,
+        "name": "Accurate to within 10ms"
+      },
+      {
+        "code": 44,
+        "name": "Accurate to within 25ms"
+      },
+      {
+        "code": 45,
+        "name": "Accurate to within 100ms"
+      },
+      {
+        "code": 46,
+        "name": "Accurate to within 250ms"
+      },
+      {
+        "code": 47,
+        "name": "Accurate to within 1s"
+      },
+      {
+        "code": 48,
+        "name": "Accurate to within 10s"
+      },
+      {
+        "code": 49,
+        "name": "Accurate to >10s"
+      }
+    ],
+    "cip_time_sync_time_source_vals": [
+      {
+        "code": 16,
+        "name": "Atomic Clock"
+      },
+      {
+        "code": 32,
+        "name": "GPS"
+      },
+      {
+        "code": 48,
+        "name": "Terrestrial Radio"
+      },
+      {
+        "code": 64,
+        "name": "PTP"
+      },
+      {
+        "code": 80,
+        "name": "NTP"
+      },
+      {
+        "code": 96,
+        "name": "Hand Set"
+      },
+      {
+        "code": 144,
+        "name": "Other"
+      },
+      {
+        "code": 160,
+        "name": "Internal Oscillator"
+      }
+    ],
+    "cip_time_sync_port_state_vals": [
+      {
+        "code": 1,
+        "name": "INITIALIZING"
+      },
+      {
+        "code": 2,
+        "name": "FAULTY"
+      },
+      {
+        "code": 3,
+        "name": "DISABLED"
+      },
+      {
+        "code": 4,
+        "name": "LISTENING"
+      },
+      {
+        "code": 5,
+        "name": "PRE_MASTER"
+      },
+      {
+        "code": 6,
+        "name": "MASTER"
+      },
+      {
+        "code": 7,
+        "name": "PASSIVE"
+      },
+      {
+        "code": 8,
+        "name": "UNCALIBRATED"
+      },
+      {
+        "code": 9,
+        "name": "SLAVE"
+      }
+    ],
+    "cip_time_sync_network_protocol_vals": [
+      {
+        "code": 1,
+        "name": "UDP/IPv4"
+      },
+      {
+        "code": 2,
+        "name": "UDP/IPv6"
+      },
+      {
+        "code": 3,
+        "name": "IEEE 802.3"
+      },
+      {
+        "code": 4,
+        "name": "DeviceNet"
+      },
+      {
+        "code": 5,
+        "name": "ControlNet"
+      },
+      {
+        "code": 65535,
+        "name": "Local or Unknown protocol"
+      }
+    ],
+    "cip_path_seg_vals": [
+      {
+        "code": 5,
+        "name": "Constructed Data Type"
+      },
+      {
+        "code": 6,
+        "name": "Elementary Data Type"
+      },
+      {
+        "code": 7,
+        "name": "Reserved"
+      }
+    ],
+    "cip_ext_logical_segment_format_vals": [
+      {
+        "code": 0,
+        "name": "Reserved"
+      },
+      {
+        "code": 1,
+        "name": "Array Index"
+      },
+      {
+        "code": 2,
+        "name": "Indirect Array Index"
+      },
+      {
+        "code": 3,
+        "name": "Bit Index"
+      },
+      {
+        "code": 4,
+        "name": "Indirect Bit Index"
+      },
+      {
+        "code": 5,
+        "name": "Structure Member Number"
+      },
+      {
+        "code": 6,
+        "name": "Structure Member Handle"
+      }
+    ],
+    "cip_symbolic_format_vals": [
+      {
+        "code": 1,
+        "name": "Double Byte Segment"
+      },
+      {
+        "code": 2,
+        "name": "Triple Byte Segment"
+      },
+      {
+        "code": 6,
+        "name": "Numeric Segment"
+      }
+    ],
+    "cip_symbolic_numeric_format_vals": [
+      {
+        "code": 6,
+        "name": "USINT"
+      },
+      {
+        "code": 7,
+        "name": "UINT"
+      },
+      {
+        "code": 8,
+        "name": "UDINT"
+      }
+    ],
+    "cip_safety_segment_format_type_vals": [
+      {
+        "code": 0,
+        "name": "Target Format"
+      },
+      {
+        "code": 1,
+        "name": "Router Format"
+      },
+      {
+        "code": 2,
+        "name": "Extended Format"
+      }
+    ],
+    "cip_cm_rpi_type_vals": [
+      {
+        "code": 0,
+        "name": "RPI acceptable"
+      },
+      {
+        "code": 1,
+        "name": "Unspecified"
+      },
+      {
+        "code": 2,
+        "name": "Minimum acceptable RPI"
+      },
+      {
+        "code": 3,
+        "name": "Maximum acceptable RPI"
+      },
+      {
+        "code": 4,
+        "name": "Required RPI to correct mismatch"
+      }
+    ],
+    "cip_cm_ext_st_vals": [
+      {
+        "code": 256,
+        "name": "Connection in use or duplicate Forward Open"
+      },
+      {
+        "code": 259,
+        "name": "Transport class and trigger combination not supported"
+      },
+      {
+        "code": 262,
+        "name": "Ownership conflict"
+      },
+      {
+        "code": 263,
+        "name": "Target connection not found"
+      },
+      {
+        "code": 264,
+        "name": "Invalid network connection parameter"
+      },
+      {
+        "code": 265,
+        "name": "Invalid connection size"
+      },
+      {
+        "code": 272,
+        "name": "Target for connection not configured"
+      },
+      {
+        "code": 273,
+        "name": "RPI not supported"
+      },
+      {
+        "code": 274,
+        "name": "RPI value(s) not acceptable"
+      },
+      {
+        "code": 275,
+        "name": "Out of connections"
+      },
+      {
+        "code": 276,
+        "name": "Vendor ID or product code mismatch"
+      },
+      {
+        "code": 277,
+        "name": "Device type mismatch"
+      },
+      {
+        "code": 278,
+        "name": "Revision mismatch"
+      },
+      {
+        "code": 279,
+        "name": "Invalid produced or consumed application path"
+      },
+      {
+        "code": 280,
+        "name": "Invalid or inconsistent configuration application path"
+      },
+      {
+        "code": 281,
+        "name": "Non-listen only connection not opened"
+      },
+      {
+        "code": 282,
+        "name": "Target object out of connections"
+      },
+      {
+        "code": 283,
+        "name": "RPI is smaller than the production inhibit time"
+      },
+      {
+        "code": 284,
+        "name": "Transport class not supported"
+      },
+      {
+        "code": 285,
+        "name": "Production trigger not supported"
+      },
+      {
+        "code": 286,
+        "name": "Direction not supported"
+      },
+      {
+        "code": 287,
+        "name": "Invalid O->T Fixed/Variable"
+      },
+      {
+        "code": 288,
+        "name": "Invalid T->O Fixed/Variable"
+      },
+      {
+        "code": 289,
+        "name": "Invalid O->T Priority"
+      },
+      {
+        "code": 290,
+        "name": "Invalid T->O Priority"
+      },
+      {
+        "code": 291,
+        "name": "Invalid O->T connection type"
+      },
+      {
+        "code": 292,
+        "name": "Invalid T->O connection type"
+      },
+      {
+        "code": 293,
+        "name": "Invalid O->T redundant owner"
+      },
+      {
+        "code": 294,
+        "name": "Invalid configuration size"
+      },
+      {
+        "code": 295,
+        "name": "Invalid O->T size"
+      },
+      {
+        "code": 296,
+        "name": "Invalid T->O size"
+      },
+      {
+        "code": 297,
+        "name": "Invalid configuration application path"
+      },
+      {
+        "code": 298,
+        "name": "Invalid consuming application path"
+      },
+      {
+        "code": 299,
+        "name": "Invalid producing application path"
+      },
+      {
+        "code": 300,
+        "name": "Configuration symbol does not exist"
+      },
+      {
+        "code": 301,
+        "name": "Consuming symbol does not exist"
+      },
+      {
+        "code": 302,
+        "name": "Producing symbol does not exist"
+      },
+      {
+        "code": 303,
+        "name": "Inconsistent application path combination"
+      },
+      {
+        "code": 304,
+        "name": "Inconsistent consume data format"
+      },
+      {
+        "code": 305,
+        "name": "Inconsistent produce data format"
+      },
+      {
+        "code": 306,
+        "name": "NULL ForwardOpen not supported"
+      },
+      {
+        "code": 515,
+        "name": "Connection timed out"
+      },
+      {
+        "code": 516,
+        "name": "Unconnected request timed out"
+      },
+      {
+        "code": 517,
+        "name": "Parameter error in unconnected request"
+      },
+      {
+        "code": 518,
+        "name": "Message too large for UnconnectedSend"
+      },
+      {
+        "code": 519,
+        "name": "Unconnected acknowledged without reply"
+      },
+      {
+        "code": 769,
+        "name": "No buffer memory available"
+      },
+      {
+        "code": 770,
+        "name": "Network bandwidth not available for data"
+      },
+      {
+        "code": 771,
+        "name": "No consumed connection ID filter available"
+      },
+      {
+        "code": 772,
+        "name": "Not configured to send scheduled priority data"
+      },
+      {
+        "code": 773,
+        "name": "Schedule signature mismatch"
+      },
+      {
+        "code": 774,
+        "name": "Schedule signature validation not possible"
+      },
+      {
+        "code": 785,
+        "name": "Port not available"
+      },
+      {
+        "code": 786,
+        "name": "Link address not valid"
+      },
+      {
+        "code": 789,
+        "name": "Invalid segment in connection path"
+      },
+      {
+        "code": 790,
+        "name": "ForwardClose connection path mismatch"
+      },
+      {
+        "code": 791,
+        "name": "Scheduling not specified"
+      },
+      {
+        "code": 792,
+        "name": "Link address to self invalid"
+      },
+      {
+        "code": 793,
+        "name": "Secondary resources unavailable"
+      },
+      {
+        "code": 794,
+        "name": "Rack connection already established"
+      },
+      {
+        "code": 795,
+        "name": "Module connection already established"
+      },
+      {
+        "code": 796,
+        "name": "Miscellaneous"
+      },
+      {
+        "code": 797,
+        "name": "Redundant connection mismatch"
+      },
+      {
+        "code": 798,
+        "name": "No more user configurable link consumer resources available in the producing module"
+      },
+      {
+        "code": 799,
+        "name": "No more user configurable link consumer resources configured in the producing module"
+      },
+      {
+        "code": 2048,
+        "name": "Network link offline"
+      },
+      {
+        "code": 2049,
+        "name": "Incompatible Multicast RPI"
+      },
+      {
+        "code": 2050,
+        "name": "Invalid Safety Connection Size"
+      },
+      {
+        "code": 2051,
+        "name": "Invalid Safety Connection Format"
+      },
+      {
+        "code": 2052,
+        "name": "Invalid Time Correction Connection Parameters"
+      },
+      {
+        "code": 2053,
+        "name": "Invalid Ping Interval EPI Multiplier"
+      },
+      {
+        "code": 2054,
+        "name": "Time Coordination Msg Min Multiplier"
+      },
+      {
+        "code": 2055,
+        "name": "Network Time Expectation Multiplier"
+      },
+      {
+        "code": 2056,
+        "name": "Timeout Multiplier"
+      },
+      {
+        "code": 2057,
+        "name": "Invalid Max Consumer Number"
+      },
+      {
+        "code": 2058,
+        "name": "Invalid CPCRC"
+      },
+      {
+        "code": 2059,
+        "name": "Time Correction Connection ID Invalid"
+      },
+      {
+        "code": 2060,
+        "name": "SCID Mismatch"
+      },
+      {
+        "code": 2061,
+        "name": "TUNID not set"
+      },
+      {
+        "code": 2062,
+        "name": "TUNID Mismatch"
+      },
+      {
+        "code": 2063,
+        "name": "Configuration operation not allowed"
+      },
+      {
+        "code": 2064,
+        "name": "No target application data available"
+      },
+      {
+        "code": 2065,
+        "name": "No originator application data available"
+      },
+      {
+        "code": 2066,
+        "name": "Node address has changed since the network was scheduled"
+      },
+      {
+        "code": 2067,
+        "name": "Not configured for off-subnet multicast"
+      },
+      {
+        "code": 2068,
+        "name": "Invalid produce/consume data format"
+      },
+      {
+        "code": 2326,
+        "name": "Egress Rule deny"
+      },
+      {
+        "code": 2327,
+        "name": "Egress Rule Cipher not allowed"
+      },
+      {
+        "code": 2328,
+        "name": "No matching Ingress Rules"
+      },
+      {
+        "code": 2329,
+        "name": "Ingress Rule deny"
+      },
+      {
+        "code": 2330,
+        "name": "Ingress Rule deny non-secure"
+      },
+      {
+        "code": 2331,
+        "name": "No matching Egress Rule"
+      }
+    ],
+    "cip_vendor_vals": [
+      {
+        "code": 1,
+        "name": "Rockwell Automation/Allen-Bradley"
+      },
+      {
+        "code": 2,
+        "name": "Namco Controls Corp."
+      },
+      {
+        "code": 3,
+        "name": "Honeywell International Inc."
+      },
+      {
+        "code": 4,
+        "name": "Parker Hannifin Corporation"
+      },
+      {
+        "code": 5,
+        "name": "Rockwell Automation/Reliance Elec."
+      },
+      {
+        "code": 6,
+        "name": "Reserved"
+      },
+      {
+        "code": 7,
+        "name": "SMC Corporation"
+      },
+      {
+        "code": 8,
+        "name": "Molex Incorporated"
+      },
+      {
+        "code": 9,
+        "name": "Western Reserve Controls Inc."
+      },
+      {
+        "code": 10,
+        "name": "Advanced Micro Controls Inc. (AMCI)"
+      },
+      {
+        "code": 11,
+        "name": "ASCO Pneumatic Controls"
+      },
+      {
+        "code": 12,
+        "name": "Banner Engineering Corporation"
+      },
+      {
+        "code": 13,
+        "name": "Belden Wire & Cable Company"
+      },
+      {
+        "code": 14,
+        "name": "Cooper Interconnect"
+      },
+      {
+        "code": 16,
+        "name": "Daniel Woodhead Co."
+      },
+      {
+        "code": 17,
+        "name": "Dearborn Group Inc."
+      },
+      {
+        "code": 18,
+        "name": "Reserved"
+      },
+      {
+        "code": 19,
+        "name": "Helm Instrument Company"
+      },
+      {
+        "code": 20,
+        "name": "Huron Net Works"
+      },
+      {
+        "code": 21,
+        "name": "Belden Deutschland GmbH"
+      },
+      {
+        "code": 22,
+        "name": "Online Development, Inc. (OLDI)"
+      },
+      {
+        "code": 23,
+        "name": "Vorne Industries, Inc."
+      },
+      {
+        "code": 24,
+        "name": "ODVA"
+      },
+      {
+        "code": 25,
+        "name": "Reserved"
+      },
+      {
+        "code": 26,
+        "name": "Festo"
+      },
+      {
+        "code": 27,
+        "name": "Reserved"
+      },
+      {
+        "code": 28,
+        "name": "Reserved"
+      },
+      {
+        "code": 30,
+        "name": "Unico, Inc."
+      },
+      {
+        "code": 31,
+        "name": "Ross Controls"
+      },
+      {
+        "code": 33,
+        "name": "Reserved"
+      },
+      {
+        "code": 34,
+        "name": "Hohner Corp."
+      },
+      {
+        "code": 35,
+        "name": "Micro Mo Electronics, Inc."
+      },
+      {
+        "code": 36,
+        "name": "MKS Instruments, Inc."
+      },
+      {
+        "code": 37,
+        "name": "Yaskawa Electric America formerly Magnetek Drives"
+      },
+      {
+        "code": 38,
+        "name": "Reserved"
+      },
+      {
+        "code": 39,
+        "name": "AVG Automation (Uticor)"
+      },
+      {
+        "code": 40,
+        "name": "WAGO Corporation"
+      },
+      {
+        "code": 41,
+        "name": "Celerity, Inc."
+      },
+      {
+        "code": 42,
+        "name": "IMI Norgren Limited"
+      },
+      {
+        "code": 43,
+        "name": "BALLUFF"
+      },
+      {
+        "code": 44,
+        "name": "Yaskawa America, Inc."
+      },
+      {
+        "code": 45,
+        "name": "Eurotherm by Schneider Electric"
+      },
+      {
+        "code": 46,
+        "name": "ABB, Inc."
+      },
+      {
+        "code": 47,
+        "name": "Omron Corporation"
+      },
+      {
+        "code": 48,
+        "name": "TURCK"
+      },
+      {
+        "code": 49,
+        "name": "Grayhill Inc."
+      },
+      {
+        "code": 50,
+        "name": "Real Time Automation"
+      },
+      {
+        "code": 51,
+        "name": "Reserved"
+      },
+      {
+        "code": 52,
+        "name": "ASCO Numatics"
+      },
+      {
+        "code": 53,
+        "name": "L\u00dcTZE"
+      },
+      {
+        "code": 54,
+        "name": "Reserved"
+      },
+      {
+        "code": 55,
+        "name": "Reserved"
+      },
+      {
+        "code": 56,
+        "name": "Softing"
+      },
+      {
+        "code": 57,
+        "name": "Pepperl+Fuchs"
+      },
+      {
+        "code": 58,
+        "name": "Spectrum Controls, Inc."
+      },
+      {
+        "code": 59,
+        "name": "D.I.P. Inc. MKS Inst."
+      },
+      {
+        "code": 60,
+        "name": "Applied Motion Products, Inc."
+      },
+      {
+        "code": 61,
+        "name": "Sencon Inc."
+      },
+      {
+        "code": 62,
+        "name": "High Country Tek"
+      },
+      {
+        "code": 63,
+        "name": "SWAC Automation Consult GmbH"
+      },
+      {
+        "code": 64,
+        "name": "Clippard Instrument Laboratory"
+      },
+      {
+        "code": 65,
+        "name": "Reserved"
+      },
+      {
+        "code": 66,
+        "name": "Reserved"
+      },
+      {
+        "code": 67,
+        "name": "Reserved"
+      },
+      {
+        "code": 68,
+        "name": "Eaton Electrical"
+      },
+      {
+        "code": 69,
+        "name": "Reserved"
+      },
+      {
+        "code": 70,
+        "name": "Reserved"
+      },
+      {
+        "code": 71,
+        "name": "Toshiba Corporation"
+      },
+      {
+        "code": 72,
+        "name": "Control Technology Incorporated"
+      },
+      {
+        "code": 73,
+        "name": "TCS (NZ) Ltd."
+      },
+      {
+        "code": 74,
+        "name": "Hitachi, Ltd."
+      },
+      {
+        "code": 75,
+        "name": "ABB Robotics"
+      },
+      {
+        "code": 76,
+        "name": "NKE Corporation"
+      },
+      {
+        "code": 77,
+        "name": "Rockwell Software, Inc."
+      },
+      {
+        "code": 78,
+        "name": "Escort Memory Systems (A Datalogic Group Co.)"
+      },
+      {
+        "code": 79,
+        "name": "Leviton"
+      },
+      {
+        "code": 80,
+        "name": "Industrial Devices Corporation"
+      },
+      {
+        "code": 81,
+        "name": "IXXAT Automation GmbH"
+      },
+      {
+        "code": 82,
+        "name": "Mitsubishi Electric Automation, Inc."
+      },
+      {
+        "code": 83,
+        "name": "OPTO 22"
+      },
+      {
+        "code": 84,
+        "name": "Reserved"
+      },
+      {
+        "code": 85,
+        "name": "Reserved"
+      },
+      {
+        "code": 86,
+        "name": "Horner Electric"
+      },
+      {
+        "code": 87,
+        "name": "Buerkert Fluid Control Systems"
+      },
+      {
+        "code": 88,
+        "name": "Reserved"
+      },
+      {
+        "code": 89,
+        "name": "Industrial Indexing Systems, Inc."
+      },
+      {
+        "code": 90,
+        "name": "HMS Networks"
+      },
+      {
+        "code": 91,
+        "name": "Robicon"
+      },
+      {
+        "code": 92,
+        "name": "Helix Technology (Granville-Phillips)"
+      },
+      {
+        "code": 93,
+        "name": "Arlington Laboratory"
+      },
+      {
+        "code": 94,
+        "name": "Advantech Corporation"
+      },
+      {
+        "code": 95,
+        "name": "Square D Company"
+      },
+      {
+        "code": 96,
+        "name": "Digital Electronics Corp."
+      },
+      {
+        "code": 97,
+        "name": "Danfoss Drives A/S"
+      },
+      {
+        "code": 98,
+        "name": "Reserved"
+      },
+      {
+        "code": 99,
+        "name": "Reserved"
+      },
+      {
+        "code": 100,
+        "name": "AVENTICS"
+      },
+      {
+        "code": 101,
+        "name": "Applied Materials, Inc."
+      },
+      {
+        "code": 102,
+        "name": "SWCC Showa Cable Systems Co., Ltd."
+      },
+      {
+        "code": 103,
+        "name": "Pacific Scientific (API Controls Inc.)"
+      },
+      {
+        "code": 104,
+        "name": "Sharp Manufacturing Systems Corporation"
+      },
+      {
+        "code": 105,
+        "name": "Olflex Wire & Cable, Inc."
+      },
+      {
+        "code": 106,
+        "name": "Reserved"
+      },
+      {
+        "code": 107,
+        "name": "Unitrode"
+      },
+      {
+        "code": 108,
+        "name": "Beckhoff Automation"
+      },
+      {
+        "code": 109,
+        "name": "National Instruments"
+      },
+      {
+        "code": 110,
+        "name": "Mykrolis Corporation (Millipore)"
+      },
+      {
+        "code": 111,
+        "name": "International Motion Controls Corp."
+      },
+      {
+        "code": 112,
+        "name": "Reserved"
+      },
+      {
+        "code": 113,
+        "name": "SEG Kempen GmbH"
+      },
+      {
+        "code": 114,
+        "name": "Reserved"
+      },
+      {
+        "code": 115,
+        "name": "Reserved"
+      },
+      {
+        "code": 116,
+        "name": "Temposonics, LLC"
+      },
+      {
+        "code": 117,
+        "name": "Krones, Inc"
+      },
+      {
+        "code": 119,
+        "name": "EXOR Electronic R & D"
+      },
+      {
+        "code": 120,
+        "name": "SIEI S.p.A."
+      },
+      {
+        "code": 121,
+        "name": "KUKA Deutschland GmbH"
+      },
+      {
+        "code": 122,
+        "name": "Reserved"
+      },
+      {
+        "code": 123,
+        "name": "SEC (Samsung Electronics Co., Ltd)"
+      },
+      {
+        "code": 124,
+        "name": "Binary Electronics Ltd"
+      },
+      {
+        "code": 125,
+        "name": "Flexible Machine Controls"
+      },
+      {
+        "code": 126,
+        "name": "Reserved"
+      },
+      {
+        "code": 127,
+        "name": "ABB Inc. (Entrelec)"
+      },
+      {
+        "code": 128,
+        "name": "MAC Valves, Inc."
+      },
+      {
+        "code": 129,
+        "name": "AUMA Riester GmbH & Co. KG"
+      },
+      {
+        "code": 130,
+        "name": "JTEKT Corporation"
+      },
+      {
+        "code": 131,
+        "name": "Reserved"
+      },
+      {
+        "code": 132,
+        "name": "Reserved"
+      },
+      {
+        "code": 133,
+        "name": "Balogh T.A.G., Corporation"
+      },
+      {
+        "code": 134,
+        "name": "TR Electronic"
+      },
+      {
+        "code": 135,
+        "name": "UNIPULSE Corporation"
+      },
+      {
+        "code": 136,
+        "name": "Reserved"
+      },
+      {
+        "code": 137,
+        "name": "Reserved"
+      },
+      {
+        "code": 138,
+        "name": "Conxall Corporation Inc."
+      },
+      {
+        "code": 139,
+        "name": "Reserved"
+      },
+      {
+        "code": 140,
+        "name": "Reserved"
+      },
+      {
+        "code": 141,
+        "name": "Kuramo Electric Co., Ltd."
+      },
+      {
+        "code": 142,
+        "name": "Creative Micro Designs"
+      },
+      {
+        "code": 143,
+        "name": "GE Industrial Systems"
+      },
+      {
+        "code": 144,
+        "name": "Leybold GmbH"
+      },
+      {
+        "code": 145,
+        "name": "Siemens Energy & Automation/Drives"
+      },
+      {
+        "code": 146,
+        "name": "Kodensha Ltd"
+      },
+      {
+        "code": 147,
+        "name": "Motion Engineering, Inc."
+      },
+      {
+        "code": 148,
+        "name": "Honda Engineering Co., Ltd"
+      },
+      {
+        "code": 149,
+        "name": "EIM Valve Controls"
+      },
+      {
+        "code": 150,
+        "name": "Melec Inc."
+      },
+      {
+        "code": 151,
+        "name": "Sony Manufacturing Systems Corporation"
+      },
+      {
+        "code": 152,
+        "name": "North American Mfg."
+      },
+      {
+        "code": 153,
+        "name": "Watlow"
+      },
+      {
+        "code": 154,
+        "name": "Japan Radio Co., Ltd"
+      },
+      {
+        "code": 155,
+        "name": "NADEX Co., Ltd"
+      },
+      {
+        "code": 156,
+        "name": "Ametek Automation & Process Technologies"
+      },
+      {
+        "code": 157,
+        "name": "Facts, Inc."
+      },
+      {
+        "code": 158,
+        "name": "KVASER AB"
+      },
+      {
+        "code": 159,
+        "name": "IDEC Corporation"
+      },
+      {
+        "code": 160,
+        "name": "Mitsubishi Heavy Industries Ltd"
+      },
+      {
+        "code": 161,
+        "name": "Mitsubishi Electric Corporation"
+      },
+      {
+        "code": 162,
+        "name": "HORIBA STEC, Co., Ltd."
+      },
+      {
+        "code": 163,
+        "name": "esd electronics gmbh"
+      },
+      {
+        "code": 164,
+        "name": "DAIHEN Corporation"
+      },
+      {
+        "code": 165,
+        "name": "Tyco Valves & Controls/Keystone"
+      },
+      {
+        "code": 166,
+        "name": "EBARA Corporation"
+      },
+      {
+        "code": 168,
+        "name": "Reserved"
+      },
+      {
+        "code": 169,
+        "name": "Hokuyo Automatic Co., Ltd."
+      },
+      {
+        "code": 170,
+        "name": "Pyramid Solutions, Inc."
+      },
+      {
+        "code": 171,
+        "name": "Denso Wave Incorporated"
+      },
+      {
+        "code": 172,
+        "name": "HLS Hard-Line Solutions Inc"
+      },
+      {
+        "code": 173,
+        "name": "Caterpillar, Inc."
+      },
+      {
+        "code": 174,
+        "name": "PDL Electronics Ltd."
+      },
+      {
+        "code": 175,
+        "name": "Reserved"
+      },
+      {
+        "code": 176,
+        "name": "Red Lion"
+      },
+      {
+        "code": 177,
+        "name": "CANON ANELVA Corporation"
+      },
+      {
+        "code": 178,
+        "name": "Toyo Denki Seizo KK"
+      },
+      {
+        "code": 179,
+        "name": "Sanyo Denki Co., Ltd."
+      },
+      {
+        "code": 180,
+        "name": "Hitachi Metals, Ltd. (formerly Advanced Energy Japan K.K.)"
+      },
+      {
+        "code": 181,
+        "name": "Pilz GmbH & Co KG"
+      },
+      {
+        "code": 182,
+        "name": "Marsh Bellofram-Bellofram PCD Division"
+      },
+      {
+        "code": 183,
+        "name": "Reserved"
+      },
+      {
+        "code": 184,
+        "name": "M-SYSTEM Co., Ltd."
+      },
+      {
+        "code": 185,
+        "name": "Nissin Electric Co., Ltd."
+      },
+      {
+        "code": 186,
+        "name": "Hitachi Metals Ltd."
+      },
+      {
+        "code": 187,
+        "name": "Oriental Motor Co., Ltd"
+      },
+      {
+        "code": 188,
+        "name": "A&D Company Limited"
+      },
+      {
+        "code": 189,
+        "name": "Phasetronics, Inc."
+      },
+      {
+        "code": 190,
+        "name": "Cummins Engine Company"
+      },
+      {
+        "code": 191,
+        "name": "Deltron Inc."
+      },
+      {
+        "code": 192,
+        "name": "Geneer Corporation"
+      },
+      {
+        "code": 193,
+        "name": "Anatol Automation, Inc."
+      },
+      {
+        "code": 194,
+        "name": "Reserved"
+      },
+      {
+        "code": 195,
+        "name": "Reserved"
+      },
+      {
+        "code": 196,
+        "name": "Medar, Inc."
+      },
+      {
+        "code": 197,
+        "name": "XP Power LLC"
+      },
+      {
+        "code": 198,
+        "name": "Advanced Energy Industries, Inc."
+      },
+      {
+        "code": 199,
+        "name": "Reserved"
+      },
+      {
+        "code": 200,
+        "name": "DAIDEN Co., Ltd"
+      },
+      {
+        "code": 201,
+        "name": "CKD Corporation"
+      },
+      {
+        "code": 202,
+        "name": "Toyo Electric Corporation"
+      },
+      {
+        "code": 203,
+        "name": "Reserved"
+      },
+      {
+        "code": 204,
+        "name": "AuCom Electronics Ltd"
+      },
+      {
+        "code": 205,
+        "name": "Sinfonia Technology Co., Ltd."
+      },
+      {
+        "code": 206,
+        "name": "Vector Informatik GmbH"
+      },
+      {
+        "code": 207,
+        "name": "Reserved"
+      },
+      {
+        "code": 208,
+        "name": "Moog Inc."
+      },
+      {
+        "code": 209,
+        "name": "Contemporary Controls"
+      },
+      {
+        "code": 210,
+        "name": "Tokyo Sokki Kenkyujo Co., Ltd"
+      },
+      {
+        "code": 211,
+        "name": "Schenck Process Group"
+      },
+      {
+        "code": 212,
+        "name": "The Oilgear Company"
+      },
+      {
+        "code": 213,
+        "name": "Reserved"
+      },
+      {
+        "code": 214,
+        "name": "ASM Japan K.K."
+      },
+      {
+        "code": 215,
+        "name": "HIRATA Corp."
+      },
+      {
+        "code": 216,
+        "name": "Panasonic Industrial Devices SUNX Co., Ltd."
+      },
+      {
+        "code": 217,
+        "name": "Meidensha Corporation"
+      },
+      {
+        "code": 218,
+        "name": "NIDEC SANKYO CORPORATION (Sankyo Seiki Mfg. Co., Ltd)"
+      },
+      {
+        "code": 219,
+        "name": "KAMRO Corp."
+      },
+      {
+        "code": 220,
+        "name": "NSD Co., Ltd."
+      },
+      {
+        "code": 221,
+        "name": "EBARA Technologies Inc."
+      },
+      {
+        "code": 222,
+        "name": "Reserved"
+      },
+      {
+        "code": 223,
+        "name": "Reserved"
+      },
+      {
+        "code": 224,
+        "name": "SG Co., Ltd"
+      },
+      {
+        "code": 225,
+        "name": "Vaasa Institute of Technology"
+      },
+      {
+        "code": 226,
+        "name": "MKS Instruments (ENI Technology)"
+      },
+      {
+        "code": 227,
+        "name": "Tateyama System Laboratory Co., Ltd."
+      },
+      {
+        "code": 228,
+        "name": "QLOG Corporation"
+      },
+      {
+        "code": 229,
+        "name": "Matric Limited Inc."
+      },
+      {
+        "code": 230,
+        "name": "NSD Corporation"
+      },
+      {
+        "code": 231,
+        "name": "Reserved"
+      },
+      {
+        "code": 232,
+        "name": "Sumitomo Wiring Systems, Ltd"
+      },
+      {
+        "code": 233,
+        "name": "Group 3 Technology Ltd"
+      },
+      {
+        "code": 234,
+        "name": "CTI Cryogenics"
+      },
+      {
+        "code": 235,
+        "name": "POLSYS CORP"
+      },
+      {
+        "code": 236,
+        "name": "Ampere Inc."
+      },
+      {
+        "code": 237,
+        "name": "Reserved"
+      },
+      {
+        "code": 238,
+        "name": "Simplatroll Ltd"
+      },
+      {
+        "code": 239,
+        "name": "Reserved"
+      },
+      {
+        "code": 240,
+        "name": "Reserved"
+      },
+      {
+        "code": 241,
+        "name": "Leading Edge Design"
+      },
+      {
+        "code": 242,
+        "name": "Humphrey Products"
+      },
+      {
+        "code": 243,
+        "name": "Schneider Electric"
+      },
+      {
+        "code": 244,
+        "name": "Westlock Controls Corp."
+      },
+      {
+        "code": 245,
+        "name": "Nihon Weidmuller Co., Ltd"
+      },
+      {
+        "code": 246,
+        "name": "Brooks Instrument"
+      },
+      {
+        "code": 247,
+        "name": "Reserved"
+      },
+      {
+        "code": 248,
+        "name": "Eaton Industries GmbH (formerly Moeller GmbH)"
+      },
+      {
+        "code": 249,
+        "name": "Varian Vacuum Products"
+      },
+      {
+        "code": 250,
+        "name": "Yokogawa Electric Corporation"
+      },
+      {
+        "code": 251,
+        "name": "Electrical Design Daiyu Co., Ltd"
+      },
+      {
+        "code": 252,
+        "name": "Omron Software Co., Ltd."
+      },
+      {
+        "code": 253,
+        "name": "EDWARDS"
+      },
+      {
+        "code": 254,
+        "name": "Control Technology Corporation"
+      },
+      {
+        "code": 255,
+        "name": "Bosch Rexroth"
+      },
+      {
+        "code": 256,
+        "name": "TURCK (formerly InterlinkBT)"
+      },
+      {
+        "code": 257,
+        "name": "Control Techniques PLC"
+      },
+      {
+        "code": 258,
+        "name": "Hardy Process Solutions"
+      },
+      {
+        "code": 259,
+        "name": "LS ELECTRIC"
+      },
+      {
+        "code": 260,
+        "name": "E.O.A. Systems Inc."
+      },
+      {
+        "code": 261,
+        "name": "Reserved"
+      },
+      {
+        "code": 262,
+        "name": "New Cosmos Electric Co., Ltd."
+      },
+      {
+        "code": 263,
+        "name": "Sense Sense Eletronica LTDA"
+      },
+      {
+        "code": 264,
+        "name": "Xycom, Inc."
+      },
+      {
+        "code": 265,
+        "name": "Baldor Electric"
+      },
+      {
+        "code": 266,
+        "name": "Reserved"
+      },
+      {
+        "code": 267,
+        "name": "Patlite Corporation"
+      },
+      {
+        "code": 268,
+        "name": "Reserved"
+      },
+      {
+        "code": 269,
+        "name": "Mogami Wire & Cable Corporation"
+      },
+      {
+        "code": 270,
+        "name": "Welding Technology Corporation"
+      },
+      {
+        "code": 271,
+        "name": "Reserved"
+      },
+      {
+        "code": 272,
+        "name": "Deutschmann Automation GmbH"
+      },
+      {
+        "code": 273,
+        "name": "ICP Panel-Tec Inc."
+      },
+      {
+        "code": 274,
+        "name": "Bray International, Inc"
+      },
+      {
+        "code": 275,
+        "name": "Reserved"
+      },
+      {
+        "code": 276,
+        "name": "Status Technologies"
+      },
+      {
+        "code": 277,
+        "name": "Trio Motion Technology ltd"
+      },
+      {
+        "code": 278,
+        "name": "Sherrex Systems Ltd"
+      },
+      {
+        "code": 279,
+        "name": "Adept Technology, Inc."
+      },
+      {
+        "code": 280,
+        "name": "Spang Power Electronics"
+      },
+      {
+        "code": 281,
+        "name": "Reserved"
+      },
+      {
+        "code": 282,
+        "name": "Acrosser Technology Co., Ltd"
+      },
+      {
+        "code": 283,
+        "name": "Hilscher GmbH"
+      },
+      {
+        "code": 284,
+        "name": "IMAX Corporation"
+      },
+      {
+        "code": 285,
+        "name": "Electronic Innovation, Inc. (Falter Engineering)"
+      },
+      {
+        "code": 286,
+        "name": "Netlogic Inc."
+      },
+      {
+        "code": 287,
+        "name": "Bosch Rexroth AG"
+      },
+      {
+        "code": 288,
+        "name": "Reserved"
+      },
+      {
+        "code": 289,
+        "name": "Reserved"
+      },
+      {
+        "code": 290,
+        "name": "Murata  Machinery Ltd."
+      },
+      {
+        "code": 291,
+        "name": "MTT Company Ltd."
+      },
+      {
+        "code": 292,
+        "name": "Kanematsu Semiconductor Corp."
+      },
+      {
+        "code": 293,
+        "name": "Takebishi Electric Sales Co."
+      },
+      {
+        "code": 294,
+        "name": "Tokyo Electron Device Ltd"
+      },
+      {
+        "code": 295,
+        "name": "PFU Limited"
+      },
+      {
+        "code": 296,
+        "name": "Hakko Automation Co., Ltd."
+      },
+      {
+        "code": 297,
+        "name": "Advanet Inc."
+      },
+      {
+        "code": 298,
+        "name": "Tokyo Electron Software Technologies Ltd."
+      },
+      {
+        "code": 299,
+        "name": "Reserved"
+      },
+      {
+        "code": 300,
+        "name": "Shinagawa Electric Wire Co., Ltd."
+      },
+      {
+        "code": 301,
+        "name": "Yokogawa M&C Corporation"
+      },
+      {
+        "code": 302,
+        "name": "KONAN Electric Co., Ltd."
+      },
+      {
+        "code": 303,
+        "name": "Binar Elektronik AB"
+      },
+      {
+        "code": 304,
+        "name": "Furukawa Electric Co."
+      },
+      {
+        "code": 305,
+        "name": "Cooper Energy Services"
+      },
+      {
+        "code": 306,
+        "name": "Schleicher GmbH & Co."
+      },
+      {
+        "code": 307,
+        "name": "Hirose Electric Co., Ltd"
+      },
+      {
+        "code": 308,
+        "name": "Western Servo Design Inc."
+      },
+      {
+        "code": 309,
+        "name": "ProSoft Technology"
+      },
+      {
+        "code": 310,
+        "name": "Reserved"
+      },
+      {
+        "code": 311,
+        "name": "Towa Shoko Co., Ltd"
+      },
+      {
+        "code": 312,
+        "name": "Kyopal Co., Ltd"
+      },
+      {
+        "code": 313,
+        "name": "Extron Co."
+      },
+      {
+        "code": 314,
+        "name": "Wieland Electric GmbH"
+      },
+      {
+        "code": 315,
+        "name": "SEW Eurodrive GmbH"
+      },
+      {
+        "code": 316,
+        "name": "Aera Corporation"
+      },
+      {
+        "code": 317,
+        "name": "STA Reutlingen"
+      },
+      {
+        "code": 318,
+        "name": "Reserved"
+      },
+      {
+        "code": 319,
+        "name": "Fuji Electric Group"
+      },
+      {
+        "code": 320,
+        "name": "Reserved"
+      },
+      {
+        "code": 321,
+        "name": "Reserved"
+      },
+      {
+        "code": 322,
+        "name": "ifm electronic gmbh"
+      },
+      {
+        "code": 323,
+        "name": "Reserved"
+      },
+      {
+        "code": 324,
+        "name": "IDEACOD-Hohner Automation S.A."
+      },
+      {
+        "code": 325,
+        "name": "CommScope Inc."
+      },
+      {
+        "code": 326,
+        "name": "Intelligent Platforms, LLC."
+      },
+      {
+        "code": 327,
+        "name": "Matsushita Electric Industrial Co., Ltd"
+      },
+      {
+        "code": 328,
+        "name": "Okaya Electronics Corporation"
+      },
+      {
+        "code": 329,
+        "name": "KASHIYAMA Industries, Ltd"
+      },
+      {
+        "code": 330,
+        "name": "JVC"
+      },
+      {
+        "code": 331,
+        "name": "Interface Corporation"
+      },
+      {
+        "code": 332,
+        "name": "Grape Systems Inc."
+      },
+      {
+        "code": 333,
+        "name": "Reserved"
+      },
+      {
+        "code": 334,
+        "name": "Reserved"
+      },
+      {
+        "code": 335,
+        "name": "Toshiba IT & Control Systems Corporation"
+      },
+      {
+        "code": 336,
+        "name": "Sanyo Machine Works, Ltd."
+      },
+      {
+        "code": 337,
+        "name": "Vansco Electronics Ltd."
+      },
+      {
+        "code": 338,
+        "name": "Dart Container Corp."
+      },
+      {
+        "code": 339,
+        "name": "Livingston & Co., Inc."
+      },
+      {
+        "code": 340,
+        "name": "Alfa Laval LKM as"
+      },
+      {
+        "code": 341,
+        "name": "BF ENTRON Ltd. (British Federal)"
+      },
+      {
+        "code": 342,
+        "name": "Bekaert Engineering NV"
+      },
+      {
+        "code": 343,
+        "name": "Ferran  Scientific Inc."
+      },
+      {
+        "code": 344,
+        "name": "KEBA Industrial Automation GmbH"
+      },
+      {
+        "code": 345,
+        "name": "Endress + Hauser"
+      },
+      {
+        "code": 346,
+        "name": "Lincoln Electric Company"
+      },
+      {
+        "code": 347,
+        "name": "ABB ALSTOM Power UK Ltd. (EGT)"
+      },
+      {
+        "code": 348,
+        "name": "Berger Lahr GmbH"
+      },
+      {
+        "code": 349,
+        "name": "Reserved"
+      },
+      {
+        "code": 350,
+        "name": "Federal Signal Corp."
+      },
+      {
+        "code": 351,
+        "name": "Kawasaki Robotics (USA), Inc."
+      },
+      {
+        "code": 352,
+        "name": "Bently Nevada Corporation"
+      },
+      {
+        "code": 354,
+        "name": "FRABA Posital"
+      },
+      {
+        "code": 355,
+        "name": "Elsag Bailey, Inc."
+      },
+      {
+        "code": 356,
+        "name": "FANUC Robotics America"
+      },
+      {
+        "code": 357,
+        "name": "Reserved"
+      },
+      {
+        "code": 358,
+        "name": "Surface Combustion, Inc."
+      },
+      {
+        "code": 359,
+        "name": "Reserved"
+      },
+      {
+        "code": 360,
+        "name": "AILES Electronics Ind. Co., Ltd."
+      },
+      {
+        "code": 361,
+        "name": "Wonderware Corporation"
+      },
+      {
+        "code": 362,
+        "name": "Particle Measuring Systems, Inc."
+      },
+      {
+        "code": 363,
+        "name": "Reserved"
+      },
+      {
+        "code": 364,
+        "name": "Reserved"
+      },
+      {
+        "code": 365,
+        "name": "BITS Co., Ltd"
+      },
+      {
+        "code": 366,
+        "name": "Japan Aviation Electronics Industry Ltd"
+      },
+      {
+        "code": 367,
+        "name": "Keyence Corporation"
+      },
+      {
+        "code": 368,
+        "name": "Kuroda Precision Industries Ltd."
+      },
+      {
+        "code": 369,
+        "name": "Mitsubishi Electric Semiconductor Application"
+      },
+      {
+        "code": 370,
+        "name": "Nippon Seisen Cable, Ltd."
+      },
+      {
+        "code": 371,
+        "name": "Omron ASO Co., Ltd"
+      },
+      {
+        "code": 372,
+        "name": "Seiko Seiki Co., Ltd."
+      },
+      {
+        "code": 373,
+        "name": "Sumitomo Heavy Industries, Ltd."
+      },
+      {
+        "code": 374,
+        "name": "Tango Computer Service Corporation"
+      },
+      {
+        "code": 375,
+        "name": "Technology Service, Inc."
+      },
+      {
+        "code": 376,
+        "name": "Toshiba Information Systems (Japan) Corporation"
+      },
+      {
+        "code": 377,
+        "name": "TOSHIBA Schneider Inverter Corporation"
+      },
+      {
+        "code": 378,
+        "name": "Toyooki Kogyo Co., Ltd."
+      },
+      {
+        "code": 379,
+        "name": "XEBEC"
+      },
+      {
+        "code": 380,
+        "name": "Madison Cable Corporation"
+      },
+      {
+        "code": 381,
+        "name": "Hitati Engineering & Services Co., Ltd"
+      },
+      {
+        "code": 382,
+        "name": "TEM-TECH Lab Co., Ltd"
+      },
+      {
+        "code": 383,
+        "name": "International Laboratory Corporation"
+      },
+      {
+        "code": 384,
+        "name": "Dyadic Systems Co., Ltd."
+      },
+      {
+        "code": 385,
+        "name": "SETO Electronics Industry Co., Ltd"
+      },
+      {
+        "code": 386,
+        "name": "Tokyo Electron Kyushu Limited"
+      },
+      {
+        "code": 387,
+        "name": "KEI System Co., Ltd"
+      },
+      {
+        "code": 388,
+        "name": "Reserved"
+      },
+      {
+        "code": 389,
+        "name": "Asahi Engineering Co., Ltd"
+      },
+      {
+        "code": 390,
+        "name": "Contrex Inc."
+      },
+      {
+        "code": 391,
+        "name": "Paradigm Controls Ltd."
+      },
+      {
+        "code": 392,
+        "name": "Reserved"
+      },
+      {
+        "code": 393,
+        "name": "Ohm Electric Co., Ltd."
+      },
+      {
+        "code": 394,
+        "name": "RKC Instrument Inc."
+      },
+      {
+        "code": 395,
+        "name": "Suzuki Motor Corporation"
+      },
+      {
+        "code": 396,
+        "name": "Custom Servo Motors Inc."
+      },
+      {
+        "code": 397,
+        "name": "PACE Control Systems"
+      },
+      {
+        "code": 398,
+        "name": "Selectron Systems AG"
+      },
+      {
+        "code": 399,
+        "name": "Reserved"
+      },
+      {
+        "code": 400,
+        "name": "LINTEC Co., Ltd."
+      },
+      {
+        "code": 401,
+        "name": "Hitachi Cable Ltd."
+      },
+      {
+        "code": 402,
+        "name": "BUSWARE Direct"
+      },
+      {
+        "code": 403,
+        "name": "Eaton Electric B.V. (former Holec Holland N.V.)"
+      },
+      {
+        "code": 404,
+        "name": "VAT Vacuum Valves AG"
+      },
+      {
+        "code": 405,
+        "name": "Omron Robotics and Safety Technologies, Inc."
+      },
+      {
+        "code": 406,
+        "name": "Alfa Instrumentos Eletronicos Ltda"
+      },
+      {
+        "code": 407,
+        "name": "TWK Elektronik GmbH"
+      },
+      {
+        "code": 408,
+        "name": "ABB Welding Systems AB"
+      },
+      {
+        "code": 409,
+        "name": "BYSTRONIC Maschinen AG"
+      },
+      {
+        "code": 410,
+        "name": "Kimura Electric Co., Ltd"
+      },
+      {
+        "code": 411,
+        "name": "Nissei Plastic Industrial Co., Ltd"
+      },
+      {
+        "code": 412,
+        "name": "Reserved"
+      },
+      {
+        "code": 413,
+        "name": "Kistler-Morse"
+      },
+      {
+        "code": 414,
+        "name": "Proteus Industries Inc."
+      },
+      {
+        "code": 415,
+        "name": "IDC Corporation"
+      },
+      {
+        "code": 416,
+        "name": "Nordson Corporation"
+      },
+      {
+        "code": 417,
+        "name": "Rapistan Systems"
+      },
+      {
+        "code": 418,
+        "name": "LP-Elektronik GmbH"
+      },
+      {
+        "code": 419,
+        "name": "GERBI & FASE S.p.A.(Fase Saldatura)"
+      },
+      {
+        "code": 420,
+        "name": "Phoenix Digital Corporation"
+      },
+      {
+        "code": 421,
+        "name": "Z-World Engineering"
+      },
+      {
+        "code": 422,
+        "name": "Honda R&D Co., Ltd."
+      },
+      {
+        "code": 423,
+        "name": "Bionics Instrument Co., Ltd."
+      },
+      {
+        "code": 424,
+        "name": "Teknic, Incorporated"
+      },
+      {
+        "code": 425,
+        "name": "R.Stahl, Inc."
+      },
+      {
+        "code": 426,
+        "name": "Reserved"
+      },
+      {
+        "code": 427,
+        "name": "Ryco Graphic Manufacturing Inc."
+      },
+      {
+        "code": 428,
+        "name": "Giddings & Lewis, Inc."
+      },
+      {
+        "code": 429,
+        "name": "Koganei Corporation"
+      },
+      {
+        "code": 430,
+        "name": "Reserved"
+      },
+      {
+        "code": 431,
+        "name": "Nichigoh Communication Electric Wire Co., Ltd."
+      },
+      {
+        "code": 433,
+        "name": "Fujikura Ltd."
+      },
+      {
+        "code": 434,
+        "name": "AD Link Technology Inc."
+      },
+      {
+        "code": 435,
+        "name": "Valmet Flow Control Inc (formerly StoneL)"
+      },
+      {
+        "code": 436,
+        "name": "Computer Optical Products, Inc."
+      },
+      {
+        "code": 437,
+        "name": "CONOS Inc."
+      },
+      {
+        "code": 438,
+        "name": "Erhardt+Leimer GmbH"
+      },
+      {
+        "code": 439,
+        "name": "UNIQUE Co. Ltd"
+      },
+      {
+        "code": 440,
+        "name": "Roboticsware, Inc."
+      },
+      {
+        "code": 441,
+        "name": "Nachi Fujikoshi Corporation"
+      },
+      {
+        "code": 442,
+        "name": "Hengstler GmbH"
+      },
+      {
+        "code": 443,
+        "name": "Vacon Plc"
+      },
+      {
+        "code": 444,
+        "name": "SUNNY GIKEN Inc."
+      },
+      {
+        "code": 445,
+        "name": "Lenze Drive Systems GmbH"
+      },
+      {
+        "code": 446,
+        "name": "CD Systems B.V."
+      },
+      {
+        "code": 447,
+        "name": "FMT/Aircraft Gate Support Systems AB"
+      },
+      {
+        "code": 448,
+        "name": "Axiomatic Technologies Corp"
+      },
+      {
+        "code": 449,
+        "name": "Embedded System Products, Inc."
+      },
+      {
+        "code": 450,
+        "name": "Reserved"
+      },
+      {
+        "code": 451,
+        "name": "Mencom Corporation"
+      },
+      {
+        "code": 452,
+        "name": "Kollmorgen"
+      },
+      {
+        "code": 453,
+        "name": "Panasonic Connect Co., Ltd."
+      },
+      {
+        "code": 454,
+        "name": "Dengensha Mfg. Co. Ltd."
+      },
+      {
+        "code": 455,
+        "name": "Quinn Systems Ltd."
+      },
+      {
+        "code": 456,
+        "name": "Tellima Technology Ltd"
+      },
+      {
+        "code": 457,
+        "name": "MDT, Software"
+      },
+      {
+        "code": 458,
+        "name": "Taiwan Keiso Co., Ltd"
+      },
+      {
+        "code": 459,
+        "name": "Pinnacle Systems"
+      },
+      {
+        "code": 460,
+        "name": "Ascom Hasler Mailing Sys"
+      },
+      {
+        "code": 461,
+        "name": "INSTRUMAR Limited"
+      },
+      {
+        "code": 462,
+        "name": "Reserved"
+      },
+      {
+        "code": 463,
+        "name": "Navistar International Transportation Corp"
+      },
+      {
+        "code": 464,
+        "name": "TRUMPF Huettinger"
+      },
+      {
+        "code": 465,
+        "name": "OCM Technology Inc."
+      },
+      {
+        "code": 466,
+        "name": "Professional Supply Inc."
+      },
+      {
+        "code": 467,
+        "name": "Control Solutions"
+      },
+      {
+        "code": 468,
+        "name": "Baumer IVO GmbH & Co. KG"
+      },
+      {
+        "code": 469,
+        "name": "Worcester Controls Corporation"
+      },
+      {
+        "code": 470,
+        "name": "Pyramid Technical Consultants, Inc."
+      },
+      {
+        "code": 471,
+        "name": "Eilersen Electric A/S"
+      },
+      {
+        "code": 472,
+        "name": "Apollo Fire Detectors Limited"
+      },
+      {
+        "code": 473,
+        "name": "Avtron Manufacturing, Inc."
+      },
+      {
+        "code": 474,
+        "name": "Reserved"
+      },
+      {
+        "code": 475,
+        "name": "Tokyo Keiso Co., Ltd."
+      },
+      {
+        "code": 476,
+        "name": "Daishowa Swiki Co., Ltd."
+      },
+      {
+        "code": 477,
+        "name": "Kojima Instruments Inc."
+      },
+      {
+        "code": 478,
+        "name": "Shimadzu Corporation"
+      },
+      {
+        "code": 479,
+        "name": "Tatsuta Electric Wire & Cable Co., Ltd."
+      },
+      {
+        "code": 480,
+        "name": "MECS Corporation"
+      },
+      {
+        "code": 481,
+        "name": "Tahara Electric"
+      },
+      {
+        "code": 482,
+        "name": "JTEKT ELECTRONICS CORPORATION"
+      },
+      {
+        "code": 483,
+        "name": "Clever Devices"
+      },
+      {
+        "code": 484,
+        "name": "GCD Hardware & Software GmbH"
+      },
+      {
+        "code": 485,
+        "name": "Reserved"
+      },
+      {
+        "code": 486,
+        "name": "Miller Electric Mfg Co."
+      },
+      {
+        "code": 487,
+        "name": "GEA Tuchenhagen GmbH"
+      },
+      {
+        "code": 488,
+        "name": "Riken Keiki Co., Ltd."
+      },
+      {
+        "code": 489,
+        "name": "Keisokugiken Corporation"
+      },
+      {
+        "code": 490,
+        "name": "Fuji Machine Mfg. Co., Ltd"
+      },
+      {
+        "code": 491,
+        "name": "Reserved"
+      },
+      {
+        "code": 492,
+        "name": "Nidec-Shimpo Corp."
+      },
+      {
+        "code": 493,
+        "name": "UTEC Corporation"
+      },
+      {
+        "code": 494,
+        "name": "Sanyo Electric Co. Ltd."
+      },
+      {
+        "code": 495,
+        "name": "Reserved"
+      },
+      {
+        "code": 496,
+        "name": "Reserved"
+      },
+      {
+        "code": 497,
+        "name": "Okano Electric Wire Co. Ltd"
+      },
+      {
+        "code": 498,
+        "name": "Shimaden Co. Ltd."
+      },
+      {
+        "code": 499,
+        "name": "Teddington Controls Ltd"
+      },
+      {
+        "code": 500,
+        "name": "Reserved"
+      },
+      {
+        "code": 501,
+        "name": "YASKAWA Europe (formerly VIPA GmbH)"
+      },
+      {
+        "code": 502,
+        "name": "Warwick Manufacturing Group"
+      },
+      {
+        "code": 503,
+        "name": "Danaher Controls"
+      },
+      {
+        "code": 504,
+        "name": "Reserved"
+      },
+      {
+        "code": 505,
+        "name": "Reserved"
+      },
+      {
+        "code": 506,
+        "name": "American Science & Engineering"
+      },
+      {
+        "code": 507,
+        "name": "Accutron Controls International Inc."
+      },
+      {
+        "code": 508,
+        "name": "Norcott Technologies Ltd"
+      },
+      {
+        "code": 509,
+        "name": "TB Woods, Inc"
+      },
+      {
+        "code": 510,
+        "name": "Proportion-Air, Inc."
+      },
+      {
+        "code": 511,
+        "name": "SICK Stegmann GmbH"
+      },
+      {
+        "code": 512,
+        "name": "Reserved"
+      },
+      {
+        "code": 513,
+        "name": "Edwards Signaling"
+      },
+      {
+        "code": 514,
+        "name": "Sumitomo Metal Industries, Ltd"
+      },
+      {
+        "code": 515,
+        "name": "Cosmo Instruments Co., Ltd."
+      },
+      {
+        "code": 516,
+        "name": "Denshosha Co., Ltd."
+      },
+      {
+        "code": 517,
+        "name": "Kaijo Corp."
+      },
+      {
+        "code": 518,
+        "name": "Michiproducts Co., Ltd."
+      },
+      {
+        "code": 519,
+        "name": "Miura Corporation"
+      },
+      {
+        "code": 520,
+        "name": "TG Information Network Co., Ltd."
+      },
+      {
+        "code": 521,
+        "name": "Fujikin, Inc."
+      },
+      {
+        "code": 522,
+        "name": "Estic Corp."
+      },
+      {
+        "code": 523,
+        "name": "GS Hydraulic Sales"
+      },
+      {
+        "code": 524,
+        "name": "Leuze Electronic GmbH & Co. KG"
+      },
+      {
+        "code": 525,
+        "name": "MTE Limited"
+      },
+      {
+        "code": 526,
+        "name": "Hyde Park Electronics, Inc."
+      },
+      {
+        "code": 527,
+        "name": "Pfeiffer Vacuum GmbH"
+      },
+      {
+        "code": 528,
+        "name": "Cyberlogic Technologies"
+      },
+      {
+        "code": 529,
+        "name": "OKUMA Corporation FA Systems Division"
+      },
+      {
+        "code": 530,
+        "name": "Reserved"
+      },
+      {
+        "code": 531,
+        "name": "Kokusai Electric Corporation"
+      },
+      {
+        "code": 532,
+        "name": "SHINKO TECHNOS"
+      },
+      {
+        "code": 533,
+        "name": "Itoh Denki Co., Ltd."
+      },
+      {
+        "code": 534,
+        "name": "Colorado Flow Tech Inc."
+      },
+      {
+        "code": 535,
+        "name": "Love Controls Division/Dwyer Inst."
+      },
+      {
+        "code": 536,
+        "name": "Alstom Drives and Controls"
+      },
+      {
+        "code": 537,
+        "name": "The Foxboro Company"
+      },
+      {
+        "code": 538,
+        "name": "Tescom Corporation"
+      },
+      {
+        "code": 539,
+        "name": "Reserved"
+      },
+      {
+        "code": 540,
+        "name": "Atlas Copco Airpower NV"
+      },
+      {
+        "code": 541,
+        "name": "Reserved"
+      },
+      {
+        "code": 542,
+        "name": "Autojet Technologies"
+      },
+      {
+        "code": 543,
+        "name": "Prima Electronics S.p.A."
+      },
+      {
+        "code": 544,
+        "name": "PMA GmbH"
+      },
+      {
+        "code": 545,
+        "name": "Shimafuji Electric Co., Ltd"
+      },
+      {
+        "code": 546,
+        "name": "Oki Electric Industry Co., Ltd"
+      },
+      {
+        "code": 547,
+        "name": "Kyushu Matsushita Electric Co., Ltd"
+      },
+      {
+        "code": 548,
+        "name": "JMACS"
+      },
+      {
+        "code": 549,
+        "name": "Tsuken Electric Ind Co., Ltd"
+      },
+      {
+        "code": 550,
+        "name": "Tamadic Co."
+      },
+      {
+        "code": 551,
+        "name": "MAATEL SA"
+      },
+      {
+        "code": 552,
+        "name": "OKUMA America"
+      },
+      {
+        "code": 553,
+        "name": "Control Techniques PLC-NA"
+      },
+      {
+        "code": 554,
+        "name": "TPC Wire & Cable"
+      },
+      {
+        "code": 555,
+        "name": "ATI Industrial Automation"
+      },
+      {
+        "code": 556,
+        "name": "Microcontrol (Australia) Pty Ltd"
+      },
+      {
+        "code": 557,
+        "name": "Serra Soldadura, S.A."
+      },
+      {
+        "code": 558,
+        "name": "Southwest Research Institute"
+      },
+      {
+        "code": 559,
+        "name": "Cabinplant International"
+      },
+      {
+        "code": 560,
+        "name": "Minebea Intec"
+      },
+      {
+        "code": 561,
+        "name": "Comau S.p.A."
+      },
+      {
+        "code": 562,
+        "name": "Phoenix Contact"
+      },
+      {
+        "code": 563,
+        "name": "Yokogawa MAT Corporation"
+      },
+      {
+        "code": 564,
+        "name": "asahi sangyo co., ltd."
+      },
+      {
+        "code": 565,
+        "name": "Valcom"
+      },
+      {
+        "code": 566,
+        "name": "Akita Myotoku Ltd."
+      },
+      {
+        "code": 567,
+        "name": "OBARA Corp."
+      },
+      {
+        "code": 568,
+        "name": "Suetron Electronic GmbH"
+      },
+      {
+        "code": 569,
+        "name": "Reserved"
+      },
+      {
+        "code": 570,
+        "name": "Serck Controls Limited"
+      },
+      {
+        "code": 571,
+        "name": "Fairchild Industrial Products Company"
+      },
+      {
+        "code": 572,
+        "name": "ARO Welding Technologies S.A.S."
+      },
+      {
+        "code": 573,
+        "name": "M2C GmbH"
+      },
+      {
+        "code": 574,
+        "name": "Shin Caterpillar Mitsubishi Ltd."
+      },
+      {
+        "code": 575,
+        "name": "Santest Co., Ltd."
+      },
+      {
+        "code": 576,
+        "name": "Cosmotechs Co., Ltd."
+      },
+      {
+        "code": 577,
+        "name": "Hitachi Electric Systems"
+      },
+      {
+        "code": 578,
+        "name": "Smartscan Ltd"
+      },
+      {
+        "code": 579,
+        "name": "Woodhead Software & Electronics France"
+      },
+      {
+        "code": 580,
+        "name": "Athena Controls, Inc."
+      },
+      {
+        "code": 581,
+        "name": "Norgren Automation Solutions, LLC (previously Syron Engineering & Manufacturing, Inc.)"
+      },
+      {
+        "code": 582,
+        "name": "Asahi Optical Co., Ltd."
+      },
+      {
+        "code": 583,
+        "name": "Sansha Electric Mfg. Co.,Ltd."
+      },
+      {
+        "code": 584,
+        "name": "CKD Nikki Denso Co,. Ltd."
+      },
+      {
+        "code": 585,
+        "name": "Star Micronics, Co., Ltd."
+      },
+      {
+        "code": 586,
+        "name": "Ecotecnia Socirtat Corp."
+      },
+      {
+        "code": 587,
+        "name": "Lenze"
+      },
+      {
+        "code": 588,
+        "name": "West Instruments Limited"
+      },
+      {
+        "code": 589,
+        "name": "LinMot"
+      },
+      {
+        "code": 590,
+        "name": "Delta Computer Systems, Inc."
+      },
+      {
+        "code": 591,
+        "name": "FANUC CORPORATION"
+      },
+      {
+        "code": 592,
+        "name": "Hearn-Gu Lee"
+      },
+      {
+        "code": 593,
+        "name": "ABB AG"
+      },
+      {
+        "code": 594,
+        "name": "Orion Machinery Co., Ltd."
+      },
+      {
+        "code": 595,
+        "name": "Reserved"
+      },
+      {
+        "code": 596,
+        "name": "Wire-Pro, Inc."
+      },
+      {
+        "code": 597,
+        "name": "Beijing Huakong Technology Co. Ltd."
+      },
+      {
+        "code": 598,
+        "name": "Yokoyama Shokai Co., Ltd."
+      },
+      {
+        "code": 599,
+        "name": "Toyogiken Co., Ltd."
+      },
+      {
+        "code": 600,
+        "name": "Coester Equipamentos Eletronicos Ltda."
+      },
+      {
+        "code": 601,
+        "name": "Kawasaki Robot"
+      },
+      {
+        "code": 602,
+        "name": "Electroplating Engineers of Japan Ltd."
+      },
+      {
+        "code": 603,
+        "name": "Robox S.p.a."
+      },
+      {
+        "code": 604,
+        "name": "Spraying Systems Company"
+      },
+      {
+        "code": 605,
+        "name": "Benshaw Inc."
+      },
+      {
+        "code": 606,
+        "name": "ZPA-DP A.S."
+      },
+      {
+        "code": 607,
+        "name": "Wired Rite Systems"
+      },
+      {
+        "code": 608,
+        "name": "Tandis Research, Inc."
+      },
+      {
+        "code": 609,
+        "name": "SSD Drives GmbH"
+      },
+      {
+        "code": 610,
+        "name": "ULVAC Japan Ltd."
+      },
+      {
+        "code": 611,
+        "name": "DYNAX Corporation"
+      },
+      {
+        "code": 612,
+        "name": "Nor-Cal Products, Inc."
+      },
+      {
+        "code": 613,
+        "name": "Aros Electronics AB"
+      },
+      {
+        "code": 614,
+        "name": "Jun-Tech Co., Ltd."
+      },
+      {
+        "code": 615,
+        "name": "HAN-MI Co. Ltd."
+      },
+      {
+        "code": 616,
+        "name": "uniNtech (formerly SungGi Internet)"
+      },
+      {
+        "code": 617,
+        "name": "Hae Pyung Electronics Reserch Institute"
+      },
+      {
+        "code": 618,
+        "name": "Milwaukee Electronics"
+      },
+      {
+        "code": 619,
+        "name": "OBERG Industries"
+      },
+      {
+        "code": 620,
+        "name": "Parker Hannifin/Compumotor Division"
+      },
+      {
+        "code": 621,
+        "name": "TECHNO DIGITAL CORPORATION"
+      },
+      {
+        "code": 622,
+        "name": "Network Supply Co., Ltd."
+      },
+      {
+        "code": 623,
+        "name": "Union Electronics Co., Ltd."
+      },
+      {
+        "code": 624,
+        "name": "Tritronics Services PM Ltd."
+      },
+      {
+        "code": 625,
+        "name": "Rockwell Automation/Sprecher+Schuh"
+      },
+      {
+        "code": 626,
+        "name": "Panasonic Corporation/Motor Company"
+      },
+      {
+        "code": 627,
+        "name": "Rolls-Royce Energy Systems, Inc."
+      },
+      {
+        "code": 628,
+        "name": "JEONGIL INTERCOM CO., LTD"
+      },
+      {
+        "code": 629,
+        "name": "Interroll Software & Electronics GmbH"
+      },
+      {
+        "code": 630,
+        "name": "Hubbell Wiring Device-Kellems (Delaware)"
+      },
+      {
+        "code": 631,
+        "name": "Intelligent Motion Systems"
+      },
+      {
+        "code": 632,
+        "name": "Reserved"
+      },
+      {
+        "code": 633,
+        "name": "INFICON AG"
+      },
+      {
+        "code": 634,
+        "name": "Hirschmann, a Belden brand"
+      },
+      {
+        "code": 635,
+        "name": "The Siemon Company"
+      },
+      {
+        "code": 636,
+        "name": "YAMAHA Motor Co. Ltd."
+      },
+      {
+        "code": 637,
+        "name": "aska corporation"
+      },
+      {
+        "code": 638,
+        "name": "Woodhead Connectivity"
+      },
+      {
+        "code": 639,
+        "name": "Trimble AB"
+      },
+      {
+        "code": 640,
+        "name": "Murrelektronik GmbH"
+      },
+      {
+        "code": 641,
+        "name": "Creatrix Labs, Inc."
+      },
+      {
+        "code": 642,
+        "name": "TopWorx"
+      },
+      {
+        "code": 643,
+        "name": "Kumho Industrial Co., Ltd."
+      },
+      {
+        "code": 644,
+        "name": "Wind River Systems, Inc."
+      },
+      {
+        "code": 645,
+        "name": "Bihl + Wiedemann GmbH"
+      },
+      {
+        "code": 646,
+        "name": "Harmonic Drive Systems Inc."
+      },
+      {
+        "code": 647,
+        "name": "Rikei Corporation"
+      },
+      {
+        "code": 648,
+        "name": "BL Autotec, Ltd."
+      },
+      {
+        "code": 649,
+        "name": "Hana Information & Technology Co., Ltd."
+      },
+      {
+        "code": 650,
+        "name": "Seoil Electric Co., Ltd."
+      },
+      {
+        "code": 651,
+        "name": "Fife Corporation"
+      },
+      {
+        "code": 652,
+        "name": "Shanghai Electrical Apparatus Research Institute"
+      },
+      {
+        "code": 653,
+        "name": "Detector Electronics"
+      },
+      {
+        "code": 654,
+        "name": "Parasense Development Centre"
+      },
+      {
+        "code": 655,
+        "name": "Reserved"
+      },
+      {
+        "code": 656,
+        "name": "Reserved"
+      },
+      {
+        "code": 657,
+        "name": "Six Tau S.p.A."
+      },
+      {
+        "code": 658,
+        "name": "Aucos GmbH"
+      },
+      {
+        "code": 659,
+        "name": "Rotork Controls Ltd."
+      },
+      {
+        "code": 660,
+        "name": "Automationdirect.com"
+      },
+      {
+        "code": 661,
+        "name": "Thermo BLH"
+      },
+      {
+        "code": 662,
+        "name": "System Controls, Ltd."
+      },
+      {
+        "code": 663,
+        "name": "Univer S.p.A."
+      },
+      {
+        "code": 664,
+        "name": "MKS-Tenta Technology"
+      },
+      {
+        "code": 665,
+        "name": "Lika Electronic"
+      },
+      {
+        "code": 666,
+        "name": "Mettler-Toledo"
+      },
+      {
+        "code": 667,
+        "name": "DXL USA Inc."
+      },
+      {
+        "code": 668,
+        "name": "Rockwell Automation/Entek IRD Intl."
+      },
+      {
+        "code": 669,
+        "name": "Nippon Otis Elevator Company"
+      },
+      {
+        "code": 670,
+        "name": "Sinano Electric, Co., Ltd."
+      },
+      {
+        "code": 671,
+        "name": "Sony Manufacturing Systems"
+      },
+      {
+        "code": 672,
+        "name": "Reserved"
+      },
+      {
+        "code": 673,
+        "name": "CONTEC CO., LTD."
+      },
+      {
+        "code": 674,
+        "name": "Automated Solutions"
+      },
+      {
+        "code": 675,
+        "name": "Controlweigh"
+      },
+      {
+        "code": 677,
+        "name": "Fincor Electronics"
+      },
+      {
+        "code": 678,
+        "name": "Cognex Corporation"
+      },
+      {
+        "code": 679,
+        "name": "Qualiflow"
+      },
+      {
+        "code": 680,
+        "name": "Weidmuller, Inc."
+      },
+      {
+        "code": 681,
+        "name": "Morinaga Milk Industry Co., Ltd."
+      },
+      {
+        "code": 682,
+        "name": "Takagi Industrial Co., Ltd."
+      },
+      {
+        "code": 683,
+        "name": "Wittenstein SE"
+      },
+      {
+        "code": 684,
+        "name": "Sena Technologies, Inc."
+      },
+      {
+        "code": 685,
+        "name": "Reserved"
+      },
+      {
+        "code": 686,
+        "name": "SPX Flow Technology Germany GmbH"
+      },
+      {
+        "code": 687,
+        "name": "Creator Teknisk Utvedkling AB"
+      },
+      {
+        "code": 688,
+        "name": "Reserved"
+      },
+      {
+        "code": 689,
+        "name": "Mibu Denki Industrial Co., Ltd."
+      },
+      {
+        "code": 690,
+        "name": "Takamastsu Machineer Section"
+      },
+      {
+        "code": 691,
+        "name": "Littelfuse"
+      },
+      {
+        "code": 692,
+        "name": "Reserved"
+      },
+      {
+        "code": 693,
+        "name": "Holjeron"
+      },
+      {
+        "code": 694,
+        "name": "Pfeiffer Vacuum SAS"
+      },
+      {
+        "code": 695,
+        "name": "Taesan LCD Co., Ltd."
+      },
+      {
+        "code": 696,
+        "name": "POSCON"
+      },
+      {
+        "code": 697,
+        "name": "VMIC"
+      },
+      {
+        "code": 698,
+        "name": "Matsushita Electric Works, Ltd."
+      },
+      {
+        "code": 699,
+        "name": "IAI Corporation"
+      },
+      {
+        "code": 700,
+        "name": "Horst GmbH"
+      },
+      {
+        "code": 701,
+        "name": "MicroControl GmbH & Co."
+      },
+      {
+        "code": 702,
+        "name": "Leine & Linde AB"
+      },
+      {
+        "code": 703,
+        "name": "Reserved"
+      },
+      {
+        "code": 704,
+        "name": "EC Elettronica Srl"
+      },
+      {
+        "code": 705,
+        "name": "VIT Software HB"
+      },
+      {
+        "code": 706,
+        "name": "Bronkhorst High-Tech B.V."
+      },
+      {
+        "code": 707,
+        "name": "Optex Co., Ltd."
+      },
+      {
+        "code": 708,
+        "name": "Yosio Electronic Co."
+      },
+      {
+        "code": 709,
+        "name": "Terasaki Electric Co., Ltd."
+      },
+      {
+        "code": 710,
+        "name": "Sodick Co., Ltd."
+      },
+      {
+        "code": 711,
+        "name": "MTS Systems Corporation-Automation Division"
+      },
+      {
+        "code": 712,
+        "name": "Mesa Systemtechnik"
+      },
+      {
+        "code": 713,
+        "name": "SHIN HO SYSTEM Co., Ltd."
+      },
+      {
+        "code": 714,
+        "name": "Goyo Electronics Co, Ltd."
+      },
+      {
+        "code": 715,
+        "name": "Loreme"
+      },
+      {
+        "code": 716,
+        "name": "SAB Brockskes GmbH & Co. KG"
+      },
+      {
+        "code": 717,
+        "name": "Trumpf Laser GmbH"
+      },
+      {
+        "code": 718,
+        "name": "Niigata Electronic Instruments Co., Ltd."
+      },
+      {
+        "code": 719,
+        "name": "Yokogawa Digital Computer Corporation"
+      },
+      {
+        "code": 720,
+        "name": "O.N. Electronic Co., Ltd."
+      },
+      {
+        "code": 721,
+        "name": "Industrial Control Communication, Inc."
+      },
+      {
+        "code": 722,
+        "name": "ABB, Inc."
+      },
+      {
+        "code": 723,
+        "name": "ElectroWave USA, Inc."
+      },
+      {
+        "code": 724,
+        "name": "Industrial Network Controls, LLC"
+      },
+      {
+        "code": 725,
+        "name": "KDT Systems Co., Ltd."
+      },
+      {
+        "code": 726,
+        "name": "SEFA Technology Inc."
+      },
+      {
+        "code": 727,
+        "name": "Nippon POP Rivets and Fasteners Ltd."
+      },
+      {
+        "code": 728,
+        "name": "Yamato Scale Co., Ltd."
+      },
+      {
+        "code": 729,
+        "name": "Zener Electric"
+      },
+      {
+        "code": 730,
+        "name": "GSE Scale Systems"
+      },
+      {
+        "code": 731,
+        "name": "ISAS (Integrated Switchgear & Sys. Pty Ltd)"
+      },
+      {
+        "code": 732,
+        "name": "Beta LaserMike Limited"
+      },
+      {
+        "code": 733,
+        "name": "TOEI Electric Co., Ltd."
+      },
+      {
+        "code": 734,
+        "name": "Hakko Electronics Co., Ltd"
+      },
+      {
+        "code": 735,
+        "name": "Reserved"
+      },
+      {
+        "code": 736,
+        "name": "RFID, Inc."
+      },
+      {
+        "code": 737,
+        "name": "Adwin Corporation"
+      },
+      {
+        "code": 738,
+        "name": "Osaka Vacuum, Ltd."
+      },
+      {
+        "code": 739,
+        "name": "A-Kyung Motion, Inc."
+      },
+      {
+        "code": 740,
+        "name": "Camozzi Automation spa"
+      },
+      {
+        "code": 741,
+        "name": "Crevis Co., LTD"
+      },
+      {
+        "code": 742,
+        "name": "Rice Lake Weighing Systems"
+      },
+      {
+        "code": 743,
+        "name": "Linux Network Services"
+      },
+      {
+        "code": 744,
+        "name": "KEB Automation KG"
+      },
+      {
+        "code": 745,
+        "name": "Hagiwara Electric Co., Ltd."
+      },
+      {
+        "code": 746,
+        "name": "Glass Inc. International"
+      },
+      {
+        "code": 748,
+        "name": "DVT Corporation"
+      },
+      {
+        "code": 749,
+        "name": "Woodward Governor"
+      },
+      {
+        "code": 750,
+        "name": "Mosaic Systems, Inc."
+      },
+      {
+        "code": 751,
+        "name": "Laserline GmbH"
+      },
+      {
+        "code": 752,
+        "name": "COM-TEC, Inc."
+      },
+      {
+        "code": 753,
+        "name": "Weed Instrument"
+      },
+      {
+        "code": 754,
+        "name": "Prof-face European Technology Center"
+      },
+      {
+        "code": 755,
+        "name": "Fuji Automation Co., Ltd."
+      },
+      {
+        "code": 756,
+        "name": "Matsutame Co., Ltd."
+      },
+      {
+        "code": 757,
+        "name": "Hitachi Via Mechanics, Ltd."
+      },
+      {
+        "code": 758,
+        "name": "Dainippon Screen Mfg. Co. Ltd."
+      },
+      {
+        "code": 759,
+        "name": "FLS Automation A/S"
+      },
+      {
+        "code": 760,
+        "name": "ABB Stotz Kontakt GmbH"
+      },
+      {
+        "code": 761,
+        "name": "Technical Marine Service"
+      },
+      {
+        "code": 762,
+        "name": "Advanced Automation Associates, Inc."
+      },
+      {
+        "code": 763,
+        "name": "Baumer Ident GmbH"
+      },
+      {
+        "code": 764,
+        "name": "Tsubakimoto Chain Co."
+      },
+      {
+        "code": 765,
+        "name": "Reserved"
+      },
+      {
+        "code": 766,
+        "name": "Furukawa Co., Ltd."
+      },
+      {
+        "code": 767,
+        "name": "Active Power"
+      },
+      {
+        "code": 768,
+        "name": "CSIRO Mining Automation"
+      },
+      {
+        "code": 769,
+        "name": "Matrix Integrated Systems"
+      },
+      {
+        "code": 770,
+        "name": "Digitronic Automationsanlagen GmbH"
+      },
+      {
+        "code": 771,
+        "name": "SICK STEGMANN Inc."
+      },
+      {
+        "code": 772,
+        "name": "TAE-Antriebstechnik GmbH"
+      },
+      {
+        "code": 773,
+        "name": "Electronic Solutions"
+      },
+      {
+        "code": 774,
+        "name": "Rocon L.L.C."
+      },
+      {
+        "code": 775,
+        "name": "Dijitized Communications Inc."
+      },
+      {
+        "code": 776,
+        "name": "Asahi Organic Chemicals Industry Co., Ltd."
+      },
+      {
+        "code": 777,
+        "name": "Hodensha"
+      },
+      {
+        "code": 778,
+        "name": "HARTING, Inc. of North America"
+      },
+      {
+        "code": 779,
+        "name": "Kuebler GmbH"
+      },
+      {
+        "code": 780,
+        "name": "Yamatake Corporation"
+      },
+      {
+        "code": 781,
+        "name": "JEOL"
+      },
+      {
+        "code": 782,
+        "name": "Yamatake Industrial Systems Co., Ltd."
+      },
+      {
+        "code": 783,
+        "name": "HAEHNE Elektronische Messgerate GmbH"
+      },
+      {
+        "code": 784,
+        "name": "Ci Technologies Pty Ltd (for Pelamos Industries)"
+      },
+      {
+        "code": 785,
+        "name": "N. SCHLUMBERGER & CIE"
+      },
+      {
+        "code": 786,
+        "name": "Teijin Seiki Co., Ltd."
+      },
+      {
+        "code": 787,
+        "name": "DAIKIN Industries, Ltd"
+      },
+      {
+        "code": 788,
+        "name": "RyuSyo Industrial Co., Ltd."
+      },
+      {
+        "code": 789,
+        "name": "SAGINOMIYA SEISAKUSHO, INC."
+      },
+      {
+        "code": 790,
+        "name": "Seishin Engineering Co., Ltd."
+      },
+      {
+        "code": 791,
+        "name": "Japan Support System Ltd."
+      },
+      {
+        "code": 792,
+        "name": "Decsys"
+      },
+      {
+        "code": 793,
+        "name": "Metronix Messgeraete und Elektronik GmbH"
+      },
+      {
+        "code": 794,
+        "name": "ROPEX Industrie - Elektronik GmbH"
+      },
+      {
+        "code": 795,
+        "name": "Vaccon Company, Inc."
+      },
+      {
+        "code": 796,
+        "name": "Siemens Industry, Inc."
+      },
+      {
+        "code": 797,
+        "name": "Ten X Technology, Inc."
+      },
+      {
+        "code": 798,
+        "name": "TE Connectivity"
+      },
+      {
+        "code": 799,
+        "name": "Delta Electronics, Inc."
+      },
+      {
+        "code": 800,
+        "name": "Denker"
+      },
+      {
+        "code": 801,
+        "name": "Autonics Corporation"
+      },
+      {
+        "code": 802,
+        "name": "JFE Electronic Engineering Pty. Ltd."
+      },
+      {
+        "code": 803,
+        "name": "Reserved"
+      },
+      {
+        "code": 804,
+        "name": "Electro-Sensors, Inc."
+      },
+      {
+        "code": 805,
+        "name": "Digi International, Inc."
+      },
+      {
+        "code": 806,
+        "name": "Texas Instruments"
+      },
+      {
+        "code": 807,
+        "name": "ADTEC Plasma Technology Co., Ltd"
+      },
+      {
+        "code": 808,
+        "name": "SICK AG"
+      },
+      {
+        "code": 809,
+        "name": "Ethernet Peripherals, Inc."
+      },
+      {
+        "code": 810,
+        "name": "Animatics Corporation"
+      },
+      {
+        "code": 811,
+        "name": "Reserved"
+      },
+      {
+        "code": 812,
+        "name": "Process Control Corporation"
+      },
+      {
+        "code": 813,
+        "name": "SystemV. Inc."
+      },
+      {
+        "code": 814,
+        "name": "Danaher Motion SRL"
+      },
+      {
+        "code": 815,
+        "name": "SHINKAWA Sensor Technology, Inc."
+      },
+      {
+        "code": 816,
+        "name": "Tesch GmbH & Co. KG"
+      },
+      {
+        "code": 817,
+        "name": "Reserved"
+      },
+      {
+        "code": 818,
+        "name": "Trend Controls Systems Ltd."
+      },
+      {
+        "code": 819,
+        "name": "Guangzhou ZHIYUAN Electronic Co., Ltd."
+      },
+      {
+        "code": 820,
+        "name": "Mykrolis Corporation"
+      },
+      {
+        "code": 821,
+        "name": "Bethlehem Steel Corporation"
+      },
+      {
+        "code": 822,
+        "name": "KK ICP"
+      },
+      {
+        "code": 823,
+        "name": "Takemoto Denki Corporation"
+      },
+      {
+        "code": 824,
+        "name": "Montalvo Corporation"
+      },
+      {
+        "code": 825,
+        "name": "Reserved"
+      },
+      {
+        "code": 826,
+        "name": "LEONI Special Cables GmbH"
+      },
+      {
+        "code": 827,
+        "name": "Reserved"
+      },
+      {
+        "code": 828,
+        "name": "ONO SOKKI CO.,LTD."
+      },
+      {
+        "code": 829,
+        "name": "RS Automation Co., Ltd."
+      },
+      {
+        "code": 830,
+        "name": "SHINDENGEN ELECTRIC MFG. CO. LTD"
+      },
+      {
+        "code": 831,
+        "name": "Origin Electric Co. Ltd."
+      },
+      {
+        "code": 832,
+        "name": "Quest Technical Solutions, Inc."
+      },
+      {
+        "code": 833,
+        "name": "LS Cable"
+      },
+      {
+        "code": 834,
+        "name": "NORD Electronic DRIVESYSTEMS GmbH"
+      },
+      {
+        "code": 835,
+        "name": "Northwire Inc."
+      },
+      {
+        "code": 836,
+        "name": "Engel Elektroantriebe GmbH"
+      },
+      {
+        "code": 837,
+        "name": "The Stanley Works"
+      },
+      {
+        "code": 838,
+        "name": "Celesco Transducer Products, Inc."
+      },
+      {
+        "code": 839,
+        "name": "Chugoku Electric Wire and Cable Co."
+      },
+      {
+        "code": 840,
+        "name": "Kongsberg Simrad AS"
+      },
+      {
+        "code": 841,
+        "name": "Panduit Corporation"
+      },
+      {
+        "code": 842,
+        "name": "Spellman High Voltage Electronics Corp."
+      },
+      {
+        "code": 843,
+        "name": "Kokusai Electric Alpha Co., Ltd."
+      },
+      {
+        "code": 844,
+        "name": "Brooks Automation, Inc."
+      },
+      {
+        "code": 845,
+        "name": "ANYWIRE CORPORATION"
+      },
+      {
+        "code": 846,
+        "name": "Honda Electronics Co. Ltd"
+      },
+      {
+        "code": 847,
+        "name": "REO AG"
+      },
+      {
+        "code": 848,
+        "name": "Heraeus Noblelight Fusion UV Inc."
+      },
+      {
+        "code": 849,
+        "name": "ASI Advanced Semiconductor Instruments GmbH"
+      },
+      {
+        "code": 850,
+        "name": "Datalogic, Inc."
+      },
+      {
+        "code": 851,
+        "name": "SoftPLC Corporation"
+      },
+      {
+        "code": 852,
+        "name": "Dynisco Instruments LLC"
+      },
+      {
+        "code": 853,
+        "name": "WEG"
+      },
+      {
+        "code": 854,
+        "name": "Teledyne LeCroy (formerly Frontline Test Equipment)"
+      },
+      {
+        "code": 855,
+        "name": "Tamagawa Seiki Co., Ltd."
+      },
+      {
+        "code": 856,
+        "name": "Multi Computing Co., Ltd."
+      },
+      {
+        "code": 857,
+        "name": "RVSI"
+      },
+      {
+        "code": 858,
+        "name": "Commercial Timesharing Inc."
+      },
+      {
+        "code": 859,
+        "name": "Tennessee Rand Automation LLC"
+      },
+      {
+        "code": 860,
+        "name": "Wacogiken Co., Ltd"
+      },
+      {
+        "code": 861,
+        "name": "Reflex Integration Inc."
+      },
+      {
+        "code": 862,
+        "name": "Siemens AG, A&D PI Flow Instruments"
+      },
+      {
+        "code": 863,
+        "name": "G. Bachmann Electronic GmbH"
+      },
+      {
+        "code": 864,
+        "name": "Entegris, Inc."
+      },
+      {
+        "code": 865,
+        "name": "Schweitzer Engineering Laboratories"
+      },
+      {
+        "code": 866,
+        "name": "ATR Industrie-Elektronik GmbH Co."
+      },
+      {
+        "code": 867,
+        "name": "PLASMATECH Co., Ltd"
+      },
+      {
+        "code": 868,
+        "name": "Reserved"
+      },
+      {
+        "code": 869,
+        "name": "GEMUE GmbH & Co. KG"
+      },
+      {
+        "code": 870,
+        "name": "Alcorn McBride Inc."
+      },
+      {
+        "code": 871,
+        "name": "MORI SEIKI CO., LTD"
+      },
+      {
+        "code": 872,
+        "name": "NodeTech Systems Ltd"
+      },
+      {
+        "code": 873,
+        "name": "Emhart Teknologies"
+      },
+      {
+        "code": 874,
+        "name": "Cervis, Inc."
+      },
+      {
+        "code": 875,
+        "name": "MSA Safety"
+      },
+      {
+        "code": 876,
+        "name": "NEDAP Power Supplies"
+      },
+      {
+        "code": 877,
+        "name": "Nippon Sanso Corporation"
+      },
+      {
+        "code": 878,
+        "name": "Mitomi Giken Co., Ltd."
+      },
+      {
+        "code": 879,
+        "name": "PULS GmbH"
+      },
+      {
+        "code": 880,
+        "name": "Reserved"
+      },
+      {
+        "code": 881,
+        "name": "Japan Control Engineering Ltd"
+      },
+      {
+        "code": 882,
+        "name": "Embedded Systems Korea (Former Zues Emtek Co Ltd.)"
+      },
+      {
+        "code": 883,
+        "name": "Automa SRL"
+      },
+      {
+        "code": 884,
+        "name": "Harms+Wende GmbH & Co KG"
+      },
+      {
+        "code": 885,
+        "name": "R. STAHL"
+      },
+      {
+        "code": 886,
+        "name": "Microwave Data Systems"
+      },
+      {
+        "code": 887,
+        "name": "Bernecker + Rainer Industrie-Elektronik GmbH"
+      },
+      {
+        "code": 888,
+        "name": "Hiprom Technologies"
+      },
+      {
+        "code": 889,
+        "name": "Reserved"
+      },
+      {
+        "code": 890,
+        "name": "Nitta Corporation"
+      },
+      {
+        "code": 891,
+        "name": "Kontron Modular Computers GmbH"
+      },
+      {
+        "code": 892,
+        "name": "Marlin Controls"
+      },
+      {
+        "code": 893,
+        "name": "Elcis Encoder s.r.l."
+      },
+      {
+        "code": 894,
+        "name": "Acromag, Inc."
+      },
+      {
+        "code": 895,
+        "name": "Avery Weigh-Tronix"
+      },
+      {
+        "code": 896,
+        "name": "Reserved"
+      },
+      {
+        "code": 897,
+        "name": "Reserved"
+      },
+      {
+        "code": 899,
+        "name": "Practicon Ltd."
+      },
+      {
+        "code": 900,
+        "name": "SCHUNK GmbH & Co. KG"
+      },
+      {
+        "code": 901,
+        "name": "MYNAH Technologies"
+      },
+      {
+        "code": 902,
+        "name": "Defontaine Groupe"
+      },
+      {
+        "code": 903,
+        "name": "Emerson Process Management Power & Water Solutions"
+      },
+      {
+        "code": 904,
+        "name": "F.A. Elec"
+      },
+      {
+        "code": 905,
+        "name": "Hottinger Baldwin Messtechnik GmbH"
+      },
+      {
+        "code": 906,
+        "name": "Teledyne DALSA"
+      },
+      {
+        "code": 907,
+        "name": "London Electronics Ltd."
+      },
+      {
+        "code": 908,
+        "name": "HSD SpA"
+      },
+      {
+        "code": 909,
+        "name": "Pepperl+Fuchs Comtrol"
+      },
+      {
+        "code": 910,
+        "name": "TEAM, S.A. (Tecnica Electronica de Automatismo Y Medida)"
+      },
+      {
+        "code": 911,
+        "name": "Regulateurs Europa Ltd"
+      },
+      {
+        "code": 912,
+        "name": "Reserved"
+      },
+      {
+        "code": 913,
+        "name": "Reserved"
+      },
+      {
+        "code": 914,
+        "name": "Micro Motion"
+      },
+      {
+        "code": 915,
+        "name": "Eckelmann AG"
+      },
+      {
+        "code": 916,
+        "name": "Hanyoung Nux"
+      },
+      {
+        "code": 917,
+        "name": "CFT Ransburg Japan KK"
+      },
+      {
+        "code": 918,
+        "name": "Kun Hung Electric Co. Ltd."
+      },
+      {
+        "code": 919,
+        "name": "Brimos wegbebakening b.v."
+      },
+      {
+        "code": 920,
+        "name": "NITTO SEIKO CO., LTD."
+      },
+      {
+        "code": 921,
+        "name": "Datasensing S.r.l."
+      },
+      {
+        "code": 922,
+        "name": "Yamazaki Machinery Works"
+      },
+      {
+        "code": 923,
+        "name": "Schmidt Technology"
+      },
+      {
+        "code": 924,
+        "name": "Parker Hannifin SpA (SBC Division)"
+      },
+      {
+        "code": 925,
+        "name": "HIMA Paul Hildebrandt GmbH"
+      },
+      {
+        "code": 926,
+        "name": "RivaTek, Inc."
+      },
+      {
+        "code": 927,
+        "name": "Misumi Corporation"
+      },
+      {
+        "code": 928,
+        "name": "GE Multilin"
+      },
+      {
+        "code": 929,
+        "name": "Measurement Computing Corporation"
+      },
+      {
+        "code": 930,
+        "name": "Jetter AG"
+      },
+      {
+        "code": 931,
+        "name": "Tokyo Electronics Systems Corporation"
+      },
+      {
+        "code": 932,
+        "name": "Togami Electric Mfg. Co., Ltd."
+      },
+      {
+        "code": 933,
+        "name": "HK Systems"
+      },
+      {
+        "code": 934,
+        "name": "CDA Systems Ltd."
+      },
+      {
+        "code": 935,
+        "name": "Aerotech Inc."
+      },
+      {
+        "code": 936,
+        "name": "JVL A/S"
+      },
+      {
+        "code": 937,
+        "name": "NovaTech Process Solutions LLC"
+      },
+      {
+        "code": 938,
+        "name": "Reserved"
+      },
+      {
+        "code": 939,
+        "name": "Cisco Systems"
+      },
+      {
+        "code": 940,
+        "name": "Grid Connect"
+      },
+      {
+        "code": 941,
+        "name": "ITW Automotive Finishing"
+      },
+      {
+        "code": 942,
+        "name": "HanYang System"
+      },
+      {
+        "code": 943,
+        "name": "ABB K.K. Technical Center"
+      },
+      {
+        "code": 944,
+        "name": "Taiyo Cable (Dongguan) Co., Ltd."
+      },
+      {
+        "code": 945,
+        "name": "Reserved"
+      },
+      {
+        "code": 946,
+        "name": "SEREN IPS INC"
+      },
+      {
+        "code": 947,
+        "name": "Belden"
+      },
+      {
+        "code": 948,
+        "name": "ControlNet International"
+      },
+      {
+        "code": 949,
+        "name": "Gefran S.P.A."
+      },
+      {
+        "code": 950,
+        "name": "ABB (Jokab Safety)"
+      },
+      {
+        "code": 951,
+        "name": "SUMITA OPTICAL GLASS, INC."
+      },
+      {
+        "code": 952,
+        "name": "Biffi Italia srl"
+      },
+      {
+        "code": 953,
+        "name": "Beck IPC GmbH"
+      },
+      {
+        "code": 954,
+        "name": "Copley Controls"
+      },
+      {
+        "code": 955,
+        "name": "Fagor Automation S. Coop."
+      },
+      {
+        "code": 956,
+        "name": "DARCOM"
+      },
+      {
+        "code": 957,
+        "name": "Frick Controls (div. of York International)"
+      },
+      {
+        "code": 958,
+        "name": "SymCom, Inc."
+      },
+      {
+        "code": 959,
+        "name": "Infranor"
+      },
+      {
+        "code": 960,
+        "name": "Kyosan Electric Mfg"
+      },
+      {
+        "code": 961,
+        "name": "Varian Vacuum Technologies"
+      },
+      {
+        "code": 962,
+        "name": "Messung Systems"
+      },
+      {
+        "code": 963,
+        "name": "Xantrex Technology, Inc."
+      },
+      {
+        "code": 964,
+        "name": "StarThis Inc."
+      },
+      {
+        "code": 965,
+        "name": "NF Chiyoda Electronics Co., Ltd."
+      },
+      {
+        "code": 966,
+        "name": "Flowserve Corporation"
+      },
+      {
+        "code": 967,
+        "name": "Spyder Controls Corp."
+      },
+      {
+        "code": 968,
+        "name": "IBA AG"
+      },
+      {
+        "code": 969,
+        "name": "SHIMOHIRA ELECTRIC MFG.CO.,LTD"
+      },
+      {
+        "code": 970,
+        "name": "Reserved"
+      },
+      {
+        "code": 971,
+        "name": "Siemens L&A"
+      },
+      {
+        "code": 972,
+        "name": "Eaton Automation GmbH (formerly Micro Innovation)"
+      },
+      {
+        "code": 973,
+        "name": "Switchgear & Instrumentation"
+      },
+      {
+        "code": 974,
+        "name": "Pre-Tech Co., Ltd."
+      },
+      {
+        "code": 975,
+        "name": "National Semiconductor"
+      },
+      {
+        "code": 976,
+        "name": "Invensys Operations Management"
+      },
+      {
+        "code": 977,
+        "name": "Ametek HDR Power Systems"
+      },
+      {
+        "code": 978,
+        "name": "Reserved"
+      },
+      {
+        "code": 979,
+        "name": "TETRA-K Corporation"
+      },
+      {
+        "code": 980,
+        "name": "C&M Corporation"
+      },
+      {
+        "code": 981,
+        "name": "Siempelkamp Maschinen"
+      },
+      {
+        "code": 982,
+        "name": "Reserved"
+      },
+      {
+        "code": 983,
+        "name": "Daifuku Co., Ltd"
+      },
+      {
+        "code": 984,
+        "name": "Electro-Matic Products Inc."
+      },
+      {
+        "code": 985,
+        "name": "BUSSAN MICROELECTRONICS CORP."
+      },
+      {
+        "code": 986,
+        "name": "ELAU AG"
+      },
+      {
+        "code": 987,
+        "name": "Hetronic USA"
+      },
+      {
+        "code": 988,
+        "name": "NIIGATA POWER SYSTEMS Co., Ltd."
+      },
+      {
+        "code": 989,
+        "name": "Software Horizons Inc."
+      },
+      {
+        "code": 990,
+        "name": "B3 Systems, Inc."
+      },
+      {
+        "code": 991,
+        "name": "Moxa, Inc."
+      },
+      {
+        "code": 992,
+        "name": "Reserved"
+      },
+      {
+        "code": 993,
+        "name": "S4 Integration"
+      },
+      {
+        "code": 994,
+        "name": "Elettro Stemi S.R.L."
+      },
+      {
+        "code": 995,
+        "name": "AquaSensors"
+      },
+      {
+        "code": 996,
+        "name": "Ifak System GmbH"
+      },
+      {
+        "code": 997,
+        "name": "SANKEI MANUFACTURING Co.,LTD."
+      },
+      {
+        "code": 998,
+        "name": "Emerson Network Power Co., Ltd."
+      },
+      {
+        "code": 999,
+        "name": "Fairmount Automation, Inc."
+      },
+      {
+        "code": 1000,
+        "name": "Bird Electronic Corporation"
+      },
+      {
+        "code": 1001,
+        "name": "Nabtesco Corporation"
+      },
+      {
+        "code": 1002,
+        "name": "AGM Electronics, Inc."
+      },
+      {
+        "code": 1003,
+        "name": "ARCX Inc."
+      },
+      {
+        "code": 1004,
+        "name": "DELTA I/O Co."
+      },
+      {
+        "code": 1005,
+        "name": "Chun IL Electric Ind. Co."
+      },
+      {
+        "code": 1006,
+        "name": "N-Tron Corporation, a Red Lion Company"
+      },
+      {
+        "code": 1007,
+        "name": "Nippon Pneumatics/Fludics System CO.,LTD."
+      },
+      {
+        "code": 1008,
+        "name": "DDK Ltd."
+      },
+      {
+        "code": 1009,
+        "name": "Seiko Epson Corporation"
+      },
+      {
+        "code": 1010,
+        "name": "halstrup-walcher GmbH"
+      },
+      {
+        "code": 1011,
+        "name": "ITT"
+      },
+      {
+        "code": 1012,
+        "name": "Ground Fault Systems bv"
+      },
+      {
+        "code": 1013,
+        "name": "Scolari Engineering S.p.A."
+      },
+      {
+        "code": 1014,
+        "name": "Vialis Traffic bv"
+      },
+      {
+        "code": 1015,
+        "name": "Weidmueller Group"
+      },
+      {
+        "code": 1016,
+        "name": "Shanghai Sibotech Automation Co. Ltd"
+      },
+      {
+        "code": 1017,
+        "name": "AEG Power Solutions GmbH"
+      },
+      {
+        "code": 1018,
+        "name": "Komatsu Electronics Inc."
+      },
+      {
+        "code": 1019,
+        "name": "Souriau"
+      },
+      {
+        "code": 1020,
+        "name": "Baumuller Chicago Corp."
+      },
+      {
+        "code": 1021,
+        "name": "J. Schmalz GmbH"
+      },
+      {
+        "code": 1022,
+        "name": "SEN Corporation"
+      },
+      {
+        "code": 1023,
+        "name": "Korenix Technology Co. Ltd"
+      },
+      {
+        "code": 1024,
+        "name": "Cooper Power Tools"
+      },
+      {
+        "code": 1025,
+        "name": "INNOBIS"
+      },
+      {
+        "code": 1026,
+        "name": "Shinho System"
+      },
+      {
+        "code": 1027,
+        "name": "Xm Services Ltd."
+      },
+      {
+        "code": 1028,
+        "name": "KVC Co., Ltd."
+      },
+      {
+        "code": 1029,
+        "name": "Sanyu Seiki Co., Ltd."
+      },
+      {
+        "code": 1030,
+        "name": "TuxPLC"
+      },
+      {
+        "code": 1031,
+        "name": "Northern Network Solutions"
+      },
+      {
+        "code": 1032,
+        "name": "Converteam GmbH"
+      },
+      {
+        "code": 1033,
+        "name": "Symbol Technologies"
+      },
+      {
+        "code": 1034,
+        "name": "S-TEAM Lab"
+      },
+      {
+        "code": 1035,
+        "name": "Maguire Products, Inc."
+      },
+      {
+        "code": 1036,
+        "name": "AC&T"
+      },
+      {
+        "code": 1037,
+        "name": "MITSUBISHI HEAVY INDUSTRIES, LTD. KOBE SHIPYARD & MACHINERY WORKS"
+      },
+      {
+        "code": 1038,
+        "name": "Hurletron Inc."
+      },
+      {
+        "code": 1039,
+        "name": "Chunichi Denshi Co., Ltd"
+      },
+      {
+        "code": 1040,
+        "name": "Cardinal Scale Mfg. Co."
+      },
+      {
+        "code": 1041,
+        "name": "METZ CONNECT USA Inc."
+      },
+      {
+        "code": 1042,
+        "name": "Base2"
+      },
+      {
+        "code": 1043,
+        "name": "ASRC Aerospace"
+      },
+      {
+        "code": 1044,
+        "name": "Beijing Stone Automation"
+      },
+      {
+        "code": 1045,
+        "name": "Changshu Switchgear Manufacture Ltd."
+      },
+      {
+        "code": 1046,
+        "name": "METRONIX Corp."
+      },
+      {
+        "code": 1047,
+        "name": "WIT"
+      },
+      {
+        "code": 1048,
+        "name": "ORMEC Systems Corp."
+      },
+      {
+        "code": 1049,
+        "name": "ASATech (China) Inc."
+      },
+      {
+        "code": 1050,
+        "name": "Controlled Systems Limited"
+      },
+      {
+        "code": 1051,
+        "name": "Mitsubishi Heavy Ind. Digital System Co., Ltd. (M.H.I.)"
+      },
+      {
+        "code": 1052,
+        "name": "Electrogrip"
+      },
+      {
+        "code": 1053,
+        "name": "TDS Automation"
+      },
+      {
+        "code": 1054,
+        "name": "T&C Power Conversion, Inc."
+      },
+      {
+        "code": 1055,
+        "name": "Robostar Co., Ltd"
+      },
+      {
+        "code": 1056,
+        "name": "Scancon A/S"
+      },
+      {
+        "code": 1057,
+        "name": "Haas Automation, Inc."
+      },
+      {
+        "code": 1058,
+        "name": "Eshed Technology"
+      },
+      {
+        "code": 1059,
+        "name": "Delta Electronic Inc."
+      },
+      {
+        "code": 1060,
+        "name": "Innovasic"
+      },
+      {
+        "code": 1061,
+        "name": "SoftDEL Systems Limited"
+      },
+      {
+        "code": 1062,
+        "name": "FiberFin, Inc."
+      },
+      {
+        "code": 1063,
+        "name": "Nicollet Technologies Corp."
+      },
+      {
+        "code": 1064,
+        "name": "B.F. Systems"
+      },
+      {
+        "code": 1065,
+        "name": "Empire Wire and Supply LLC"
+      },
+      {
+        "code": 1066,
+        "name": "ENDO KOGYO CO., LTD"
+      },
+      {
+        "code": 1067,
+        "name": "Elmo Motion Control LTD"
+      },
+      {
+        "code": 1068,
+        "name": "Reserved"
+      },
+      {
+        "code": 1069,
+        "name": "Asahi Keiki Co., Ltd."
+      },
+      {
+        "code": 1070,
+        "name": "Joy Mining Machinery"
+      },
+      {
+        "code": 1071,
+        "name": "MPM Engineering Ltd."
+      },
+      {
+        "code": 1072,
+        "name": "Wolke Inks & Printers GmbH"
+      },
+      {
+        "code": 1073,
+        "name": "Mitsubishi Electric Engineering Co., Ltd."
+      },
+      {
+        "code": 1074,
+        "name": "COMET AG"
+      },
+      {
+        "code": 1075,
+        "name": "Real Time Objects & Systems, LLC"
+      },
+      {
+        "code": 1076,
+        "name": "MISCO Refractometer"
+      },
+      {
+        "code": 1077,
+        "name": "JT Engineering Inc."
+      },
+      {
+        "code": 1078,
+        "name": "Automated Packing Systems"
+      },
+      {
+        "code": 1079,
+        "name": "Niobrara R&D Corp."
+      },
+      {
+        "code": 1080,
+        "name": "Garmin Ltd."
+      },
+      {
+        "code": 1081,
+        "name": "Japan Mobile Platform Co., Ltd"
+      },
+      {
+        "code": 1082,
+        "name": "Advosol Inc."
+      },
+      {
+        "code": 1083,
+        "name": "ABB Global Services Limited"
+      },
+      {
+        "code": 1084,
+        "name": "Sciemetric Instruments Inc."
+      },
+      {
+        "code": 1085,
+        "name": "Tata Elxsi Ltd."
+      },
+      {
+        "code": 1086,
+        "name": "Mechatronics Co.,Ltd"
+      },
+      {
+        "code": 1087,
+        "name": "Cooper Bussmann"
+      },
+      {
+        "code": 1088,
+        "name": "Trinite Automatisering B.V."
+      },
+      {
+        "code": 1089,
+        "name": "Peek Traffic B.V."
+      },
+      {
+        "code": 1090,
+        "name": "Acrison, Inc."
+      },
+      {
+        "code": 1091,
+        "name": "Applied Robotics, Inc."
+      },
+      {
+        "code": 1092,
+        "name": "FireBus LLC"
+      },
+      {
+        "code": 1093,
+        "name": "Sevenstar"
+      },
+      {
+        "code": 1094,
+        "name": "Magnetek"
+      },
+      {
+        "code": 1095,
+        "name": "Omron Microscan Systems, Inc."
+      },
+      {
+        "code": 1096,
+        "name": "Air Water Inc."
+      },
+      {
+        "code": 1097,
+        "name": "SensoPart Industriesensorik GmbH"
+      },
+      {
+        "code": 1098,
+        "name": "Tiefenbach Control Systems GmbH"
+      },
+      {
+        "code": 1099,
+        "name": "INOXPA S.A"
+      },
+      {
+        "code": 1100,
+        "name": "Zurich University of Applied Sciences"
+      },
+      {
+        "code": 1101,
+        "name": "Ethernet Direct"
+      },
+      {
+        "code": 1102,
+        "name": "GSI-Micro-E Systems"
+      },
+      {
+        "code": 1103,
+        "name": "S-Net Automation Co., Ltd."
+      },
+      {
+        "code": 1104,
+        "name": "Power Electronics S.L."
+      },
+      {
+        "code": 1105,
+        "name": "Renesas Electronics"
+      },
+      {
+        "code": 1106,
+        "name": "NSWCCD-SSES"
+      },
+      {
+        "code": 1107,
+        "name": "Porter Engineering Ltd."
+      },
+      {
+        "code": 1108,
+        "name": "Meggitt Airdynamics, Inc."
+      },
+      {
+        "code": 1109,
+        "name": "Inductive Automation"
+      },
+      {
+        "code": 1110,
+        "name": "Neural ID"
+      },
+      {
+        "code": 1111,
+        "name": "EEPod LLC"
+      },
+      {
+        "code": 1112,
+        "name": "Hitachi Industrial Equipment Systems Co.,Ltd."
+      },
+      {
+        "code": 1113,
+        "name": "Salem Automation"
+      },
+      {
+        "code": 1114,
+        "name": "port GmbH"
+      },
+      {
+        "code": 1115,
+        "name": "B & PLUS"
+      },
+      {
+        "code": 1116,
+        "name": "Graco Inc."
+      },
+      {
+        "code": 1117,
+        "name": "Altera Corporation"
+      },
+      {
+        "code": 1118,
+        "name": "Technology Brewing Corporation"
+      },
+      {
+        "code": 1119,
+        "name": "Reserved"
+      },
+      {
+        "code": 1120,
+        "name": "Reserved"
+      },
+      {
+        "code": 1121,
+        "name": "CSE Servelec"
+      },
+      {
+        "code": 1122,
+        "name": "Reserved"
+      },
+      {
+        "code": 1123,
+        "name": "Reserved"
+      },
+      {
+        "code": 1124,
+        "name": "Fluke Networks"
+      },
+      {
+        "code": 1125,
+        "name": "Tetra Pak Packaging Solutions SpA"
+      },
+      {
+        "code": 1126,
+        "name": "Racine Federated, Inc."
+      },
+      {
+        "code": 1127,
+        "name": "Pureron Japan Co., Ltd."
+      },
+      {
+        "code": 1128,
+        "name": "Reserved"
+      },
+      {
+        "code": 1129,
+        "name": "Reserved"
+      },
+      {
+        "code": 1130,
+        "name": "Brother Industries, Ltd."
+      },
+      {
+        "code": 1131,
+        "name": "Reserved"
+      },
+      {
+        "code": 1132,
+        "name": "Leroy Automation"
+      },
+      {
+        "code": 1133,
+        "name": "Reserved"
+      },
+      {
+        "code": 1134,
+        "name": "THK Co., Ltd."
+      },
+      {
+        "code": 1135,
+        "name": "Reserved"
+      },
+      {
+        "code": 1136,
+        "name": "Reserved"
+      },
+      {
+        "code": 1137,
+        "name": "TR-Electronic GmbH"
+      },
+      {
+        "code": 1138,
+        "name": "ASCON S.p.A."
+      },
+      {
+        "code": 1139,
+        "name": "Toledo do Brasil Industria de Balancas Ltda."
+      },
+      {
+        "code": 1140,
+        "name": "Caterpillar Global Mining Europe GmbH"
+      },
+      {
+        "code": 1141,
+        "name": "Emerson Process Management Valve Automation"
+      },
+      {
+        "code": 1142,
+        "name": "Alstom Transport"
+      },
+      {
+        "code": 1143,
+        "name": "Reserved"
+      },
+      {
+        "code": 1144,
+        "name": "Matrox Electronic Systems"
+      },
+      {
+        "code": 1145,
+        "name": "Littelfuse"
+      },
+      {
+        "code": 1146,
+        "name": "PLASMART, Inc."
+      },
+      {
+        "code": 1147,
+        "name": "Miyachi Corporation"
+      },
+      {
+        "code": 1148,
+        "name": "Reserved"
+      },
+      {
+        "code": 1149,
+        "name": "Reserved"
+      },
+      {
+        "code": 1150,
+        "name": "Promess Incorporated"
+      },
+      {
+        "code": 1151,
+        "name": "COPA-DATA GmbH"
+      },
+      {
+        "code": 1152,
+        "name": "Precision Engine Controls Corporation"
+      },
+      {
+        "code": 1153,
+        "name": "Alga Automacao e controle LTDA"
+      },
+      {
+        "code": 1154,
+        "name": "Lapp Group"
+      },
+      {
+        "code": 1155,
+        "name": "ICES"
+      },
+      {
+        "code": 1156,
+        "name": "Philips Lighting bv"
+      },
+      {
+        "code": 1157,
+        "name": "Aseptomag AG"
+      },
+      {
+        "code": 1158,
+        "name": "ARC Informatique"
+      },
+      {
+        "code": 1159,
+        "name": "Hesmor GmbH"
+      },
+      {
+        "code": 1160,
+        "name": "Kobe Steel, Ltd."
+      },
+      {
+        "code": 1161,
+        "name": "FLIR Systems"
+      },
+      {
+        "code": 1162,
+        "name": "Xcelgo A/S"
+      },
+      {
+        "code": 1163,
+        "name": "STRATON AUTOMATION"
+      },
+      {
+        "code": 1164,
+        "name": "Zypcom, Inc."
+      },
+      {
+        "code": 1165,
+        "name": "Swagelok"
+      },
+      {
+        "code": 1166,
+        "name": "Elspec"
+      },
+      {
+        "code": 1167,
+        "name": "ITT Water & Wastewater AB"
+      },
+      {
+        "code": 1168,
+        "name": "Kunbus GmbH Industrial Communication"
+      },
+      {
+        "code": 1169,
+        "name": "Reserved"
+      },
+      {
+        "code": 1170,
+        "name": "Performance Controls, Inc."
+      },
+      {
+        "code": 1171,
+        "name": "ACS Motion Control, Ltd."
+      },
+      {
+        "code": 1172,
+        "name": "Reserved"
+      },
+      {
+        "code": 1173,
+        "name": "IStar Technology Limited"
+      },
+      {
+        "code": 1174,
+        "name": "Alicat Scientific, Inc."
+      },
+      {
+        "code": 1175,
+        "name": "Reserved"
+      },
+      {
+        "code": 1176,
+        "name": "ADFweb.com SRL"
+      },
+      {
+        "code": 1177,
+        "name": "Tata Consultancy Services Limited"
+      },
+      {
+        "code": 1178,
+        "name": "CXR Ltd."
+      },
+      {
+        "code": 1179,
+        "name": "Vishay Nobel AB"
+      },
+      {
+        "code": 1180,
+        "name": "Reserved"
+      },
+      {
+        "code": 1181,
+        "name": "Emerson - SolaHD"
+      },
+      {
+        "code": 1182,
+        "name": "Endress+Hauser"
+      },
+      {
+        "code": 1183,
+        "name": "Bartec GmbH"
+      },
+      {
+        "code": 1184,
+        "name": "Reserved"
+      },
+      {
+        "code": 1185,
+        "name": "AccuSentry, Inc."
+      },
+      {
+        "code": 1186,
+        "name": "Curtiss Wright - Exlar Actuator Solutions"
+      },
+      {
+        "code": 1187,
+        "name": "ILS Technology"
+      },
+      {
+        "code": 1188,
+        "name": "Control Concepts, Inc."
+      },
+      {
+        "code": 1189,
+        "name": "Reserved"
+      },
+      {
+        "code": 1190,
+        "name": "Procon Engineering A Division of National Oilwell Varco UK Ltd"
+      },
+      {
+        "code": 1191,
+        "name": "Hermary"
+      },
+      {
+        "code": 1192,
+        "name": "Q-Lambda"
+      },
+      {
+        "code": 1193,
+        "name": "Reserved"
+      },
+      {
+        "code": 1194,
+        "name": "VAMP Ltd"
+      },
+      {
+        "code": 1195,
+        "name": "FlexLink"
+      },
+      {
+        "code": 1196,
+        "name": "Office FA.com Co., Ltd."
+      },
+      {
+        "code": 1197,
+        "name": "SPMC (Changzhou) Co. Ltd."
+      },
+      {
+        "code": 1198,
+        "name": "Anton Paar GmbH"
+      },
+      {
+        "code": 1199,
+        "name": "Zhuzhou CSR Times Electric Co., Ltd."
+      },
+      {
+        "code": 1200,
+        "name": "DeStaCo"
+      },
+      {
+        "code": 1201,
+        "name": "Synrad, Inc"
+      },
+      {
+        "code": 1202,
+        "name": "Bonfiglioli Vectron GmbH"
+      },
+      {
+        "code": 1203,
+        "name": "Pivotal Systems"
+      },
+      {
+        "code": 1204,
+        "name": "TKSCT"
+      },
+      {
+        "code": 1205,
+        "name": "Randy Nuernberger"
+      },
+      {
+        "code": 1206,
+        "name": "CENTRALP"
+      },
+      {
+        "code": 1207,
+        "name": "Tengen Group"
+      },
+      {
+        "code": 1208,
+        "name": "OES, Inc."
+      },
+      {
+        "code": 1209,
+        "name": "Actel Corporation"
+      },
+      {
+        "code": 1210,
+        "name": "Monaghan Engineering, Inc."
+      },
+      {
+        "code": 1211,
+        "name": "wenglor sensoric gmbh"
+      },
+      {
+        "code": 1212,
+        "name": "HSA Systems"
+      },
+      {
+        "code": 1213,
+        "name": "MKP Co., Ltd."
+      },
+      {
+        "code": 1214,
+        "name": "Tappan Wire and Cable"
+      },
+      {
+        "code": 1215,
+        "name": "Heinzmann GmbH & Co. KG"
+      },
+      {
+        "code": 1216,
+        "name": "Process Automation International Ltd."
+      },
+      {
+        "code": 1217,
+        "name": "Secure Crossing"
+      },
+      {
+        "code": 1218,
+        "name": "SMA Railway Technology GmbH"
+      },
+      {
+        "code": 1219,
+        "name": "FMS Force Measuring Systems AG"
+      },
+      {
+        "code": 1220,
+        "name": "ABT Endustri Enerji Sistemleri Sanayi Tic. Ltd. Sti."
+      },
+      {
+        "code": 1221,
+        "name": "MagneMotion Inc."
+      },
+      {
+        "code": 1222,
+        "name": "STS Co., Ltd."
+      },
+      {
+        "code": 1223,
+        "name": "Knorr-Bremse Espana, S.A. - Merak Division"
+      },
+      {
+        "code": 1224,
+        "name": "ABOUNDI, Inc."
+      },
+      {
+        "code": 1225,
+        "name": "Rosemount Inc."
+      },
+      {
+        "code": 1226,
+        "name": "GEA FES, Inc."
+      },
+      {
+        "code": 1227,
+        "name": "TMG Technologie und Engineering GmbH"
+      },
+      {
+        "code": 1228,
+        "name": "embeX GmbH"
+      },
+      {
+        "code": 1229,
+        "name": "GH Electrotermia, S.A."
+      },
+      {
+        "code": 1230,
+        "name": "Tolomatic"
+      },
+      {
+        "code": 1231,
+        "name": "Dukane"
+      },
+      {
+        "code": 1232,
+        "name": "Elco (Tian Jin) Electronics Co., Ltd."
+      },
+      {
+        "code": 1233,
+        "name": "Jacobs Automation"
+      },
+      {
+        "code": 1234,
+        "name": "Noda Radio Frequency Technologies Co., Ltd."
+      },
+      {
+        "code": 1235,
+        "name": "MSC Tuttlingen GmbH"
+      },
+      {
+        "code": 1236,
+        "name": "Hitachi Cable Manchester"
+      },
+      {
+        "code": 1237,
+        "name": "ACOREL SAS"
+      },
+      {
+        "code": 1238,
+        "name": "Global Engineering Solutions Co., Ltd."
+      },
+      {
+        "code": 1239,
+        "name": "ALTE Transportation, S.L."
+      },
+      {
+        "code": 1240,
+        "name": "Penko Engineering B.V."
+      },
+      {
+        "code": 1241,
+        "name": "Z-Tec Automation Systems Inc."
+      },
+      {
+        "code": 1242,
+        "name": "ENTRON Controls LLC"
+      },
+      {
+        "code": 1243,
+        "name": "Johannes Huebner Fabrik Elektrischer Maschinen GmbH"
+      },
+      {
+        "code": 1244,
+        "name": "RF IDeas, Inc."
+      },
+      {
+        "code": 1245,
+        "name": "Pentronic AB"
+      },
+      {
+        "code": 1246,
+        "name": "Atlas Copco IAS GmbH"
+      },
+      {
+        "code": 1247,
+        "name": "TDK-Lambda Corporation"
+      },
+      {
+        "code": 1248,
+        "name": "Reserved"
+      },
+      {
+        "code": 1249,
+        "name": "Reserved"
+      },
+      {
+        "code": 1250,
+        "name": "Altronic LLC"
+      },
+      {
+        "code": 1251,
+        "name": "Siemens AG"
+      },
+      {
+        "code": 1252,
+        "name": "Liebherr Transportation Systems GmbH & Co KG"
+      },
+      {
+        "code": 1253,
+        "name": "Reserved"
+      },
+      {
+        "code": 1254,
+        "name": "Reserved"
+      },
+      {
+        "code": 1255,
+        "name": "Reserved"
+      },
+      {
+        "code": 1256,
+        "name": "LMI Technologies"
+      },
+      {
+        "code": 1257,
+        "name": "Reserved"
+      },
+      {
+        "code": 1258,
+        "name": "Reserved"
+      },
+      {
+        "code": 1259,
+        "name": "Reserved"
+      },
+      {
+        "code": 1260,
+        "name": "Reserved"
+      },
+      {
+        "code": 1261,
+        "name": "CEPHALOS Automatisierung mbH"
+      },
+      {
+        "code": 1262,
+        "name": "Reserved"
+      },
+      {
+        "code": 1263,
+        "name": "Reserved"
+      },
+      {
+        "code": 1264,
+        "name": "Reserved"
+      },
+      {
+        "code": 1265,
+        "name": "Quabbin Wire & Cable Co., Inc."
+      },
+      {
+        "code": 1266,
+        "name": "Reserved"
+      },
+      {
+        "code": 1267,
+        "name": "Reserved"
+      },
+      {
+        "code": 1268,
+        "name": "HORIBA Precision Instruments (Beijing) Co.,Ltd."
+      },
+      {
+        "code": 1269,
+        "name": "Reserved"
+      },
+      {
+        "code": 1270,
+        "name": "Rovema GmbH"
+      },
+      {
+        "code": 1271,
+        "name": "Reserved"
+      },
+      {
+        "code": 1272,
+        "name": "IEP GmbH"
+      },
+      {
+        "code": 1273,
+        "name": "Reserved"
+      },
+      {
+        "code": 1274,
+        "name": "Reserved"
+      },
+      {
+        "code": 1275,
+        "name": "Reserved"
+      },
+      {
+        "code": 1276,
+        "name": "Reserved"
+      },
+      {
+        "code": 1277,
+        "name": "Control Chief Corporation"
+      },
+      {
+        "code": 1278,
+        "name": "Reserved"
+      },
+      {
+        "code": 1279,
+        "name": "Reserved"
+      },
+      {
+        "code": 1280,
+        "name": "Reserved"
+      },
+      {
+        "code": 1281,
+        "name": "Reserved"
+      },
+      {
+        "code": 1282,
+        "name": "PRIMES GmbH"
+      },
+      {
+        "code": 1283,
+        "name": "Branson Ultrasonics"
+      },
+      {
+        "code": 1284,
+        "name": "DEIF A/S"
+      },
+      {
+        "code": 1285,
+        "name": "CODESYS GmbH"
+      },
+      {
+        "code": 1286,
+        "name": "Reserved"
+      },
+      {
+        "code": 1287,
+        "name": "Smarteye Corporation"
+      },
+      {
+        "code": 1288,
+        "name": "Shibaura Machine"
+      },
+      {
+        "code": 1289,
+        "name": "HMS/BU Ewon"
+      },
+      {
+        "code": 1290,
+        "name": "OFS"
+      },
+      {
+        "code": 1291,
+        "name": "KROHNE"
+      },
+      {
+        "code": 1292,
+        "name": "Reserved"
+      },
+      {
+        "code": 1293,
+        "name": "Reserved"
+      },
+      {
+        "code": 1294,
+        "name": "Reserved"
+      },
+      {
+        "code": 1295,
+        "name": "Kistler Instrumente AG"
+      },
+      {
+        "code": 1296,
+        "name": "Reserved"
+      },
+      {
+        "code": 1297,
+        "name": "Reserved"
+      },
+      {
+        "code": 1298,
+        "name": "Reserved"
+      },
+      {
+        "code": 1299,
+        "name": "Reserved"
+      },
+      {
+        "code": 1300,
+        "name": "Reserved"
+      },
+      {
+        "code": 1301,
+        "name": "Xylem Analytics Germany GmbH"
+      },
+      {
+        "code": 1302,
+        "name": "Lenord, Bauer & Co. GmbH"
+      },
+      {
+        "code": 1303,
+        "name": "Carlo Gavazzi Controls"
+      },
+      {
+        "code": 1304,
+        "name": "Faiveley Transport"
+      },
+      {
+        "code": 1305,
+        "name": "Reserved"
+      },
+      {
+        "code": 1306,
+        "name": "Sensia LLC"
+      },
+      {
+        "code": 1307,
+        "name": "Kepware Technologies"
+      },
+      {
+        "code": 1308,
+        "name": "duagon AG"
+      },
+      {
+        "code": 1309,
+        "name": "Reserved"
+      },
+      {
+        "code": 1310,
+        "name": "Xylem Water Solutions"
+      },
+      {
+        "code": 1311,
+        "name": "Automation Professionals, LLC"
+      },
+      {
+        "code": 1312,
+        "name": "Reserved"
+      },
+      {
+        "code": 1313,
+        "name": "CEIA SpA"
+      },
+      {
+        "code": 1314,
+        "name": "Reserved"
+      },
+      {
+        "code": 1315,
+        "name": "Alphagate Automatisierungstechnik GmbH"
+      },
+      {
+        "code": 1316,
+        "name": "Mecco Partners, LLC"
+      },
+      {
+        "code": 1317,
+        "name": "LAP GmbH Laser Applikationen"
+      },
+      {
+        "code": 1318,
+        "name": "ABB S.p.A. - SACE Division"
+      },
+      {
+        "code": 1319,
+        "name": "Reserved"
+      },
+      {
+        "code": 1320,
+        "name": "Reserved"
+      },
+      {
+        "code": 1321,
+        "name": "C.E. Electronics, Inc."
+      },
+      {
+        "code": 1322,
+        "name": "Thermo Ramsey Inc., a part of Thermo Fisher Scientific"
+      },
+      {
+        "code": 1323,
+        "name": "Helmholz GmbH & Co. KG"
+      },
+      {
+        "code": 1324,
+        "name": "EUCHNER GmbH + Co. KG"
+      },
+      {
+        "code": 1325,
+        "name": "AMKmotion"
+      },
+      {
+        "code": 1326,
+        "name": "Badger Meter"
+      },
+      {
+        "code": 1327,
+        "name": "Reserved"
+      },
+      {
+        "code": 1328,
+        "name": "Fisher-Rosemount Systems, Inc. doing business as Process Systems & Solutions"
+      },
+      {
+        "code": 1329,
+        "name": "Conductix-Wampfler Automation GmbH"
+      },
+      {
+        "code": 1330,
+        "name": "Fairbanks Scales, Inc."
+      },
+      {
+        "code": 1331,
+        "name": "Imperx, Inc."
+      },
+      {
+        "code": 1332,
+        "name": "FRONIUS International GmbH"
+      },
+      {
+        "code": 1333,
+        "name": "Hoffman Enclosures"
+      },
+      {
+        "code": 1334,
+        "name": "Elecsys Corporation"
+      },
+      {
+        "code": 1335,
+        "name": "Reserved"
+      },
+      {
+        "code": 1336,
+        "name": "RACO Manufacturing and Engineering"
+      },
+      {
+        "code": 1337,
+        "name": "Hein Lanz Industrial Tech."
+      },
+      {
+        "code": 1338,
+        "name": "Codenomicon"
+      },
+      {
+        "code": 1339,
+        "name": "SABO Elektronik GmbH"
+      },
+      {
+        "code": 1340,
+        "name": "Reserved"
+      },
+      {
+        "code": 1341,
+        "name": "Sensirion AG"
+      },
+      {
+        "code": 1342,
+        "name": "SIKO GmbH"
+      },
+      {
+        "code": 1343,
+        "name": "Reserved"
+      },
+      {
+        "code": 1344,
+        "name": "GRUNDFOS"
+      },
+      {
+        "code": 1345,
+        "name": "Reserved"
+      },
+      {
+        "code": 1346,
+        "name": "Beijer Electronics Products AB"
+      },
+      {
+        "code": 1347,
+        "name": "Reserved"
+      },
+      {
+        "code": 1348,
+        "name": "AIMCO"
+      },
+      {
+        "code": 1349,
+        "name": "Reserved"
+      },
+      {
+        "code": 1350,
+        "name": "Coval"
+      },
+      {
+        "code": 1351,
+        "name": "Powell Industries"
+      },
+      {
+        "code": 1352,
+        "name": "Reserved"
+      },
+      {
+        "code": 1353,
+        "name": "IPDisplays"
+      },
+      {
+        "code": 1354,
+        "name": "SCAIME SAS"
+      },
+      {
+        "code": 1355,
+        "name": "Metal Work SpA"
+      },
+      {
+        "code": 1356,
+        "name": "Telsonic AG"
+      },
+      {
+        "code": 1357,
+        "name": "Reserved"
+      },
+      {
+        "code": 1358,
+        "name": "Hauch & Bach ApS"
+      },
+      {
+        "code": 1359,
+        "name": "Pago AG"
+      },
+      {
+        "code": 1360,
+        "name": "ULTIMATE Europe Transportation Equipment GmbH"
+      },
+      {
+        "code": 1361,
+        "name": "Reserved"
+      },
+      {
+        "code": 1362,
+        "name": "FW Murphy Production Controls, LLC"
+      },
+      {
+        "code": 1363,
+        "name": "Lake Cable LLC"
+      },
+      {
+        "code": 1364,
+        "name": "Reserved"
+      },
+      {
+        "code": 1365,
+        "name": "Reserved"
+      },
+      {
+        "code": 1366,
+        "name": "Reserved"
+      },
+      {
+        "code": 1367,
+        "name": "Reserved"
+      },
+      {
+        "code": 1368,
+        "name": "Nanotec Electronic GmbH & Co. KG"
+      },
+      {
+        "code": 1369,
+        "name": "SAMWON ACT Co., Ltd."
+      },
+      {
+        "code": 1370,
+        "name": "Aparian Inc."
+      },
+      {
+        "code": 1371,
+        "name": "Cosys Inc."
+      },
+      {
+        "code": 1372,
+        "name": "Insight Automation Inc."
+      },
+      {
+        "code": 1373,
+        "name": "Reserved"
+      },
+      {
+        "code": 1374,
+        "name": "FASTECH"
+      },
+      {
+        "code": 1375,
+        "name": "K.A. Schmersal GmbH & Co. KG"
+      },
+      {
+        "code": 1376,
+        "name": "Reserved"
+      },
+      {
+        "code": 1377,
+        "name": "Reserved"
+      },
+      {
+        "code": 1378,
+        "name": "SEIDENSHA ELECTRONICS CO., LTD"
+      },
+      {
+        "code": 1379,
+        "name": "Reserved"
+      },
+      {
+        "code": 1380,
+        "name": "Don Electronics Ltd"
+      },
+      {
+        "code": 1381,
+        "name": "burster gmbh & co kg"
+      },
+      {
+        "code": 1382,
+        "name": "Unitronics (1989) (RG) LTD"
+      },
+      {
+        "code": 1383,
+        "name": "OEM Technology Solutions"
+      },
+      {
+        "code": 1384,
+        "name": "Allied Motion"
+      },
+      {
+        "code": 1385,
+        "name": "Reserved"
+      },
+      {
+        "code": 1386,
+        "name": "DENGENSHA TOA CO., LTD"
+      },
+      {
+        "code": 1387,
+        "name": "Systec Systemtechnik und Industrieautomation GmbH"
+      },
+      {
+        "code": 1388,
+        "name": "Reserved"
+      },
+      {
+        "code": 1389,
+        "name": "Jenny Science AG"
+      },
+      {
+        "code": 1390,
+        "name": "Baumer Optronic GmbH"
+      },
+      {
+        "code": 1391,
+        "name": "Invertek Drives Ltd"
+      },
+      {
+        "code": 1392,
+        "name": "High Grade Controls Corporation"
+      },
+      {
+        "code": 1393,
+        "name": "Reserved"
+      },
+      {
+        "code": 1394,
+        "name": "Reserved"
+      },
+      {
+        "code": 1395,
+        "name": "Reserved"
+      },
+      {
+        "code": 1396,
+        "name": "Actia Systems"
+      },
+      {
+        "code": 1397,
+        "name": "Reserved"
+      },
+      {
+        "code": 1398,
+        "name": "Beijing Tianma Intelligent Control Technology Co., Ltd"
+      },
+      {
+        "code": 1399,
+        "name": "Universal Robots A/S"
+      },
+      {
+        "code": 1400,
+        "name": "Reserved"
+      },
+      {
+        "code": 1401,
+        "name": "Dialight"
+      },
+      {
+        "code": 1402,
+        "name": "E-T-A Elektrotechnische Apparate GmbH"
+      },
+      {
+        "code": 1403,
+        "name": "Kemppi Oy"
+      },
+      {
+        "code": 1404,
+        "name": "Reserved"
+      },
+      {
+        "code": 1405,
+        "name": "ORing Industrial Networking Corp."
+      },
+      {
+        "code": 1406,
+        "name": "Reserved"
+      },
+      {
+        "code": 1407,
+        "name": "Reserved"
+      },
+      {
+        "code": 1408,
+        "name": "ELAP S.R.L."
+      },
+      {
+        "code": 1409,
+        "name": "Applied Mining Technologies"
+      },
+      {
+        "code": 1410,
+        "name": "KITZ SCT Corporation"
+      },
+      {
+        "code": 1411,
+        "name": "VTEX Corporation"
+      },
+      {
+        "code": 1412,
+        "name": "ESYSE GmbH Embedded Systems Engineering"
+      },
+      {
+        "code": 1413,
+        "name": "Automation Controls"
+      },
+      {
+        "code": 1414,
+        "name": "Reserved"
+      },
+      {
+        "code": 1415,
+        "name": "Cincinnati Test Systems"
+      },
+      {
+        "code": 1416,
+        "name": "Reserved"
+      },
+      {
+        "code": 1417,
+        "name": "Zumbach Electronics Corp."
+      },
+      {
+        "code": 1418,
+        "name": "Emerson Automation Solutions"
+      },
+      {
+        "code": 1419,
+        "name": "CCS Inc."
+      },
+      {
+        "code": 1420,
+        "name": "Videojet, Inc."
+      },
+      {
+        "code": 1421,
+        "name": "Zebra Technologies"
+      },
+      {
+        "code": 1422,
+        "name": "ANRITSU CORPORATION"
+      },
+      {
+        "code": 1423,
+        "name": "Dimetix AG"
+      },
+      {
+        "code": 1424,
+        "name": "General Measure (China)"
+      },
+      {
+        "code": 1425,
+        "name": "Fortress Interlocks"
+      },
+      {
+        "code": 1426,
+        "name": "Reserved"
+      },
+      {
+        "code": 1427,
+        "name": "Task Force Tips"
+      },
+      {
+        "code": 1428,
+        "name": "SERVO-ROBOT INC."
+      },
+      {
+        "code": 1429,
+        "name": "Flow Devices and Systems, Inc."
+      },
+      {
+        "code": 1430,
+        "name": "nLIGHT, Inc."
+      },
+      {
+        "code": 1431,
+        "name": "Microchip Technology Inc."
+      },
+      {
+        "code": 1432,
+        "name": "Reserved"
+      },
+      {
+        "code": 1433,
+        "name": "Reserved"
+      },
+      {
+        "code": 1434,
+        "name": "Accutron Instruments Inc."
+      },
+      {
+        "code": 1435,
+        "name": "Kaeser Kompressoren SE"
+      },
+      {
+        "code": 1436,
+        "name": "Reserved"
+      },
+      {
+        "code": 1437,
+        "name": "Coherix, Inc."
+      },
+      {
+        "code": 1438,
+        "name": "FLSmidth A/S"
+      },
+      {
+        "code": 1439,
+        "name": "Reserved"
+      },
+      {
+        "code": 1440,
+        "name": "Cole-Parmer Instrument Company"
+      },
+      {
+        "code": 1441,
+        "name": "Wachendorff Automation GmbH & Co., KG"
+      },
+      {
+        "code": 1442,
+        "name": "SMAC Moving Coil Actuators"
+      },
+      {
+        "code": 1444,
+        "name": "PushCorp, Inc."
+      },
+      {
+        "code": 1445,
+        "name": "Fluke Process Instruments GmbH"
+      },
+      {
+        "code": 1446,
+        "name": "Mini Motor S.p.a"
+      },
+      {
+        "code": 1447,
+        "name": "I-CON Industry Tech."
+      },
+      {
+        "code": 1448,
+        "name": "Grace Technologies"
+      },
+      {
+        "code": 1449,
+        "name": "Zaxis Inc."
+      },
+      {
+        "code": 1450,
+        "name": "Lumasense Technologies"
+      },
+      {
+        "code": 1451,
+        "name": "Domino Printing"
+      },
+      {
+        "code": 1452,
+        "name": "Reserved"
+      },
+      {
+        "code": 1453,
+        "name": "Reserved"
+      },
+      {
+        "code": 1454,
+        "name": "Altus Sistemas de Automa\u00e7\u00e3o S.A."
+      },
+      {
+        "code": 1455,
+        "name": "Reserved"
+      },
+      {
+        "code": 1456,
+        "name": "InterTech Development Company"
+      },
+      {
+        "code": 1457,
+        "name": "Reserved"
+      },
+      {
+        "code": 1458,
+        "name": "Perle Systems Limited"
+      },
+      {
+        "code": 1459,
+        "name": "Utthunga Technologies Pvt Ltd.,"
+      },
+      {
+        "code": 1460,
+        "name": "Reserved"
+      },
+      {
+        "code": 1461,
+        "name": "WIPOTEC GmbH"
+      },
+      {
+        "code": 1462,
+        "name": "Atos spa"
+      },
+      {
+        "code": 1463,
+        "name": "Solartron Metrology LTD"
+      },
+      {
+        "code": 1464,
+        "name": "Reserved"
+      },
+      {
+        "code": 1465,
+        "name": "Analog Devices"
+      },
+      {
+        "code": 1466,
+        "name": "Power Electronics International, Inc."
+      },
+      {
+        "code": 1468,
+        "name": "Campbell Wrapper Corporation"
+      },
+      {
+        "code": 1469,
+        "name": "Herkules-Resotec Elektronik GmbH"
+      },
+      {
+        "code": 1470,
+        "name": "aignep spa"
+      },
+      {
+        "code": 1471,
+        "name": "Reserved"
+      },
+      {
+        "code": 1472,
+        "name": "PMV Automation AB"
+      },
+      {
+        "code": 1473,
+        "name": "Reserved"
+      },
+      {
+        "code": 1474,
+        "name": "ProTec Dynatronix LLC dba Dynatronix"
+      },
+      {
+        "code": 1475,
+        "name": "Reserved"
+      },
+      {
+        "code": 1476,
+        "name": "Bitronics, LLC."
+      },
+      {
+        "code": 1477,
+        "name": "Delta Tau Data Systems"
+      },
+      {
+        "code": 1478,
+        "name": "Reserved"
+      },
+      {
+        "code": 1479,
+        "name": "AUTOSOL"
+      },
+      {
+        "code": 1480,
+        "name": "ADB Safegate"
+      },
+      {
+        "code": 1481,
+        "name": "Reserved"
+      },
+      {
+        "code": 1482,
+        "name": "Reserved"
+      },
+      {
+        "code": 1483,
+        "name": "Artis GmbH"
+      },
+      {
+        "code": 1484,
+        "name": "REJ Co., LTD"
+      },
+      {
+        "code": 1485,
+        "name": "Vanderlande"
+      },
+      {
+        "code": 1486,
+        "name": "Packet Power"
+      },
+      {
+        "code": 1487,
+        "name": "ima-tec gmbh"
+      },
+      {
+        "code": 1488,
+        "name": "Vision Automation A/S"
+      },
+      {
+        "code": 1489,
+        "name": "PROCENTEC BV"
+      },
+      {
+        "code": 1490,
+        "name": "HETRONIK GmbH"
+      },
+      {
+        "code": 1491,
+        "name": "Lanmark Controls Inc."
+      },
+      {
+        "code": 1492,
+        "name": "Reserved"
+      },
+      {
+        "code": 1493,
+        "name": "flexlog GmbH"
+      },
+      {
+        "code": 1494,
+        "name": "YUCHANGTECH"
+      },
+      {
+        "code": 1495,
+        "name": "Dynapower Company"
+      },
+      {
+        "code": 1496,
+        "name": "TAKIKAWA ENGINEERING"
+      },
+      {
+        "code": 1497,
+        "name": "Ingersoll Rand"
+      },
+      {
+        "code": 1498,
+        "name": "ASA-RT s.r.l"
+      },
+      {
+        "code": 1499,
+        "name": "TRUMPF Schweiz AG"
+      },
+      {
+        "code": 1500,
+        "name": "Reserved"
+      },
+      {
+        "code": 1501,
+        "name": "Rinstrum"
+      },
+      {
+        "code": 1502,
+        "name": "Reserved"
+      },
+      {
+        "code": 1503,
+        "name": "Reserved"
+      },
+      {
+        "code": 1504,
+        "name": "BlueBotics SA"
+      },
+      {
+        "code": 1505,
+        "name": "Dynapar Corporation"
+      },
+      {
+        "code": 1506,
+        "name": "Blum-Novotest"
+      },
+      {
+        "code": 1507,
+        "name": "CIMON"
+      },
+      {
+        "code": 1508,
+        "name": "Dalian SeaSky Automation Co., ltd"
+      },
+      {
+        "code": 1509,
+        "name": "Rethink Robotics GmbH"
+      },
+      {
+        "code": 1510,
+        "name": "Ingeteam Power Technology S. A."
+      },
+      {
+        "code": 1511,
+        "name": "TOSEI ENGINEERING CORP."
+      },
+      {
+        "code": 1512,
+        "name": "SAMSON AG"
+      },
+      {
+        "code": 1513,
+        "name": "TGW Mechanics GmbH"
+      },
+      {
+        "code": 1514,
+        "name": "Diatrend Corporation"
+      },
+      {
+        "code": 1515,
+        "name": "Reserved"
+      },
+      {
+        "code": 1516,
+        "name": "VAHLE Automation GmbH"
+      },
+      {
+        "code": 1517,
+        "name": "JSL Technology Co.,Ltd."
+      },
+      {
+        "code": 1518,
+        "name": "NetTechnix E&P GmbH"
+      },
+      {
+        "code": 1519,
+        "name": "Reserved"
+      },
+      {
+        "code": 1520,
+        "name": "Tecweigh"
+      },
+      {
+        "code": 1521,
+        "name": "IVEK Corporation"
+      },
+      {
+        "code": 1522,
+        "name": "Reserved"
+      },
+      {
+        "code": 1523,
+        "name": "AQ M-TECH AB"
+      },
+      {
+        "code": 1524,
+        "name": "Rexnord Industries LLC"
+      },
+      {
+        "code": 1525,
+        "name": "Reserved"
+      },
+      {
+        "code": 1526,
+        "name": "OPTEX FA Co., Ltd"
+      },
+      {
+        "code": 1527,
+        "name": "Volktek Corporation"
+      },
+      {
+        "code": 1528,
+        "name": "INGENIA"
+      },
+      {
+        "code": 1529,
+        "name": "Reserved"
+      },
+      {
+        "code": 1530,
+        "name": "Analytical Technology, Inc."
+      },
+      {
+        "code": 1531,
+        "name": "Columbus McKinnon Corporation"
+      },
+      {
+        "code": 1532,
+        "name": "HBC-radiomatic GmbH"
+      },
+      {
+        "code": 1533,
+        "name": "Leonton Technologies"
+      },
+      {
+        "code": 1534,
+        "name": "Mitsubishi Electric India Pvt. Ltd."
+      },
+      {
+        "code": 1535,
+        "name": "FOBA Laser, ALLTEC GmbH"
+      },
+      {
+        "code": 1536,
+        "name": "Leakmaster Inc"
+      },
+      {
+        "code": 1537,
+        "name": "Buhler AG"
+      },
+      {
+        "code": 1538,
+        "name": "LINAK Denmark A/S"
+      },
+      {
+        "code": 1539,
+        "name": "Reserved"
+      },
+      {
+        "code": 1540,
+        "name": "SIEB & MEYER AG"
+      },
+      {
+        "code": 1541,
+        "name": "Reserved"
+      },
+      {
+        "code": 1542,
+        "name": "Watson-Marlow Ltd"
+      },
+      {
+        "code": 1543,
+        "name": "ABB Switzerland Ltd - Low Voltage Products"
+      },
+      {
+        "code": 1544,
+        "name": "Reserved"
+      },
+      {
+        "code": 1545,
+        "name": "adphos"
+      },
+      {
+        "code": 1546,
+        "name": "Hangzhou Hikrobot Technology Co., Ltd."
+      },
+      {
+        "code": 1547,
+        "name": "TOSS GmbH & Co. KG"
+      },
+      {
+        "code": 1548,
+        "name": "Solar Turbines Incorporated"
+      },
+      {
+        "code": 1549,
+        "name": "Reserved"
+      },
+      {
+        "code": 1550,
+        "name": "Reserved"
+      },
+      {
+        "code": 1551,
+        "name": "Carlo Gavazzi Industri"
+      },
+      {
+        "code": 1552,
+        "name": "Nippon Gear"
+      },
+      {
+        "code": 1553,
+        "name": "OSIsoft, LLC"
+      },
+      {
+        "code": 1554,
+        "name": "Rinco Ultrasonics AG"
+      },
+      {
+        "code": 1555,
+        "name": "Reserved"
+      },
+      {
+        "code": 1556,
+        "name": "Reserved"
+      },
+      {
+        "code": 1557,
+        "name": "Mitutoyo"
+      },
+      {
+        "code": 1558,
+        "name": "swisca"
+      },
+      {
+        "code": 1559,
+        "name": "Micro-Epsilon Messtechnik GmbH & Co. KG"
+      },
+      {
+        "code": 1560,
+        "name": "AMADA MIYACHI AMERICA"
+      },
+      {
+        "code": 1561,
+        "name": "Taihan Electric Wire Co., Ltd."
+      },
+      {
+        "code": 1562,
+        "name": "JANOME Corporation"
+      },
+      {
+        "code": 1563,
+        "name": "ISHIDA"
+      },
+      {
+        "code": 1564,
+        "name": "NAKANISHI INC."
+      },
+      {
+        "code": 1565,
+        "name": "Mecademic Inc."
+      },
+      {
+        "code": 1566,
+        "name": "Reserved"
+      },
+      {
+        "code": 1567,
+        "name": "Sigma (NSW) PTY LTD"
+      },
+      {
+        "code": 1568,
+        "name": "Hammond Power Solutions Inc.-Mesta"
+      },
+      {
+        "code": 1569,
+        "name": "Reserved"
+      },
+      {
+        "code": 1570,
+        "name": "Reserved"
+      },
+      {
+        "code": 1571,
+        "name": "TRIDIMEO"
+      },
+      {
+        "code": 1572,
+        "name": "Motortronics UK Ltd."
+      },
+      {
+        "code": 1573,
+        "name": "Doosan Robotics"
+      },
+      {
+        "code": 1574,
+        "name": "ADVANCED Motion Controls"
+      },
+      {
+        "code": 1575,
+        "name": "OnRobot A/S"
+      },
+      {
+        "code": 1576,
+        "name": "Reserved"
+      },
+      {
+        "code": 1577,
+        "name": "Oetiker"
+      },
+      {
+        "code": 1578,
+        "name": "SICK OPTEX"
+      },
+      {
+        "code": 1579,
+        "name": "Reserved"
+      },
+      {
+        "code": 1580,
+        "name": "Reserved"
+      },
+      {
+        "code": 1581,
+        "name": "Kahler Automation Corporation"
+      },
+      {
+        "code": 1582,
+        "name": "Accuenergy (Canada) Inc."
+      },
+      {
+        "code": 1583,
+        "name": "TCI, LLC - An Allied Motion Company"
+      },
+      {
+        "code": 1584,
+        "name": "Sun Automation"
+      },
+      {
+        "code": 1585,
+        "name": "READY Robotics Corporation"
+      },
+      {
+        "code": 1586,
+        "name": "PEM, Power Eng & Mfg., Inc"
+      },
+      {
+        "code": 1587,
+        "name": "D\u00fcrr Somac GmbH"
+      },
+      {
+        "code": 1588,
+        "name": "Reserved"
+      },
+      {
+        "code": 1589,
+        "name": "Reserved"
+      },
+      {
+        "code": 1590,
+        "name": "Reserved"
+      },
+      {
+        "code": 1591,
+        "name": "RICOH Industrial Solutions Inc."
+      },
+      {
+        "code": 1592,
+        "name": "Shanghai Junqian Sensing Technology Co. Ltd."
+      },
+      {
+        "code": 1593,
+        "name": "Knick Elektronische Messger\u00e4te GmbH & Co. KG"
+      },
+      {
+        "code": 1594,
+        "name": "Magnescale. Co., Ltd."
+      },
+      {
+        "code": 1595,
+        "name": "Reserved"
+      },
+      {
+        "code": 1596,
+        "name": "Weintek Labs., Inc"
+      },
+      {
+        "code": 1597,
+        "name": "Sherpa, Inc."
+      },
+      {
+        "code": 1598,
+        "name": "Inspekto A.M.V LTD"
+      },
+      {
+        "code": 1599,
+        "name": "Hydronix Ltd"
+      },
+      {
+        "code": 1600,
+        "name": "AIOI- SYSTEMS CO. LTD."
+      },
+      {
+        "code": 1601,
+        "name": "Ingenieurb\u00fcro Mewes & Partner GmbH"
+      },
+      {
+        "code": 1602,
+        "name": "HIGHYAG Lasertechnologie GmbH"
+      },
+      {
+        "code": 1603,
+        "name": "Ningbo Jetron Technology Co. Ltd."
+      },
+      {
+        "code": 1604,
+        "name": "Myostat Motion Control"
+      },
+      {
+        "code": 1605,
+        "name": "A-T Controls, Inc"
+      },
+      {
+        "code": 1606,
+        "name": "M2M craft Co., Ltd."
+      },
+      {
+        "code": 1607,
+        "name": "FUTEK Advanced Sensor Technology, Inc."
+      },
+      {
+        "code": 1608,
+        "name": "Cetek"
+      },
+      {
+        "code": 1609,
+        "name": "Norgren Manufacturing Co., Ltd."
+      },
+      {
+        "code": 1610,
+        "name": "Bernstein AG"
+      },
+      {
+        "code": 1611,
+        "name": "Hitachi Industrial Products, Ltd."
+      },
+      {
+        "code": 1612,
+        "name": "Reserved"
+      },
+      {
+        "code": 1613,
+        "name": "Duplomatic MS spa"
+      },
+      {
+        "code": 1614,
+        "name": "Ambrit Ltd"
+      },
+      {
+        "code": 1615,
+        "name": "Highlight Tech Corp."
+      },
+      {
+        "code": 1616,
+        "name": "New Power Plasma Co. Ltd."
+      },
+      {
+        "code": 1617,
+        "name": "AGCO Corporation"
+      },
+      {
+        "code": 1618,
+        "name": "Techman Robot"
+      },
+      {
+        "code": 1619,
+        "name": "Nabeya Bi-tech Kaisha"
+      },
+      {
+        "code": 1620,
+        "name": "Reserved"
+      },
+      {
+        "code": 1621,
+        "name": "Panasonic Corporation / Electric Works Company"
+      },
+      {
+        "code": 1622,
+        "name": "Cytiva"
+      },
+      {
+        "code": 1623,
+        "name": "Janasi Industries Ltd."
+      },
+      {
+        "code": 1624,
+        "name": "Haffmans BV"
+      },
+      {
+        "code": 1625,
+        "name": "Reserved"
+      },
+      {
+        "code": 1626,
+        "name": "Omniview Pty Ltd"
+      },
+      {
+        "code": 1627,
+        "name": "Reserved"
+      },
+      {
+        "code": 1628,
+        "name": "Dover Flexo Electronics"
+      },
+      {
+        "code": 1629,
+        "name": "Reserved"
+      },
+      {
+        "code": 1630,
+        "name": "IDEM Safety Switches"
+      },
+      {
+        "code": 1631,
+        "name": "Sonotroagel GmbH"
+      },
+      {
+        "code": 1632,
+        "name": "Thermo Gamma-Metrics LLC, a part of Thermo Fisher Scientific"
+      },
+      {
+        "code": 1633,
+        "name": "BBH Products"
+      },
+      {
+        "code": 1634,
+        "name": "RSI Elektrotechnik"
+      },
+      {
+        "code": 1635,
+        "name": "Carlo Gavazzi Ltd"
+      },
+      {
+        "code": 1636,
+        "name": "KOFLOC Corp."
+      },
+      {
+        "code": 1637,
+        "name": "VTScada by Trihedral"
+      },
+      {
+        "code": 1638,
+        "name": "Hach"
+      },
+      {
+        "code": 1639,
+        "name": "Cogniac"
+      },
+      {
+        "code": 1640,
+        "name": "Toshiba Infrastructure Systems & Solutions Corporation"
+      },
+      {
+        "code": 1641,
+        "name": "Cannon-Automata"
+      },
+      {
+        "code": 1642,
+        "name": "Rosenberger"
+      },
+      {
+        "code": 1643,
+        "name": "Blue-White Industries"
+      },
+      {
+        "code": 1644,
+        "name": "Cellumation GmbH"
+      },
+      {
+        "code": 1645,
+        "name": "TEAC Corp."
+      },
+      {
+        "code": 1646,
+        "name": "AEG Identifikationssysteme GmbH"
+      },
+      {
+        "code": 1647,
+        "name": "MARS TOHKEN SOLUTION CO.LTD."
+      },
+      {
+        "code": 1648,
+        "name": "Midas Technology Corp."
+      },
+      {
+        "code": 1649,
+        "name": "Dinkle Enterprise Co., Ltd."
+      },
+      {
+        "code": 1650,
+        "name": "THALES"
+      },
+      {
+        "code": 1651,
+        "name": "Dunkermotoren"
+      },
+      {
+        "code": 1652,
+        "name": "SONOTEC GmbH"
+      },
+      {
+        "code": 1653,
+        "name": "Brinkmann Pumpen"
+      },
+      {
+        "code": 1654,
+        "name": "Rheonics"
+      },
+      {
+        "code": 1655,
+        "name": "Precimeter"
+      },
+      {
+        "code": 1656,
+        "name": "Reserved"
+      },
+      {
+        "code": 1657,
+        "name": "ALGO SYSTEM CO., LTD."
+      },
+      {
+        "code": 1658,
+        "name": "Christ Electronic Systems GmbH"
+      },
+      {
+        "code": 1659,
+        "name": "JFcontrol Co., Ltd."
+      },
+      {
+        "code": 1660,
+        "name": "Shenzhen Inovance Technology Co., Ltd"
+      },
+      {
+        "code": 1661,
+        "name": "Rheonik Coriolis Mass Flow Sensors"
+      },
+      {
+        "code": 1662,
+        "name": "Ichor Systems, Inc."
+      },
+      {
+        "code": 1663,
+        "name": "di-soric GmbH & Co. KG"
+      },
+      {
+        "code": 1664,
+        "name": "Amphenol ICC"
+      },
+      {
+        "code": 1665,
+        "name": "Ningbo AirTAC Automation Industrial Co., Ltd."
+      },
+      {
+        "code": 1666,
+        "name": "RSI"
+      },
+      {
+        "code": 1667,
+        "name": "Soft Robotics Inc."
+      },
+      {
+        "code": 1668,
+        "name": "MUSCLE CORPORATION"
+      },
+      {
+        "code": 1669,
+        "name": "Spotlight Systems LLC"
+      },
+      {
+        "code": 1670,
+        "name": "Afag Holding AG"
+      },
+      {
+        "code": 1671,
+        "name": "TELESIS TECHNOLOGIES INC"
+      },
+      {
+        "code": 1672,
+        "name": "SSI Schaefer Automation GmbH"
+      },
+      {
+        "code": 1673,
+        "name": "Super Systems, Inc."
+      },
+      {
+        "code": 1674,
+        "name": "CoreTigo LTD"
+      },
+      {
+        "code": 1675,
+        "name": "Inxpect SPA"
+      },
+      {
+        "code": 1676,
+        "name": "Kostal Industrie Elektrik GmbH"
+      },
+      {
+        "code": 1677,
+        "name": "JingQi (Tianjin) technology Co.,Ltd"
+      },
+      {
+        "code": 1678,
+        "name": "AGI Suretrack"
+      },
+      {
+        "code": 1679,
+        "name": "JAKA Robotics Co., Ltd."
+      },
+      {
+        "code": 1680,
+        "name": "Polarteknik Oy"
+      },
+      {
+        "code": 1681,
+        "name": "RoboteQ, Inc"
+      },
+      {
+        "code": 1682,
+        "name": "Uson"
+      },
+      {
+        "code": 1683,
+        "name": "Opt Machine Vision Tech Co., Ltd"
+      },
+      {
+        "code": 1684,
+        "name": "Asyril SA"
+      },
+      {
+        "code": 1685,
+        "name": "Georg Fischer Piping Systems"
+      },
+      {
+        "code": 1686,
+        "name": "Aber Instruments Ltd"
+      },
+      {
+        "code": 1687,
+        "name": "CodeWrights GmbH"
+      },
+      {
+        "code": 1688,
+        "name": "Neurala, Inc."
+      },
+      {
+        "code": 1689,
+        "name": "Panasonic Software Development Center Dalian Co.,Ltd."
+      },
+      {
+        "code": 1690,
+        "name": "Perinet GmbH"
+      },
+      {
+        "code": 1691,
+        "name": "MS Ultraschall Technologie GmbH"
+      },
+      {
+        "code": 1692,
+        "name": "PLASUS GmbH"
+      },
+      {
+        "code": 1693,
+        "name": "Nikon Corporation"
+      },
+      {
+        "code": 1694,
+        "name": "Shenzhen Hengzhiyuan Technology Corporation Ltd."
+      },
+      {
+        "code": 1695,
+        "name": "Kowa Optronics Co., Ltd."
+      },
+      {
+        "code": 1696,
+        "name": "Specialist Mechanical Engineers"
+      },
+      {
+        "code": 1697,
+        "name": "CMD Corporation"
+      },
+      {
+        "code": 1698,
+        "name": "Sanwa Engineering Corp."
+      },
+      {
+        "code": 1699,
+        "name": "Intellore Systems Pvt. Ltd"
+      },
+      {
+        "code": 1700,
+        "name": "Toledo e Souza"
+      },
+      {
+        "code": 1701,
+        "name": "PBS Biotech, Inc"
+      },
+      {
+        "code": 1702,
+        "name": "PLANET Technology Corporation"
+      },
+      {
+        "code": 1703,
+        "name": "Robatech AG"
+      },
+      {
+        "code": 1704,
+        "name": "MARKEM-IMAJE"
+      },
+      {
+        "code": 1705,
+        "name": "Novanta IMS"
+      },
+      {
+        "code": 1706,
+        "name": "Bamboo-Dynamics"
+      },
+      {
+        "code": 1707,
+        "name": "FACTS Engineering, LLC"
+      },
+      {
+        "code": 1708,
+        "name": "Digital Dynamics"
+      },
+      {
+        "code": 1709,
+        "name": "Fatek Automation Corporation"
+      },
+      {
+        "code": 1710,
+        "name": "Hanwha"
+      },
+      {
+        "code": 1711,
+        "name": "Fukuda"
+      },
+      {
+        "code": 1712,
+        "name": "Zhejiang Eternal Automation Sci-Tec Co.,Ltd"
+      },
+      {
+        "code": 1713,
+        "name": "KYOWA ELECTRONIC INSTRUMENTS CO.,LTD."
+      },
+      {
+        "code": 1714,
+        "name": "Vaisala Oyj"
+      },
+      {
+        "code": 1715,
+        "name": "Hennecke GmbH"
+      },
+      {
+        "code": 1716,
+        "name": "Encoder Products Company"
+      },
+      {
+        "code": 1717,
+        "name": "Converting Equipment International (dba CEI)"
+      },
+      {
+        "code": 1718,
+        "name": "Reserved"
+      },
+      {
+        "code": 1719,
+        "name": "Kinova"
+      },
+      {
+        "code": 1720,
+        "name": "The Poling Group, Inc."
+      },
+      {
+        "code": 1721,
+        "name": "plating electronic GmbH"
+      },
+      {
+        "code": 1722,
+        "name": "HIWIN MIKROSYSTEM CORP."
+      },
+      {
+        "code": 1723,
+        "name": "Wuxi Xinje Electric Co.,Ltd."
+      },
+      {
+        "code": 1724,
+        "name": "ViSCO Technologies Corporation"
+      },
+      {
+        "code": 1725,
+        "name": "MinebeaMitsumi Inc."
+      },
+      {
+        "code": 1726,
+        "name": "FIAtec GmbH"
+      },
+      {
+        "code": 1727,
+        "name": "eSOL Co.,Ltd"
+      },
+      {
+        "code": 1728,
+        "name": "NTN TECHNICAL SERVICE"
+      },
+      {
+        "code": 1729,
+        "name": "Shanghai Flexem"
+      },
+      {
+        "code": 1730,
+        "name": "Magswitch"
+      },
+      {
+        "code": 1731,
+        "name": "VEGA Grieshaber KG"
+      },
+      {
+        "code": 1732,
+        "name": "H.D.T. S.R.L."
+      },
+      {
+        "code": 1733,
+        "name": "Tool-Temp AG"
+      },
+      {
+        "code": 1734,
+        "name": "Hollysys Technology Group Co., Ltd"
+      },
+      {
+        "code": 1735,
+        "name": "Basler Electric Company"
+      },
+      {
+        "code": 1736,
+        "name": "Shinwa Controls Co.,Ltd"
+      },
+      {
+        "code": 1737,
+        "name": "Nanjing Decowell Automation Co.,Ltd."
+      },
+      {
+        "code": 1738,
+        "name": "Reverity Inc"
+      },
+      {
+        "code": 1739,
+        "name": "TOSHIBA MITSUBISHI-ELECTRIC INDUSTRIAL SYSTEMS CORPORATION"
+      },
+      {
+        "code": 1740,
+        "name": "BizLink Special Cables Germany GmbH"
+      },
+      {
+        "code": 1741,
+        "name": "Electronics Inc."
+      },
+      {
+        "code": 1742,
+        "name": "Inexbot"
+      },
+      {
+        "code": 1743,
+        "name": "Mujin, Inc."
+      },
+      {
+        "code": 1744,
+        "name": "Shanghai AYAN Industry System Co., Ltd"
+      },
+      {
+        "code": 1745,
+        "name": "EKE-Electronics Ltd."
+      },
+      {
+        "code": 1746,
+        "name": "Bizerba SE & Co. KG"
+      },
+      {
+        "code": 1747,
+        "name": "Astrodyne TDI"
+      },
+      {
+        "code": 1748,
+        "name": "FOCUS-ON VoF"
+      },
+      {
+        "code": 1749,
+        "name": "EWM GmbH"
+      },
+      {
+        "code": 1750,
+        "name": "Takebishi Corporation"
+      },
+      {
+        "code": 1751,
+        "name": "Pneumax S.P.A"
+      },
+      {
+        "code": 1752,
+        "name": "Indu-Sol GmbH"
+      },
+      {
+        "code": 1753,
+        "name": "Reserved"
+      },
+      {
+        "code": 1754,
+        "name": "Reserved"
+      },
+      {
+        "code": 1755,
+        "name": "E.MC Corporation"
+      },
+      {
+        "code": 1756,
+        "name": "Optris GmbH & Co. KG"
+      },
+      {
+        "code": 1757,
+        "name": "PLIEM "
+      },
+      {
+        "code": 1758,
+        "name": "Overview AI"
+      },
+      {
+        "code": 1759,
+        "name": "DMN-WESTINGHOUSE"
+      },
+      {
+        "code": 1760,
+        "name": "Horizon Inc."
+      },
+      {
+        "code": 1761,
+        "name": "Vention"
+      },
+      {
+        "code": 1762,
+        "name": "NOVASEN"
+      },
+      {
+        "code": 1763,
+        "name": "AMETEK Land"
+      },
+      {
+        "code": 1764,
+        "name": "Tocho Marking Systems America, Inc"
+      },
+      {
+        "code": 1765,
+        "name": "Schaeffler Monitoring Services GmbH"
+      },
+      {
+        "code": 1766,
+        "name": "Veo Robotics, Inc."
+      },
+      {
+        "code": 1767,
+        "name": "LOGISTIQ, division of LEWCO Inc"
+      },
+      {
+        "code": 1768,
+        "name": "UGL Pty Limited"
+      },
+      {
+        "code": 1769,
+        "name": "ADT"
+      },
+      {
+        "code": 1770,
+        "name": "PSTEK "
+      },
+      {
+        "code": 1771,
+        "name": "Strokmatic Innovation Technology"
+      },
+      {
+        "code": 1772,
+        "name": "RT-Labs AB"
+      },
+      {
+        "code": 1773,
+        "name": "Plasmatreat GmbH"
+      },
+      {
+        "code": 1775,
+        "name": "Binarix Corporation"
+      },
+      {
+        "code": 1776,
+        "name": "EN2CORE Technology Inc. "
+      },
+      {
+        "code": 1777,
+        "name": "STOBER Antriebstechnik GmbH & Co. KG"
+      },
+      {
+        "code": 1778,
+        "name": "NIRECO CORPORATION"
+      },
+      {
+        "code": 1779,
+        "name": "BEIJING JIYUAN AUTOMATION TECHNOLOGY CO., LTD"
+      },
+      {
+        "code": 1780,
+        "name": "WERMA Signaltechnik"
+      },
+      {
+        "code": 1781,
+        "name": "ISH Ingenieursoziet\u00e4t GmbH"
+      },
+      {
+        "code": 1782,
+        "name": "Elementary"
+      },
+      {
+        "code": 1783,
+        "name": "Synapticon"
+      },
+      {
+        "code": 1784,
+        "name": "DELO Industrial Adhesives"
+      },
+      {
+        "code": 1785,
+        "name": "Eura Drives Electric Co., Ltd"
+      },
+      {
+        "code": 1786,
+        "name": "MYUNGBO CABLE"
+      },
+      {
+        "code": 1787,
+        "name": "Mech-Mind Robotics Technologies"
+      },
+      {
+        "code": 1788,
+        "name": "TMSS France"
+      },
+      {
+        "code": 1789,
+        "name": "R.T.A"
+      },
+      {
+        "code": 1790,
+        "name": "Baumer"
+      },
+      {
+        "code": 1791,
+        "name": "Controlway (Suzhou) Electric Co., Ltd. "
+      },
+      {
+        "code": 1792,
+        "name": "ODOT Automation"
+      },
+      {
+        "code": 1793,
+        "name": "Pizzato Elettrica S.r.l."
+      },
+      {
+        "code": 1794,
+        "name": "Tsubakimoto Chain Co."
+      },
+      {
+        "code": 1795,
+        "name": "Voegtlin Instruments GmbH (gas flow technology)"
+      },
+      {
+        "code": 1796,
+        "name": "ZUKEN ELMIC Inc."
+      },
+      {
+        "code": 1797,
+        "name": "McCrometer Inc."
+      },
+      {
+        "code": 1798,
+        "name": "Shandong Aotai Electric Co., Ltd"
+      },
+      {
+        "code": 1799,
+        "name": "Rotork Inc."
+      },
+      {
+        "code": 1800,
+        "name": "Alliant Technologies"
+      },
+      {
+        "code": 1801,
+        "name": "Janatics"
+      },
+      {
+        "code": 1802,
+        "name": "Brady Worldwide, Inc."
+      },
+      {
+        "code": 1803,
+        "name": "Pinesolution"
+      },
+      {
+        "code": 1804,
+        "name": "Sealevel Systems Inc"
+      },
+      {
+        "code": 1805,
+        "name": "Delta Line SA"
+      },
+      {
+        "code": 1806,
+        "name": "Eureka Robotics"
+      },
+      {
+        "code": 1807,
+        "name": "CITIZEN FINEDEVICE CO.,LTD."
+      },
+      {
+        "code": 1808,
+        "name": "Comsys AB"
+      },
+      {
+        "code": 1809,
+        "name": "JUMO GmbH & Co. KG"
+      },
+      {
+        "code": 1810,
+        "name": "Simco ION"
+      },
+      {
+        "code": 1811,
+        "name": "SONIC ITALIA"
+      },
+      {
+        "code": 1812,
+        "name": "Fortinet, Inc."
+      },
+      {
+        "code": 1813,
+        "name": "Shenzhen Blue Dynamics Precision Co., Ltd."
+      },
+      {
+        "code": 1814,
+        "name": "NITTOKU CO., LTD."
+      },
+      {
+        "code": 1815,
+        "name": "TATSUTA TACHII ELECTRIC CABLE CO.,LTD"
+      },
+      {
+        "code": 1816,
+        "name": "MicroVision, Inc."
+      },
+      {
+        "code": 1817,
+        "name": "Empress Software Japan Inc."
+      },
+      {
+        "code": 1818,
+        "name": "Jiangsu Gao Kai Precision Fluid Technology Co., Ltd."
+      },
+      {
+        "code": 1819,
+        "name": "SmartD Technologies Inc"
+      },
+      {
+        "code": 1820,
+        "name": "TDK-Lambda Ltd."
+      },
+      {
+        "code": 1821,
+        "name": "Shaanxi Yidu Intelligence Technology Co.,Ltd."
+      },
+      {
+        "code": 1822,
+        "name": "Chengdu RuiBao Electronic Technology Co., Ltd"
+      },
+      {
+        "code": 1823,
+        "name": "Beijing Peitian Technology Co., Ltd"
+      },
+      {
+        "code": 1824,
+        "name": "Innovire AG"
+      },
+      {
+        "code": 1825,
+        "name": "Nautitech Mining Systems PTY LTD"
+      },
+      {
+        "code": 1826,
+        "name": "GP Systems GmbH"
+      },
+      {
+        "code": 1827,
+        "name": "Moore Industries - International, Inc."
+      },
+      {
+        "code": 1828,
+        "name": "NDW Group BV"
+      },
+      {
+        "code": 1829,
+        "name": "SignalFire Telemetry, Inc."
+      },
+      {
+        "code": 1830,
+        "name": "VIDAR LLC"
+      },
+      {
+        "code": 1831,
+        "name": "Zhejiang HuaRay Technology Co., Ltd."
+      },
+      {
+        "code": 1832,
+        "name": "Laumas Elettronica s.r.l."
+      },
+      {
+        "code": 1833,
+        "name": "CATTRON NORTH AMERICA, INC."
+      },
+      {
+        "code": 1834,
+        "name": "Phase Technologies, LLC"
+      },
+      {
+        "code": 1835,
+        "name": "Gunda Automation GmbH"
+      },
+      {
+        "code": 1836,
+        "name": "Transcend Communication Beijing Co., Ltd."
+      },
+      {
+        "code": 1837,
+        "name": "GOOD WILL INSTRUMENT CO., LTD."
+      },
+      {
+        "code": 1838,
+        "name": "UnitX Inc"
+      },
+      {
+        "code": 1839,
+        "name": "HQ Scales Inc."
+      },
+      {
+        "code": 1840,
+        "name": "Contrinex AG"
+      },
+      {
+        "code": 1841,
+        "name": "ASSA ABLOY Entrance Systems Germany GmbH"
+      },
+      {
+        "code": 1842,
+        "name": "Therma-Tron-X, Inc."
+      },
+      {
+        "code": 1843,
+        "name": "Antaira Technologies Co. Ltd."
+      },
+      {
+        "code": 1844,
+        "name": "ProMinent GmbH"
+      },
+      {
+        "code": 1845,
+        "name": "Shanghai Quicktron Automation Technology Co., Ltd."
+      },
+      {
+        "code": 1846,
+        "name": "Six Sigma Concepts, LLC"
+      },
+      {
+        "code": 1847,
+        "name": "Hafner Pneumatika Term\u00e9kgy\u00e1rt\u00f3, Keresked\u0151 \u00e9s Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"
+      },
+      {
+        "code": 1848,
+        "name": "Keco Inc."
+      },
+      {
+        "code": 1849,
+        "name": "Iris Dynamics Ltd."
+      },
+      {
+        "code": 1850,
+        "name": "Moser Baer AG"
+      },
+      {
+        "code": 1851,
+        "name": "Kanadevia Corporation"
+      },
+      {
+        "code": 1852,
+        "name": "IWAKI CO., LTD."
+      },
+      {
+        "code": 1853,
+        "name": "MR Control Systems International Inc."
+      },
+      {
+        "code": 1854,
+        "name": "IRISS, Inc."
+      },
+      {
+        "code": 1855,
+        "name": "Rodix, Inc."
+      },
+      {
+        "code": 1856,
+        "name": "HAI ROBOTICS Co., Ltd."
+      },
+      {
+        "code": 1857,
+        "name": "WAGO Electronic (Tianjin) Co., Ltd."
+      },
+      {
+        "code": 1858,
+        "name": "NXP Semiconductors Netherlands B.V"
+      },
+      {
+        "code": 9876,
+        "name": "ODVA"
+      },
+      {
+        "code": 65531,
+        "name": "Profile Vendor ID"
+      },
+      {
+        "code": 65532,
+        "name": "Unspecified IO-Link Vendor"
+      },
+      {
+        "code": 65533,
+        "name": "Unspecified HART Vendor"
+      },
+      {
+        "code": 65534,
+        "name": "Unspecified Modbus Vendor"
+      },
+      {
+        "code": 65535,
+        "name": "Reserved"
+      }
+    ],
+    "cip_devtype_vals": [
+      {
+        "code": 0,
+        "name": "Generic Device (deprecated)"
+      },
+      {
+        "code": 2,
+        "name": "AC Drive"
+      },
+      {
+        "code": 3,
+        "name": "Motor Overload"
+      },
+      {
+        "code": 4,
+        "name": "Limit Switch"
+      },
+      {
+        "code": 5,
+        "name": "Inductive Proximity Switch"
+      },
+      {
+        "code": 6,
+        "name": "Photoelectric Sensor"
+      },
+      {
+        "code": 7,
+        "name": "General Purpose Discrete I/O"
+      },
+      {
+        "code": 9,
+        "name": "Resolver"
+      },
+      {
+        "code": 12,
+        "name": "Communications Adapter"
+      },
+      {
+        "code": 14,
+        "name": "Programmable Logic Controller"
+      },
+      {
+        "code": 19,
+        "name": "DC Drive"
+      },
+      {
+        "code": 24,
+        "name": "Human-Machine Interface"
+      },
+      {
+        "code": 26,
+        "name": "Mass Flow Controller"
+      },
+      {
+        "code": 27,
+        "name": "Pneumatic Valve"
+      },
+      {
+        "code": 28,
+        "name": "Vacuum Pressure Gauge"
+      },
+      {
+        "code": 29,
+        "name": "Process Control Value"
+      },
+      {
+        "code": 30,
+        "name": "Residual Gas Analyzer"
+      },
+      {
+        "code": 31,
+        "name": "DC Power Generator"
+      },
+      {
+        "code": 32,
+        "name": "RF Power Generator"
+      },
+      {
+        "code": 33,
+        "name": "Turbomolecular Vacuum Pump"
+      },
+      {
+        "code": 34,
+        "name": "Encoder"
+      },
+      {
+        "code": 35,
+        "name": "Safety Discrete I/O Device"
+      },
+      {
+        "code": 36,
+        "name": "Fluid Flow Controller"
+      },
+      {
+        "code": 37,
+        "name": "CIP Motion Drive"
+      },
+      {
+        "code": 38,
+        "name": "CompoNet Repeater"
+      },
+      {
+        "code": 39,
+        "name": "Mass Flow Controller, Enhanced"
+      },
+      {
+        "code": 40,
+        "name": "CIP Modbus Device"
+      },
+      {
+        "code": 41,
+        "name": "CIP Modbus Translator"
+      },
+      {
+        "code": 42,
+        "name": "Safety Analog I/O Device"
+      },
+      {
+        "code": 43,
+        "name": "Generic Device (keyable)"
+      },
+      {
+        "code": 44,
+        "name": "Managed Ethernet Switch"
+      },
+      {
+        "code": 45,
+        "name": "CIP Motion Safety Drive Device"
+      },
+      {
+        "code": 46,
+        "name": "Safety Drive Device"
+      },
+      {
+        "code": 47,
+        "name": "CIP Motion Encoder"
+      },
+      {
+        "code": 48,
+        "name": "CIP Motion Converter"
+      },
+      {
+        "code": 49,
+        "name": "CIP Motion I/O"
+      },
+      {
+        "code": 50,
+        "name": "ControlNet Physical Layer Component"
+      },
+      {
+        "code": 51,
+        "name": "Circuit Breaker"
+      },
+      {
+        "code": 52,
+        "name": "HART Device"
+      },
+      {
+        "code": 53,
+        "name": "CIP-HART Translator"
+      },
+      {
+        "code": 54,
+        "name": "IO-Link Master"
+      },
+      {
+        "code": 55,
+        "name": "Operator Interface Component"
+      },
+      {
+        "code": 56,
+        "name": "Process Device \u2013 Standard Pressure Device"
+      },
+      {
+        "code": 57,
+        "name": "Process Device \u2013 Scaled Pressure Device"
+      },
+      {
+        "code": 58,
+        "name": "Process Device \u2013 Coriolis Flow Device"
+      },
+      {
+        "code": 59,
+        "name": "Process Device \u2013 Electromagnetic Flow"
+      },
+      {
+        "code": 60,
+        "name": "Process Device \u2013 Vortex Flow Device"
+      },
+      {
+        "code": 61,
+        "name": "Process Device \u2013 Temperature Device"
+      },
+      {
+        "code": 62,
+        "name": "Process Device \u2013 Level Device"
+      },
+      {
+        "code": 200,
+        "name": "Embedded Component"
+      }
+    ],
+    "cip_run_idle_vals": [
+      {
+        "code": 0,
+        "name": "Idle"
+      },
+      {
+        "code": 1,
+        "name": "Run"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "extracted_at_utc": "2026-05-01T14:00:03+00:00",
+  "suricata_branch": "master",
+  "parsers": {
+    "modbus": {
+      "keywords": [
+        "modbus"
+      ],
+      "docs": "https://docs.suricata.io/en/latest/rules/modbus-keyword.html",
+      "notes": "Single keyword `modbus:` with subfields function/access/unit_id.",
+      "sources_verified": [
+        {
+          "path": "src/app-layer-modbus.c",
+          "url": "https://raw.githubusercontent.com/OISF/suricata/master/src/app-layer-modbus.c",
+          "present": true
+        },
+        {
+          "path": "src/detect-modbus.c",
+          "url": "https://raw.githubusercontent.com/OISF/suricata/master/src/detect-modbus.c",
+          "present": true
+        }
+      ],
+      "all_sources_present": true
+    },
+    "dnp3": {
+      "keywords": [
+        "dnp3_func",
+        "dnp3_ind",
+        "dnp3_obj",
+        "dnp3_data"
+      ],
+      "docs": "https://docs.suricata.io/en/latest/rules/dnp3-keywords.html",
+      "notes": "Separate keywords for function code, internal indications, object groups, and data block matching.",
+      "sources_verified": [
+        {
+          "path": "src/app-layer-dnp3.c",
+          "url": "https://raw.githubusercontent.com/OISF/suricata/master/src/app-layer-dnp3.c",
+          "present": true
+        }
+      ],
+      "all_sources_present": true
+    },
+    "enip": {
+      "keywords": [
+        "enip_command",
+        "cip_service"
+      ],
+      "docs": "https://docs.suricata.io/en/latest/rules/enip-keyword.html",
+      "notes": "ENIP framing keyword + CIP service code keyword. cip_service: takes a decimal service code. Migrated from C (src/app-layer-enip.c) to Rust in newer Suricata versions.",
+      "sources_verified": [
+        {
+          "path": "rust/src/enip/mod.rs",
+          "url": "https://raw.githubusercontent.com/OISF/suricata/master/rust/src/enip/mod.rs",
+          "present": true
+        }
+      ],
+      "all_sources_present": true
+    }
+  },
+  "byte_rule_protocols": [
+    "s7comm",
+    "srtp",
+    "iec104",
+    "bacnet",
+    "opcua",
+    "mms",
+    "profinet"
+  ],
+  "byte_rule_note": "Protocols listed under byte_rule_protocols have no native Suricata app-layer parser at the snapshot time. Detection rules for these must use byte-pattern matching (content + offset/depth/within)."
+}

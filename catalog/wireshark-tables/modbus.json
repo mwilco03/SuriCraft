@@ -1,0 +1,100 @@
+{
+  "protocol": "modbus",
+  "wireshark_branch": "master",
+  "sources": [
+    {
+      "file": "packet-mbtcp.c",
+      "url": "https://raw.githubusercontent.com/wireshark/wireshark/master/epan/dissectors/packet-mbtcp.c",
+      "size_bytes": 102812
+    }
+  ],
+  "extracted_at_utc": "2026-05-01T14:07:22+00:00",
+  "table_count": 4,
+  "entry_count": 19,
+  "tables": {
+    "diagnostic_restart_communication_option_vals": [
+      {
+        "code": 0,
+        "name": "Leave Log"
+      },
+      {
+        "code": 255,
+        "name": "Clear Log"
+      }
+    ],
+    "read_device_id_vals": [
+      {
+        "code": 1,
+        "name": "Basic Device Identification"
+      },
+      {
+        "code": 2,
+        "name": "Regular Device Identification"
+      },
+      {
+        "code": 3,
+        "name": "Extended Device Identification"
+      },
+      {
+        "code": 4,
+        "name": "Specific Identification Object"
+      }
+    ],
+    "object_id_vals": [
+      {
+        "code": 0,
+        "name": "VendorName"
+      },
+      {
+        "code": 1,
+        "name": "ProductCode"
+      },
+      {
+        "code": 2,
+        "name": "MajorMinorRevision"
+      },
+      {
+        "code": 3,
+        "name": "VendorURL"
+      },
+      {
+        "code": 4,
+        "name": "ProductName"
+      },
+      {
+        "code": 5,
+        "name": "ModelName"
+      },
+      {
+        "code": 6,
+        "name": "UserApplicationName"
+      }
+    ],
+    "conformity_level_vals": [
+      {
+        "code": 1,
+        "name": "Basic Device Identification (stream)"
+      },
+      {
+        "code": 2,
+        "name": "Regular Device Identification (stream)"
+      },
+      {
+        "code": 3,
+        "name": "Extended Device Identification (stream)"
+      },
+      {
+        "code": 129,
+        "name": "Basic Device Identification (stream and individual)"
+      },
+      {
+        "code": 130,
+        "name": "Regular Device Identification (stream and individual)"
+      },
+      {
+        "code": 131,
+        "name": "Extended Device Identification (stream and individual)"
+      }
+    ]
+  }
+}

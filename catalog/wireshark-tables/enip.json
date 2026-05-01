@@ -1,0 +1,564 @@
+{
+  "protocol": "enip",
+  "wireshark_branch": "master",
+  "sources": [
+    {
+      "file": "packet-enip.c",
+      "url": "https://raw.githubusercontent.com/wireshark/wireshark/master/epan/dissectors/packet-enip.c",
+      "size_bytes": 238126
+    }
+  ],
+  "extracted_at_utc": "2026-05-01T14:07:22+00:00",
+  "table_count": 32,
+  "entry_count": 121,
+  "tables": {
+    "encap_cmd_vals": [
+      {
+        "code": 0,
+        "name": "NOP"
+      },
+      {
+        "code": 4,
+        "name": "List Services"
+      },
+      {
+        "code": 99,
+        "name": "List Identity"
+      },
+      {
+        "code": 100,
+        "name": "List Interfaces"
+      },
+      {
+        "code": 101,
+        "name": "Register Session"
+      },
+      {
+        "code": 102,
+        "name": "Unregister Session"
+      },
+      {
+        "code": 111,
+        "name": "Send RR Data"
+      },
+      {
+        "code": 112,
+        "name": "Send Unit Data"
+      },
+      {
+        "code": 200,
+        "name": "StartDTLS"
+      }
+    ],
+    "encap_status_vals": [
+      {
+        "code": 0,
+        "name": "Success"
+      },
+      {
+        "code": 1,
+        "name": "Invalid Command"
+      },
+      {
+        "code": 2,
+        "name": "No Memory Resources"
+      },
+      {
+        "code": 3,
+        "name": "Incorrect Data"
+      },
+      {
+        "code": 100,
+        "name": "Invalid Session Handle"
+      },
+      {
+        "code": 101,
+        "name": "Invalid Length"
+      },
+      {
+        "code": 105,
+        "name": "Unsupported Protocol Revision"
+      },
+      {
+        "code": 106,
+        "name": "Encapsulated CIP service not allowed on this port"
+      }
+    ],
+    "cpf_type_vals": [
+      {
+        "code": 0,
+        "name": "Null Address Item"
+      },
+      {
+        "code": 12,
+        "name": "CIP Identity"
+      },
+      {
+        "code": 134,
+        "name": "CIP Security Information"
+      },
+      {
+        "code": 135,
+        "name": "EtherNet/IP Capability"
+      },
+      {
+        "code": 136,
+        "name": "EtherNet/IP Usage"
+      },
+      {
+        "code": 161,
+        "name": "Connected Address Item"
+      },
+      {
+        "code": 177,
+        "name": "Connected Data Item"
+      },
+      {
+        "code": 178,
+        "name": "Unconnected Data Item"
+      },
+      {
+        "code": 256,
+        "name": "List Services Response"
+      },
+      {
+        "code": 32768,
+        "name": "Socket Address Info O->T"
+      },
+      {
+        "code": 32769,
+        "name": "Socket Address Info T->O"
+      },
+      {
+        "code": 32770,
+        "name": "Sequenced Address Item"
+      },
+      {
+        "code": 32771,
+        "name": "Unconnected Message over UDP"
+      }
+    ],
+    "unconn_msg_type_vals": [
+      {
+        "code": 0,
+        "name": "Reserved"
+      },
+      {
+        "code": 1,
+        "name": "UCMM_NOACK"
+      }
+    ],
+    "enip_tcpip_status_interface_config_vals": [
+      {
+        "code": 0,
+        "name": "Not configured"
+      },
+      {
+        "code": 1,
+        "name": "BOOTP/DHCP/NVS"
+      },
+      {
+        "code": 2,
+        "name": "Hardware settings"
+      }
+    ],
+    "enip_tcpip_status_acd_vals": [
+      {
+        "code": 0,
+        "name": "No Address Conflict Detected"
+      },
+      {
+        "code": 1,
+        "name": "Address Conflict Detected"
+      }
+    ],
+    "enip_tcpip_config_control_config_vals": [
+      {
+        "code": 0,
+        "name": "Static IP"
+      },
+      {
+        "code": 1,
+        "name": "BOOTP"
+      },
+      {
+        "code": 2,
+        "name": "DHCP"
+      }
+    ],
+    "enip_tcpip_mcast_alloc_vals": [
+      {
+        "code": 0,
+        "name": "Use default multicast algorithm"
+      },
+      {
+        "code": 1,
+        "name": "Use Num Mcast and Mcast Start Addr"
+      }
+    ],
+    "enip_tcpip_acd_activity_vals": [
+      {
+        "code": 0,
+        "name": "No Conflict Detected"
+      },
+      {
+        "code": 1,
+        "name": "Probe IPv4 Address"
+      },
+      {
+        "code": 2,
+        "name": "Ongoing Detection"
+      },
+      {
+        "code": 3,
+        "name": "Semi Active Probe"
+      }
+    ],
+    "enip_elink_duplex_vals": [
+      {
+        "code": 0,
+        "name": "Half Duplex"
+      },
+      {
+        "code": 1,
+        "name": "Full Duplex"
+      }
+    ],
+    "enip_elink_iflags_neg_status_vals": [
+      {
+        "code": 0,
+        "name": "Auto-negotiation in progress"
+      },
+      {
+        "code": 1,
+        "name": "Auto-negotiation and speed detection failed"
+      },
+      {
+        "code": 2,
+        "name": "Auto-negotiation failed but detected speed"
+      },
+      {
+        "code": 3,
+        "name": "Successfully negotiated speed and duplex"
+      },
+      {
+        "code": 4,
+        "name": "Auto-negotiation not attempted.  Forced speed and duplex"
+      }
+    ],
+    "enip_elink_iflags_reset_vals": [
+      {
+        "code": 0,
+        "name": "Activate change automatically"
+      },
+      {
+        "code": 1,
+        "name": "Device requires Reset service for change"
+      }
+    ],
+    "enip_elink_iflags_hw_fault_vals": [
+      {
+        "code": 0,
+        "name": "No local hardware fault"
+      },
+      {
+        "code": 1,
+        "name": "Local hardware fault detected"
+      }
+    ],
+    "enip_elink_interface_type_vals": [
+      {
+        "code": 0,
+        "name": "Unknown type"
+      },
+      {
+        "code": 1,
+        "name": "Internal"
+      },
+      {
+        "code": 2,
+        "name": "Twisted-pair"
+      },
+      {
+        "code": 3,
+        "name": "Optical fiber"
+      }
+    ],
+    "enip_elink_interface_state_vals": [
+      {
+        "code": 0,
+        "name": "Unknown state"
+      },
+      {
+        "code": 1,
+        "name": "Enabled"
+      },
+      {
+        "code": 2,
+        "name": "Disabled"
+      },
+      {
+        "code": 3,
+        "name": "Testing"
+      }
+    ],
+    "enip_elink_admin_state_vals": [
+      {
+        "code": 1,
+        "name": "Enabled"
+      },
+      {
+        "code": 2,
+        "name": "Disabled"
+      }
+    ],
+    "enip_elink_phy_mode_vals": [
+      {
+        "code": 0,
+        "name": "CSMA/CD"
+      },
+      {
+        "code": 1,
+        "name": "PLCA"
+      }
+    ],
+    "enip_dlr_network_topology_vals": [
+      {
+        "code": 0,
+        "name": "Linear"
+      },
+      {
+        "code": 1,
+        "name": "Ring"
+      }
+    ],
+    "enip_dlr_network_status_vals": [
+      {
+        "code": 0,
+        "name": "Normal"
+      },
+      {
+        "code": 1,
+        "name": "Ring Fault"
+      },
+      {
+        "code": 2,
+        "name": "Unexpected Loop Detected"
+      },
+      {
+        "code": 3,
+        "name": "Partial Network Failure"
+      },
+      {
+        "code": 4,
+        "name": "Rapid Fault/Restore Cycle"
+      }
+    ],
+    "enip_dlr_ring_supervisor_status_vals": [
+      {
+        "code": 0,
+        "name": "Backup Ring Supervisor"
+      },
+      {
+        "code": 1,
+        "name": "Active Ring Supervisor"
+      },
+      {
+        "code": 2,
+        "name": "Ring Node"
+      },
+      {
+        "code": 3,
+        "name": "Non-DLR Topology"
+      },
+      {
+        "code": 4,
+        "name": "Cannot Support Parameters"
+      }
+    ],
+    "enip_dlr_redundant_gateway_status_vals": [
+      {
+        "code": 0,
+        "name": "Non-Gateway DLR node"
+      },
+      {
+        "code": 1,
+        "name": "Backup Gateway"
+      },
+      {
+        "code": 2,
+        "name": "Active Gateway"
+      },
+      {
+        "code": 3,
+        "name": "Gateway Fault"
+      },
+      {
+        "code": 4,
+        "name": "Cannot Support Parameters"
+      },
+      {
+        "code": 5,
+        "name": "Partial Network Fault"
+      }
+    ],
+    "cip_security_state_vals": [
+      {
+        "code": 0,
+        "name": "Factory Default Configuration"
+      },
+      {
+        "code": 1,
+        "name": "Configuration In Progress"
+      },
+      {
+        "code": 2,
+        "name": "Configured"
+      },
+      {
+        "code": 3,
+        "name": "Incomplete Configuration"
+      }
+    ],
+    "eip_security_state_vals": [
+      {
+        "code": 0,
+        "name": "Factory Default Configuration"
+      },
+      {
+        "code": 1,
+        "name": "Configuration In Progress"
+      },
+      {
+        "code": 2,
+        "name": "Configured"
+      },
+      {
+        "code": 3,
+        "name": "Pull Model In Progress"
+      },
+      {
+        "code": 4,
+        "name": "Pull Model Completed"
+      },
+      {
+        "code": 5,
+        "name": "Pull Model Disabled"
+      }
+    ],
+    "eip_security_psk_usage_vals": [
+      {
+        "code": 0,
+        "name": "Server"
+      },
+      {
+        "code": 1,
+        "name": "Client"
+      },
+      {
+        "code": 2,
+        "name": "Any Usage"
+      }
+    ],
+    "eip_cert_state_vals": [
+      {
+        "code": 0,
+        "name": "Non-Existent"
+      },
+      {
+        "code": 1,
+        "name": "Created"
+      },
+      {
+        "code": 2,
+        "name": "Configuring"
+      },
+      {
+        "code": 3,
+        "name": "Verified"
+      },
+      {
+        "code": 4,
+        "name": "Invalid"
+      }
+    ],
+    "eip_cert_status_vals": [
+      {
+        "code": 0,
+        "name": "Not Verified"
+      },
+      {
+        "code": 1,
+        "name": "Verified"
+      },
+      {
+        "code": 2,
+        "name": "Invalid"
+      }
+    ],
+    "enip_interface_handle_vals": [
+      {
+        "code": 0,
+        "name": "CIP"
+      }
+    ],
+    "dlr_source_port_vals": [
+      {
+        "code": 0,
+        "name": "Port 1 or Port 2"
+      },
+      {
+        "code": 1,
+        "name": "Port 1"
+      },
+      {
+        "code": 2,
+        "name": "Port 2"
+      }
+    ],
+    "dlr_ring_state_vals": [
+      {
+        "code": 1,
+        "name": "RING_NORMAL_STATE"
+      },
+      {
+        "code": 2,
+        "name": "RING_FAULT_STATE"
+      }
+    ],
+    "dlr_adv_state_vals": [
+      {
+        "code": 1,
+        "name": "ACTIVE_LISTEN_STATE"
+      },
+      {
+        "code": 2,
+        "name": "ACTIVE_NORMAL_STATE"
+      },
+      {
+        "code": 3,
+        "name": "FAULT_STATE"
+      }
+    ],
+    "dlr_adv_learning_update_vals": [
+      {
+        "code": 0,
+        "name": "Disabled"
+      },
+      {
+        "code": 1,
+        "name": "Enabled"
+      }
+    ],
+    "dlr_flush_learning_update_vals": [
+      {
+        "code": 0,
+        "name": "Disabled"
+      },
+      {
+        "code": 1,
+        "name": "Enabled"
+      }
+    ]
+  }
+}

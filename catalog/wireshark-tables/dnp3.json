@@ -1,0 +1,1934 @@
+{
+  "protocol": "dnp3",
+  "wireshark_branch": "master",
+  "sources": [
+    {
+      "file": "packet-dnp.c",
+      "url": "https://raw.githubusercontent.com/wireshark/wireshark/master/epan/dissectors/packet-dnp.c",
+      "size_bytes": 258598
+    }
+  ],
+  "extracted_at_utc": "2026-05-01T14:07:22+00:00",
+  "table_count": 29,
+  "entry_count": 465,
+  "tables": {
+    "dnp3_ctl_func_pri_vals": [
+      {
+        "code": 0,
+        "name": "Reset of Remote Link"
+      },
+      {
+        "code": 1,
+        "name": "Reset of User Process"
+      },
+      {
+        "code": 2,
+        "name": "Test Function For Link"
+      },
+      {
+        "code": 3,
+        "name": "User Data"
+      },
+      {
+        "code": 4,
+        "name": "Unconfirmed User Data"
+      },
+      {
+        "code": 9,
+        "name": "Request Link Status"
+      }
+    ],
+    "dnp3_ctl_func_sec_vals": [
+      {
+        "code": 0,
+        "name": "ACK"
+      },
+      {
+        "code": 1,
+        "name": "NACK"
+      },
+      {
+        "code": 11,
+        "name": "Status of Link"
+      },
+      {
+        "code": 14,
+        "name": "Link Service Not Functioning"
+      },
+      {
+        "code": 15,
+        "name": "Link Service Not Used or Implemented"
+      }
+    ],
+    "dnp3_ctl_flags_pri_vals": [
+      {
+        "code": 128,
+        "name": "DIR"
+      },
+      {
+        "code": 64,
+        "name": "PRM"
+      },
+      {
+        "code": 32,
+        "name": "FCB"
+      },
+      {
+        "code": 16,
+        "name": "FCV"
+      }
+    ],
+    "dnp3_ctl_flags_sec_vals": [
+      {
+        "code": 128,
+        "name": "DIR"
+      },
+      {
+        "code": 64,
+        "name": "PRM"
+      },
+      {
+        "code": 32,
+        "name": "RES"
+      },
+      {
+        "code": 16,
+        "name": "DFC"
+      }
+    ],
+    "dnp3_tr_flags_vals": [
+      {
+        "code": 128,
+        "name": "FIN"
+      },
+      {
+        "code": 64,
+        "name": "FIR"
+      }
+    ],
+    "dnp3_al_flags_vals": [
+      {
+        "code": 128,
+        "name": "FIR"
+      },
+      {
+        "code": 64,
+        "name": "FIN"
+      },
+      {
+        "code": 32,
+        "name": "CON"
+      },
+      {
+        "code": 16,
+        "name": "UNS"
+      }
+    ],
+    "dnp3_al_func_vals": [
+      {
+        "code": 0,
+        "name": "Confirm"
+      },
+      {
+        "code": 1,
+        "name": "Read"
+      },
+      {
+        "code": 2,
+        "name": "Write"
+      },
+      {
+        "code": 3,
+        "name": "Select"
+      },
+      {
+        "code": 4,
+        "name": "Operate"
+      },
+      {
+        "code": 5,
+        "name": "Direct Operate"
+      },
+      {
+        "code": 6,
+        "name": "Direct Operate No Ack"
+      },
+      {
+        "code": 7,
+        "name": "Immediate Freeze"
+      },
+      {
+        "code": 8,
+        "name": "Immediate Freeze No Ack"
+      },
+      {
+        "code": 9,
+        "name": "Freeze and Clear"
+      },
+      {
+        "code": 10,
+        "name": "Freeze and Clear No ACK"
+      },
+      {
+        "code": 11,
+        "name": "Freeze With Time"
+      },
+      {
+        "code": 12,
+        "name": "Freeze With Time No ACK"
+      },
+      {
+        "code": 13,
+        "name": "Cold Restart"
+      },
+      {
+        "code": 14,
+        "name": "Warm Restart"
+      },
+      {
+        "code": 15,
+        "name": "Initialize Data"
+      },
+      {
+        "code": 16,
+        "name": "Initialize Application"
+      },
+      {
+        "code": 17,
+        "name": "Start Application"
+      },
+      {
+        "code": 18,
+        "name": "Stop Application"
+      },
+      {
+        "code": 19,
+        "name": "Save Configuration"
+      },
+      {
+        "code": 20,
+        "name": "Enable Spontaneous Messages"
+      },
+      {
+        "code": 21,
+        "name": "Disable Spontaneous Messages"
+      },
+      {
+        "code": 22,
+        "name": "Assign Classes"
+      },
+      {
+        "code": 23,
+        "name": "Delay Measurement"
+      },
+      {
+        "code": 24,
+        "name": "Record Current Time"
+      },
+      {
+        "code": 25,
+        "name": "Open File"
+      },
+      {
+        "code": 26,
+        "name": "Close File"
+      },
+      {
+        "code": 27,
+        "name": "Delete File"
+      },
+      {
+        "code": 28,
+        "name": "Get File Info"
+      },
+      {
+        "code": 29,
+        "name": "Authenticate File"
+      },
+      {
+        "code": 30,
+        "name": "Abort File"
+      },
+      {
+        "code": 31,
+        "name": "Activate Config"
+      },
+      {
+        "code": 32,
+        "name": "Authentication Request"
+      },
+      {
+        "code": 33,
+        "name": "Authentication Error"
+      },
+      {
+        "code": 129,
+        "name": "Response"
+      },
+      {
+        "code": 130,
+        "name": "Unsolicited Response"
+      },
+      {
+        "code": 131,
+        "name": "Authentication Response"
+      }
+    ],
+    "dnp3_al_iin_vals": [
+      {
+        "code": 256,
+        "name": "Broadcast message Rx'd"
+      },
+      {
+        "code": 512,
+        "name": "Class 1 Data Available"
+      },
+      {
+        "code": 1024,
+        "name": "Class 2 Data Available"
+      },
+      {
+        "code": 2048,
+        "name": "Class 3 Data Available"
+      },
+      {
+        "code": 4096,
+        "name": "Time Sync Required from Master"
+      },
+      {
+        "code": 8192,
+        "name": "Outputs in Local Mode"
+      },
+      {
+        "code": 16384,
+        "name": "Device Trouble"
+      },
+      {
+        "code": 32768,
+        "name": "Device Restart"
+      },
+      {
+        "code": 1,
+        "name": "Function Code not implemented"
+      },
+      {
+        "code": 2,
+        "name": "Requested Objects Unknown"
+      },
+      {
+        "code": 4,
+        "name": "Parameters Invalid or Out of Range"
+      },
+      {
+        "code": 8,
+        "name": "Event Buffer Overflow"
+      },
+      {
+        "code": 16,
+        "name": "Operation Already Executing"
+      },
+      {
+        "code": 32,
+        "name": "Device Configuration Corrupt"
+      }
+    ],
+    "dnp3_al_objq_prefix_vals": [
+      {
+        "code": 0,
+        "name": "None"
+      },
+      {
+        "code": 1,
+        "name": "1-Octet Index Prefix"
+      },
+      {
+        "code": 2,
+        "name": "2-Octet Index Prefix"
+      },
+      {
+        "code": 3,
+        "name": "4-Octet Index Prefix"
+      },
+      {
+        "code": 4,
+        "name": "1-Octet Object Size Prefix"
+      },
+      {
+        "code": 5,
+        "name": "2-Octet Object Size Prefix"
+      },
+      {
+        "code": 6,
+        "name": "4-Octet Object Size Prefix"
+      }
+    ],
+    "dnp3_al_objq_range_vals": [
+      {
+        "code": 0,
+        "name": "8-bit Start and Stop Indices"
+      },
+      {
+        "code": 1,
+        "name": "16-bit Start and Stop Indices"
+      },
+      {
+        "code": 2,
+        "name": "32-bit Start and Stop Indices"
+      },
+      {
+        "code": 3,
+        "name": "8-bit Absolute Address in Range Field"
+      },
+      {
+        "code": 4,
+        "name": "16-bit Absolute Address in Range Field"
+      },
+      {
+        "code": 5,
+        "name": "32-bit Absolute Address in Range Field"
+      },
+      {
+        "code": 6,
+        "name": "No Range Field"
+      },
+      {
+        "code": 7,
+        "name": "8-bit Single Field Quantity"
+      },
+      {
+        "code": 8,
+        "name": "16-bit Single Field Quantity"
+      },
+      {
+        "code": 9,
+        "name": "32-bit Single Field Quantity"
+      },
+      {
+        "code": 10,
+        "name": "Reserved"
+      },
+      {
+        "code": 11,
+        "name": "Free-format Qualifier"
+      }
+    ],
+    "dnp3_al_obj_vals": [
+      {
+        "code": 196,
+        "name": "Device Attributes - Configuration ID (Obj:00, Var:196)"
+      },
+      {
+        "code": 197,
+        "name": "Device Attributes - Configuration version (Obj:00, Var:197)"
+      },
+      {
+        "code": 198,
+        "name": "Device Attributes - Configuration build date (Obj:00, Var:198)"
+      },
+      {
+        "code": 199,
+        "name": "Device Attributes - Configuration last change date (Obj:00, Var:199)"
+      },
+      {
+        "code": 200,
+        "name": "Device Attributes - Configuration signature (Obj:00, Var:200)"
+      },
+      {
+        "code": 201,
+        "name": "Device Attributes - Configuration signature algorithm (Obj:00, Var:201)"
+      },
+      {
+        "code": 202,
+        "name": "Device Attributes - Master Resource ID (mRID) (Obj:00, Var:202)"
+      },
+      {
+        "code": 203,
+        "name": "Device Attributes - Device altitude (Obj:00, Var:203)"
+      },
+      {
+        "code": 204,
+        "name": "Device Attributes - Device longitude (Obj:00, Var:204)"
+      },
+      {
+        "code": 205,
+        "name": "Device Attributes - Device latitude (Obj:00, Var:205)"
+      },
+      {
+        "code": 206,
+        "name": "Device Attributes - User-assigned secondary operator name (Obj:00, Var:206)"
+      },
+      {
+        "code": 207,
+        "name": "Device Attributes - User-assigned primary operator name (Obj:00, Var:207)"
+      },
+      {
+        "code": 208,
+        "name": "Device Attributes - User-assigned system name (Obj:00, Var:208)"
+      },
+      {
+        "code": 209,
+        "name": "Device Attributes - Secure authentication version (Obj:00, Var:209)"
+      },
+      {
+        "code": 210,
+        "name": "Device Attributes - Number of security statistics per association (Obj:00, Var:210)"
+      },
+      {
+        "code": 211,
+        "name": "Device Attributes - Identifier of support for user-specific attributes (Obj:00, Var:211)"
+      },
+      {
+        "code": 212,
+        "name": "Device Attributes - Number of master-defined data set prototypes (Obj:00, Var:212)"
+      },
+      {
+        "code": 213,
+        "name": "Device Attributes - Number of outstation-defined data set prototypes (Obj:00, Var:213)"
+      },
+      {
+        "code": 214,
+        "name": "Device Attributes - Number of master-defined data sets (Obj:00, Var:214)"
+      },
+      {
+        "code": 215,
+        "name": "Device Attributes - Number of outstation-defined data sets (Obj:00, Var:215)"
+      },
+      {
+        "code": 216,
+        "name": "Device Attributes - Max number of binary outputs per request (Obj:00, Var:216)"
+      },
+      {
+        "code": 217,
+        "name": "Device Attributes - Local timing accuracy (Obj:00, Var:217)"
+      },
+      {
+        "code": 218,
+        "name": "Device Attributes - Duration of timing accuracy (Obj:00, Var:218)"
+      },
+      {
+        "code": 219,
+        "name": "Device Attributes - Support for analog output events (Obj:00, Var:219)"
+      },
+      {
+        "code": 220,
+        "name": "Device Attributes - Max analog output index (Obj:00, Var:220)"
+      },
+      {
+        "code": 221,
+        "name": "Device Attributes - Number of analog outputs (Obj:00, Var:221)"
+      },
+      {
+        "code": 222,
+        "name": "Device Attributes - Support for binary output events (Obj:00, Var:222)"
+      },
+      {
+        "code": 223,
+        "name": "Device Attributes - Max binary output index (Obj:00, Var:223)"
+      },
+      {
+        "code": 224,
+        "name": "Device Attributes - Number of binary outputs (Obj:00, Var:224)"
+      },
+      {
+        "code": 225,
+        "name": "Device Attributes - Support for frozen counter events (Obj:00, Var:225)"
+      },
+      {
+        "code": 226,
+        "name": "Device Attributes - Support for frozen counters (Obj:00, Var:226)"
+      },
+      {
+        "code": 227,
+        "name": "Device Attributes - Support for counter events (Obj:00, Var:227)"
+      },
+      {
+        "code": 228,
+        "name": "Device Attributes - Max counter index (Obj:00, Var:228)"
+      },
+      {
+        "code": 229,
+        "name": "Device Attributes - Number of counter points (Obj:00, Var:229)"
+      },
+      {
+        "code": 230,
+        "name": "Device Attributes - Support for frozen analog inputs (Obj:00, Var:230)"
+      },
+      {
+        "code": 231,
+        "name": "Device Attributes - Support for analog input events (Obj:00, Var:231)"
+      },
+      {
+        "code": 232,
+        "name": "Device Attributes - Maximum analog input index (Obj:00, Var:232)"
+      },
+      {
+        "code": 233,
+        "name": "Device Attributes - Number of analog input points (Obj:00, Var:233)"
+      },
+      {
+        "code": 234,
+        "name": "Device Attributes - Support for Double-Bit BI Events (Obj:00, Var:234)"
+      },
+      {
+        "code": 235,
+        "name": "Device Attributes - Max Double-bit BI Point Index (Obj:00, Var:235)"
+      },
+      {
+        "code": 236,
+        "name": "Device Attributes - Number of Double-bit BI Points (Obj:00, Var:236)"
+      },
+      {
+        "code": 237,
+        "name": "Device Attributes - Support for Binary Input Events (Obj:00, Var:237)"
+      },
+      {
+        "code": 238,
+        "name": "Device Attributes - Max Binary Input Point Index (Obj:00, Var:238)"
+      },
+      {
+        "code": 239,
+        "name": "Device Attributes - Number of Binary Input Points (Obj:00, Var:239)"
+      },
+      {
+        "code": 240,
+        "name": "Device Attributes - Maximum Transmit Fragment Size (Obj:00, Var:240)"
+      },
+      {
+        "code": 241,
+        "name": "Device Attributes - Maximum Receive Fragment Size (Obj:00, Var:241)"
+      },
+      {
+        "code": 242,
+        "name": "Device Attributes - Device Manufacturers SW Version (Obj:00, Var:242)"
+      },
+      {
+        "code": 243,
+        "name": "Device Attributes - Device Manufacturers HW Version (Obj:00, Var:243)"
+      },
+      {
+        "code": 245,
+        "name": "Device Attributes - User-Assigned Location (Obj:00, Var:245)"
+      },
+      {
+        "code": 246,
+        "name": "Device Attributes - User-Assigned ID code/number (Obj:00, Var:246)"
+      },
+      {
+        "code": 247,
+        "name": "Device Attributes - User-Assigned Device Name (Obj:00, Var:247)"
+      },
+      {
+        "code": 248,
+        "name": "Device Attributes - Device Serial Number (Obj:00, Var:248)"
+      },
+      {
+        "code": 249,
+        "name": "Device Attributes - DNP Subset and Conformance (Obj:00, Var:249)"
+      },
+      {
+        "code": 250,
+        "name": "Device Attributes - Device Product Name and Model (Obj:00, Var:250)"
+      },
+      {
+        "code": 252,
+        "name": "Device Attributes - Device Manufacturers Name (Obj:00, Var:252)"
+      },
+      {
+        "code": 254,
+        "name": "Device Attributes - Non-specific All-attributes Request (Obj:00, Var:254)"
+      },
+      {
+        "code": 255,
+        "name": "Device Attributes - List of Attribute Variations (Obj:00, Var:255)"
+      },
+      {
+        "code": 256,
+        "name": "Binary Input Default Variation (Obj:01, Var:Default)"
+      },
+      {
+        "code": 257,
+        "name": "Single-Bit Binary Input (Obj:01, Var:01)"
+      },
+      {
+        "code": 258,
+        "name": "Binary Input With Status (Obj:01, Var:02)"
+      },
+      {
+        "code": 512,
+        "name": "Binary Input Change Default Variation (Obj:02, Var:Default)"
+      },
+      {
+        "code": 513,
+        "name": "Binary Input Change Without Time (Obj:02, Var:01)"
+      },
+      {
+        "code": 514,
+        "name": "Binary Input Change With Time (Obj:02, Var:02)"
+      },
+      {
+        "code": 515,
+        "name": "Binary Input Change With Relative Time (Obj:02, Var:03)"
+      },
+      {
+        "code": 768,
+        "name": "Double-bit Input Default Variation (Obj:03, Var:Default)"
+      },
+      {
+        "code": 769,
+        "name": "Double-bit Input No Flags (Obj:03, Var:01)"
+      },
+      {
+        "code": 770,
+        "name": "Double-bit Input With Status (Obj:03, Var:02)"
+      },
+      {
+        "code": 1024,
+        "name": "Double-bit Input Change Default Variation (Obj:04, Var:Default)"
+      },
+      {
+        "code": 1025,
+        "name": "Double-bit Input Change Without Time (Obj:04, Var:01)"
+      },
+      {
+        "code": 1026,
+        "name": "Double-bit Input Change With Time (Obj:04, Var:02)"
+      },
+      {
+        "code": 1027,
+        "name": "Double-bit Input Change With Relative Time (Obj:04, Var:03)"
+      },
+      {
+        "code": 2560,
+        "name": "Binary Output Default Variation (Obj:10, Var:Default)"
+      },
+      {
+        "code": 2561,
+        "name": "Binary Output (Obj:10, Var:01)"
+      },
+      {
+        "code": 2562,
+        "name": "Binary Output Status (Obj:10, Var:02)"
+      },
+      {
+        "code": 2816,
+        "name": "Binary Output Change Default Variation (Obj:11, Var:Default)"
+      },
+      {
+        "code": 2817,
+        "name": "Binary Output Change Without Time (Obj:11, Var:01)"
+      },
+      {
+        "code": 2818,
+        "name": "Binary Output Change With Time (Obj:11, Var:02)"
+      },
+      {
+        "code": 3073,
+        "name": "Control Relay Output Block (Obj:12, Var:01)"
+      },
+      {
+        "code": 3074,
+        "name": "Pattern Control Block (Obj:12, Var:02)"
+      },
+      {
+        "code": 3075,
+        "name": "Pattern Mask (Obj:12, Var:03)"
+      },
+      {
+        "code": 3329,
+        "name": "Binary Command Event Without Time (Obj 13, Var:01)"
+      },
+      {
+        "code": 3330,
+        "name": "Binary Command Event With Time (Obj 13, Var:02)"
+      },
+      {
+        "code": 5120,
+        "name": "Binary Counter Default Variation (Obj:20, Var:Default)"
+      },
+      {
+        "code": 5121,
+        "name": "32-Bit Binary Counter (Obj:20, Var:01)"
+      },
+      {
+        "code": 5122,
+        "name": "16-Bit Binary Counter (Obj:20, Var:02)"
+      },
+      {
+        "code": 5123,
+        "name": "32-Bit Binary Delta Counter (Obj:20, Var:03)"
+      },
+      {
+        "code": 5124,
+        "name": "16-Bit Binary Delta Counter (Obj:20, Var:04)"
+      },
+      {
+        "code": 5125,
+        "name": "32-Bit Binary Counter Without Flag (Obj:20, Var:05)"
+      },
+      {
+        "code": 5126,
+        "name": "16-Bit Binary Counter Without Flag (Obj:20, Var:06)"
+      },
+      {
+        "code": 5127,
+        "name": "32-Bit Binary Delta Counter Without Flag (Obj:20, Var:07)"
+      },
+      {
+        "code": 5128,
+        "name": "16-Bit Binary Delta Counter Without Flag (Obj:20, Var:08)"
+      },
+      {
+        "code": 5376,
+        "name": "Frozen Binary Counter Default Variation (Obj:21, Var:Default)"
+      },
+      {
+        "code": 5377,
+        "name": "32-Bit Frozen Binary Counter (Obj:21, Var:01)"
+      },
+      {
+        "code": 5378,
+        "name": "16-Bit Frozen Binary Counter (Obj:21, Var:02)"
+      },
+      {
+        "code": 5379,
+        "name": "32-Bit Frozen Binary Delta Counter (Obj:21, Var:03)"
+      },
+      {
+        "code": 5380,
+        "name": "16-Bit Frozen Binary Delta Counter (Obj:21, Var:04)"
+      },
+      {
+        "code": 5381,
+        "name": "32-Bit Frozen Binary Counter With Flag and Time (Obj:21, Var:05)"
+      },
+      {
+        "code": 5382,
+        "name": "16-Bit Frozen Binary Counter With Flag and Time (Obj:21, Var:06)"
+      },
+      {
+        "code": 5383,
+        "name": "32-Bit Frozen Binary Delta Counter With Flag and Time (Obj:21, Var:07)"
+      },
+      {
+        "code": 5384,
+        "name": "16-Bit Frozen Binary Delta Counter With Flag and Time (Obj:21, Var:08)"
+      },
+      {
+        "code": 5385,
+        "name": "32-Bit Frozen Binary Counter Without Flag (Obj:21, Var:09)"
+      },
+      {
+        "code": 5386,
+        "name": "16-Bit Frozen Binary Counter Without Flag (Obj:21, Var:10)"
+      },
+      {
+        "code": 5387,
+        "name": "32-Bit Frozen Binary Delta Counter Without Flag (Obj:21, Var:11)"
+      },
+      {
+        "code": 5388,
+        "name": "16-Bit Frozen Binary Delta Counter Without Flag (Obj:21, Var:12)"
+      },
+      {
+        "code": 5632,
+        "name": "Binary Counter Change Default Variation (Obj:22, Var:Default)"
+      },
+      {
+        "code": 5633,
+        "name": "32-Bit Counter Change Event w/o Time (Obj:22, Var:01)"
+      },
+      {
+        "code": 5634,
+        "name": "16-Bit Counter Change Event w/o Time (Obj:22, Var:02)"
+      },
+      {
+        "code": 5635,
+        "name": "32-Bit Delta Counter Change Event w/o Time (Obj:22, Var:03)"
+      },
+      {
+        "code": 5636,
+        "name": "16-Bit Delta Counter Change Event w/o Time (Obj:22, Var:04)"
+      },
+      {
+        "code": 5637,
+        "name": "32-Bit Counter Change Event with Time (Obj:22, Var:05)"
+      },
+      {
+        "code": 5638,
+        "name": "16-Bit Counter Change Event with Time (Obj:22, Var:06)"
+      },
+      {
+        "code": 5639,
+        "name": "32-Bit Delta Counter Change Event with Time (Obj:22, Var:07)"
+      },
+      {
+        "code": 5640,
+        "name": "16-Bit Delta Counter Change Event with Time (Obj:22, Var:08)"
+      },
+      {
+        "code": 5888,
+        "name": "Frozen Binary Counter Change Default Variation (Obj:23, Var:Default)"
+      },
+      {
+        "code": 5889,
+        "name": "32-Bit Frozen Counter Change Event w/o Time (Obj:23, Var:01)"
+      },
+      {
+        "code": 5890,
+        "name": "16-Bit Frozen Counter Change Event w/o Time (Obj:23, Var:02)"
+      },
+      {
+        "code": 5891,
+        "name": "32-Bit Frozen Delta Counter Change Event w/o Time (Obj:23, Var:03)"
+      },
+      {
+        "code": 5892,
+        "name": "16-Bit Frozen Delta Counter Change Event w/o Time (Obj:23, Var:04)"
+      },
+      {
+        "code": 5893,
+        "name": "32-Bit Frozen Counter Change Event with Time (Obj:23, Var:05)"
+      },
+      {
+        "code": 5894,
+        "name": "16-Bit Frozen Counter Change Event with Time (Obj:23, Var:06)"
+      },
+      {
+        "code": 5895,
+        "name": "32-Bit Frozen Delta Counter Change Event with Time (Obj:23, Var:07)"
+      },
+      {
+        "code": 5896,
+        "name": "16-Bit Frozen Delta Counter Change Event with Time (Obj:23, Var:08)"
+      },
+      {
+        "code": 7680,
+        "name": "Analog Input Default Variation (Obj:30, Var:Default)"
+      },
+      {
+        "code": 7681,
+        "name": "32-Bit Analog Input (Obj:30, Var:01)"
+      },
+      {
+        "code": 7682,
+        "name": "16-Bit Analog Input (Obj:30, Var:02)"
+      },
+      {
+        "code": 7683,
+        "name": "32-Bit Analog Input Without Flag (Obj:30, Var:03)"
+      },
+      {
+        "code": 7684,
+        "name": "16-Bit Analog Input Without Flag (Obj:30, Var:04)"
+      },
+      {
+        "code": 7685,
+        "name": "32-Bit Floating Point Input (Obj:30, Var:05)"
+      },
+      {
+        "code": 7686,
+        "name": "64-Bit Floating Point Input (Obj:30, Var:06)"
+      },
+      {
+        "code": 7937,
+        "name": "32-Bit Frozen Analog Input (Obj:31, Var:01)"
+      },
+      {
+        "code": 7938,
+        "name": "16-Bit Frozen Analog Input (Obj:31, Var:02)"
+      },
+      {
+        "code": 7939,
+        "name": "32-Bit Frozen Analog Input w/ Time of Freeze (Obj:31, Var:03)"
+      },
+      {
+        "code": 7940,
+        "name": "16-Bit Frozen Analog Input w/ Time of Freeze (Obj:31, Var:04)"
+      },
+      {
+        "code": 7941,
+        "name": "32-Bit Frozen Analog Input Without Flag (Obj:31, Var:05)"
+      },
+      {
+        "code": 7942,
+        "name": "16-Bit Frozen Analog Input Without Flag (Obj:31, Var:06)"
+      },
+      {
+        "code": 7943,
+        "name": "32-Bit Frozen Floating Point Input (Obj:31, Var:07)"
+      },
+      {
+        "code": 7944,
+        "name": "64-Bit Frozen Floating Point Input (Obj:31, Var:08)"
+      },
+      {
+        "code": 8192,
+        "name": "Analog Input Change Default Variation (Obj:32, Var:Default)"
+      },
+      {
+        "code": 8193,
+        "name": "32-Bit Analog Change Event w/o Time (Obj:32, Var:01)"
+      },
+      {
+        "code": 8194,
+        "name": "16-Bit Analog Change Event w/o Time (Obj:32, Var:02)"
+      },
+      {
+        "code": 8195,
+        "name": "32-Bit Analog Change Event with Time (Obj:32, Var:03)"
+      },
+      {
+        "code": 8196,
+        "name": "16-Bit Analog Change Event with Time (Obj:32, Var:04)"
+      },
+      {
+        "code": 8197,
+        "name": "32-Bit Floating Point Change Event w/o Time (Obj:32, Var:05)"
+      },
+      {
+        "code": 8198,
+        "name": "64-Bit Floating Point Change Event w/o Time (Obj:32, Var:06)"
+      },
+      {
+        "code": 8199,
+        "name": "32-Bit Floating Point Change Event w/ Time (Obj:32, Var:07)"
+      },
+      {
+        "code": 8200,
+        "name": "64-Bit Floating Point Change Event w/ Time (Obj:32, Var:08)"
+      },
+      {
+        "code": 8449,
+        "name": "32-Bit Frozen Analog Event w/o Time (Obj:33, Var:01)"
+      },
+      {
+        "code": 8450,
+        "name": "16-Bit Frozen Analog Event w/o Time (Obj:33, Var:02)"
+      },
+      {
+        "code": 8451,
+        "name": "32-Bit Frozen Analog Event w/ Time (Obj:33, Var:03)"
+      },
+      {
+        "code": 8452,
+        "name": "16-Bit Frozen Analog Event w/ Time (Obj:33, Var:04)"
+      },
+      {
+        "code": 8453,
+        "name": "32-Bit Floating Point Frozen Change Event w/o Time (Obj:33, Var:05)"
+      },
+      {
+        "code": 8454,
+        "name": "64-Bit Floating Point Frozen Change Event w/o Time (Obj:33, Var:06)"
+      },
+      {
+        "code": 8455,
+        "name": "32-Bit Floating Point Frozen Change Event w/ Time (Obj:33, Var:07)"
+      },
+      {
+        "code": 8456,
+        "name": "64-Bit Floating Point Frozen Change Event w/ Time (Obj:33, Var:08)"
+      },
+      {
+        "code": 8704,
+        "name": "Analog Input Deadband Default Variation (Obj:34, Var:Default)"
+      },
+      {
+        "code": 8705,
+        "name": "16-Bit Analog Input Deadband (Obj:34, Var:01)"
+      },
+      {
+        "code": 8706,
+        "name": "32-Bit Analog Input Deadband (Obj:34, Var:02)"
+      },
+      {
+        "code": 8707,
+        "name": "32-Bit Floating Point Analog Input Deadband (Obj:34, Var:03)"
+      },
+      {
+        "code": 10240,
+        "name": "Analog Output Default Variation (Obj:40, Var:Default)"
+      },
+      {
+        "code": 10241,
+        "name": "32-Bit Analog Output Status (Obj:40, Var:01)"
+      },
+      {
+        "code": 10242,
+        "name": "16-Bit Analog Output Status (Obj:40, Var:02)"
+      },
+      {
+        "code": 10243,
+        "name": "32-Bit Floating Point Output Status (Obj:40, Var:03)"
+      },
+      {
+        "code": 10244,
+        "name": "64-Bit Floating Point Output Status (Obj:40, Var:04)"
+      },
+      {
+        "code": 10497,
+        "name": "32-Bit Analog Output Block (Obj:41, Var:01)"
+      },
+      {
+        "code": 10498,
+        "name": "16-Bit Analog Output Block (Obj:41, Var:02)"
+      },
+      {
+        "code": 10499,
+        "name": "32-Bit Floating Point Output Block (Obj:41, Var:03)"
+      },
+      {
+        "code": 10500,
+        "name": "64-Bit Floating Point Output Block (Obj:41, Var:04)"
+      },
+      {
+        "code": 10752,
+        "name": "Analog Output Event Default Variation (Obj:42, Var:Default)"
+      },
+      {
+        "code": 10753,
+        "name": "32-Bit Analog Output Event w/o Time (Obj:42, Var:01)"
+      },
+      {
+        "code": 10754,
+        "name": "16-Bit Analog Output Event w/o Time (Obj:42, Var:02)"
+      },
+      {
+        "code": 10755,
+        "name": "32-Bit Analog Output Event with Time (Obj:42, Var:03)"
+      },
+      {
+        "code": 10756,
+        "name": "16-Bit Analog Output Event with Time (Obj:42, Var:04)"
+      },
+      {
+        "code": 10757,
+        "name": "32-Bit Floating Point Output Event w/o Time (Obj:42, Var:05)"
+      },
+      {
+        "code": 10758,
+        "name": "64-Bit Floating Point Output Event w/o Time (Obj:42, Var:06)"
+      },
+      {
+        "code": 10759,
+        "name": "32-Bit Floating Point Output Event w/ Time (Obj:42, Var:07)"
+      },
+      {
+        "code": 10760,
+        "name": "64-Bit Floating Point Output Event w/ Time (Obj:42, Var:08)"
+      },
+      {
+        "code": 11009,
+        "name": "32-Bit Analog Output Event w/o Time (Obj:43, Var:01)"
+      },
+      {
+        "code": 11010,
+        "name": "16-Bit Analog Output Event w/o Time (Obj:43, Var:02)"
+      },
+      {
+        "code": 11011,
+        "name": "32-Bit Analog Output Event with Time (Obj:43, Var:03)"
+      },
+      {
+        "code": 11012,
+        "name": "16-Bit Analog Output Event with Time (Obj:43, Var:04)"
+      },
+      {
+        "code": 11013,
+        "name": "32-Bit Floating Point Output Event w/o Time (Obj:43, Var:05)"
+      },
+      {
+        "code": 11014,
+        "name": "64-Bit Floating Point Output Event w/o Time (Obj:43, Var:06)"
+      },
+      {
+        "code": 11015,
+        "name": "32-Bit Floating Point Output Event w/ Time (Obj:43, Var:07)"
+      },
+      {
+        "code": 11016,
+        "name": "64-Bit Floating Point Output Event w/ Time (Obj:43, Var:08)"
+      },
+      {
+        "code": 12800,
+        "name": "Time and Date Default Variations (Obj:50, Var:Default)"
+      },
+      {
+        "code": 12801,
+        "name": "Time and Date (Obj:50, Var:01)"
+      },
+      {
+        "code": 12802,
+        "name": "Time and Date w/Interval (Obj:50, Var:02)"
+      },
+      {
+        "code": 12803,
+        "name": "Last Recorded Time and Date (Obj:50, Var:03)"
+      },
+      {
+        "code": 13057,
+        "name": "Time and Date CTO (Obj:51, Var:01)"
+      },
+      {
+        "code": 13058,
+        "name": "Unsynchronized Time and Date CTO (Obj:51, Var:02)"
+      },
+      {
+        "code": 13314,
+        "name": "Time Delay - Fine (Obj:52, Var:02)"
+      },
+      {
+        "code": 15361,
+        "name": "Class 0 Data (Obj:60, Var:01)"
+      },
+      {
+        "code": 15362,
+        "name": "Class 1 Data (Obj:60, Var:02)"
+      },
+      {
+        "code": 15363,
+        "name": "Class 2 Data (Obj:60, Var:03)"
+      },
+      {
+        "code": 15364,
+        "name": "Class 3 Data (Obj:60, Var:04)"
+      },
+      {
+        "code": 17923,
+        "name": "File Control - File Command (Obj:70, Var:03)"
+      },
+      {
+        "code": 17924,
+        "name": "File Control - File Status (Obj:70, Var:04)"
+      },
+      {
+        "code": 17925,
+        "name": "File Control - File Transport (Obj:70, Var:05)"
+      },
+      {
+        "code": 17926,
+        "name": "File Control - File Transport Status (Obj:70, Var:06)"
+      },
+      {
+        "code": 20481,
+        "name": "Internal Indications (Obj:80, Var:01)"
+      },
+      {
+        "code": 21761,
+        "name": "Data-Set Prototype, with UUID (Obj:85, Var:01)"
+      },
+      {
+        "code": 22017,
+        "name": "Data-Set Descriptor, Data-Set Contents (Obj:86, Var:01)"
+      },
+      {
+        "code": 22018,
+        "name": "Data-Set Descriptor, Characteristics (Obj:86, Var:02)"
+      },
+      {
+        "code": 22019,
+        "name": "Data-Set Descriptor, Point Index Attributes (Obj:86, Var:03)"
+      },
+      {
+        "code": 22273,
+        "name": "Data-Set, Present Value (Obj:87, Var:01)"
+      },
+      {
+        "code": 22529,
+        "name": "Data-Set, Snapshot (Obj:88, Var:01)"
+      },
+      {
+        "code": 28160,
+        "name": "Octet String (Obj:110)"
+      },
+      {
+        "code": 28416,
+        "name": "Octet String Event (Obj:111)"
+      },
+      {
+        "code": 28672,
+        "name": "Virtual Terminal Output Block (Obj:112)"
+      },
+      {
+        "code": 28928,
+        "name": "Virtual Terminal Event Data (Obj:113)"
+      },
+      {
+        "code": 30721,
+        "name": "Authentication Challenge (Obj:120, Var:01)"
+      },
+      {
+        "code": 30722,
+        "name": "Authentication Reply (Obj:120, Var:02)"
+      },
+      {
+        "code": 30723,
+        "name": "Authentication Aggressive Mode Request (Obj:120, Var:03)"
+      },
+      {
+        "code": 30724,
+        "name": "Authentication Session Key Status Request (Obj:120, Var:04)"
+      },
+      {
+        "code": 30725,
+        "name": "Authentication Session Key Status (Obj:120, Var:05)"
+      },
+      {
+        "code": 30726,
+        "name": "Authentication Session Key Change (Obj:120, Var:06)"
+      },
+      {
+        "code": 30727,
+        "name": "Authentication Error (Obj:120, Var:07)"
+      },
+      {
+        "code": 30729,
+        "name": "Authentication Message Authentication Code (Obj:120, Var:09)"
+      },
+      {
+        "code": 30731,
+        "name": "Authentication Update Key Change Request (Obj:120, Var:11)"
+      },
+      {
+        "code": 30732,
+        "name": "Authentication Update Key Change Reply (Obj:120, Var:12)"
+      },
+      {
+        "code": 30733,
+        "name": "Authentication Update Key Change (Obj:120, Var:13)"
+      },
+      {
+        "code": 30735,
+        "name": "Authentication Update Key Change Confirmation (Obj:120, Var:15)"
+      },
+      {
+        "code": 30977,
+        "name": "Security Statistics (Obj:121, Var:01)"
+      },
+      {
+        "code": 31233,
+        "name": "Security Statistic Event (Obj:122, Var:01)"
+      },
+      {
+        "code": 31234,
+        "name": "Security Statistic Event w/ Time (Obj:122, Var:02)"
+      }
+    ],
+    "dnp3_al_ctlc_code_vals": [
+      {
+        "code": 0,
+        "name": "NUL Operation"
+      },
+      {
+        "code": 1,
+        "name": "Pulse On"
+      },
+      {
+        "code": 2,
+        "name": "Pulse Off"
+      },
+      {
+        "code": 3,
+        "name": "Latch On"
+      },
+      {
+        "code": 4,
+        "name": "Latch Off"
+      }
+    ],
+    "dnp3_al_ctlc_misc_vals": [
+      {
+        "code": 1,
+        "name": "Queue"
+      },
+      {
+        "code": 2,
+        "name": "Clear"
+      },
+      {
+        "code": 0,
+        "name": "Not Set"
+      },
+      {
+        "code": 3,
+        "name": "Queue and Clear"
+      }
+    ],
+    "dnp3_al_ctlc_tc_vals": [
+      {
+        "code": 0,
+        "name": "NUL"
+      },
+      {
+        "code": 1,
+        "name": "Close"
+      },
+      {
+        "code": 2,
+        "name": "Trip"
+      },
+      {
+        "code": 3,
+        "name": "Reserved"
+      }
+    ],
+    "dnp3_al_ctl_status_vals": [
+      {
+        "code": 0,
+        "name": "Req. Accepted/Init/Queued"
+      },
+      {
+        "code": 1,
+        "name": "Req. Not Accepted; Arm-Timer Expired"
+      },
+      {
+        "code": 2,
+        "name": "Req. Not Accepted; No 'SELECT' Received"
+      },
+      {
+        "code": 3,
+        "name": "Req. Not Accepted; Format Err. in Ctl Req."
+      },
+      {
+        "code": 4,
+        "name": "Ctl Oper. Not Supported For This Point"
+      },
+      {
+        "code": 5,
+        "name": "Req. Not Accepted; Ctrl Queue Full/Point Active"
+      },
+      {
+        "code": 6,
+        "name": "Req. Not Accepted; Ctrl Hardware Problems"
+      },
+      {
+        "code": 7,
+        "name": "Req. Not Accepted; Local/Remote switch in Local"
+      },
+      {
+        "code": 8,
+        "name": "Req. Not Accepted; Too many operations"
+      },
+      {
+        "code": 9,
+        "name": "Req. Not Accepted; Insufficient authorization"
+      },
+      {
+        "code": 10,
+        "name": "Req. Not Accepted; Local automation proc active"
+      },
+      {
+        "code": 11,
+        "name": "Req. Not Accepted; Processing limited"
+      },
+      {
+        "code": 12,
+        "name": "Req. Not Accepted; Out of range value"
+      },
+      {
+        "code": 126,
+        "name": "Req. Not Accepted; Non-participating (NOP request)"
+      },
+      {
+        "code": 127,
+        "name": "Req. Not Accepted; Undefined error"
+      }
+    ],
+    "dnp3_al_biflag_vals": [
+      {
+        "code": 1,
+        "name": "Online"
+      },
+      {
+        "code": 2,
+        "name": "Restart"
+      },
+      {
+        "code": 4,
+        "name": "Comm Fail"
+      },
+      {
+        "code": 8,
+        "name": "Remote Forced"
+      },
+      {
+        "code": 16,
+        "name": "Locally Forced"
+      },
+      {
+        "code": 32,
+        "name": "Chatter Filter"
+      }
+    ],
+    "dnp3_al_ctrflag_vals": [
+      {
+        "code": 1,
+        "name": "Online"
+      },
+      {
+        "code": 2,
+        "name": "Restart"
+      },
+      {
+        "code": 4,
+        "name": "Comm Fail"
+      },
+      {
+        "code": 8,
+        "name": "Remote Forced"
+      },
+      {
+        "code": 16,
+        "name": "Locally Forced"
+      },
+      {
+        "code": 32,
+        "name": "Roll-Over"
+      },
+      {
+        "code": 64,
+        "name": "Discontinuity"
+      }
+    ],
+    "dnp3_al_aiflag_vals": [
+      {
+        "code": 1,
+        "name": "Online"
+      },
+      {
+        "code": 2,
+        "name": "Restart"
+      },
+      {
+        "code": 4,
+        "name": "Comm Fail"
+      },
+      {
+        "code": 8,
+        "name": "Remote Forced"
+      },
+      {
+        "code": 16,
+        "name": "Locally Forced"
+      },
+      {
+        "code": 32,
+        "name": "Over-Range"
+      },
+      {
+        "code": 64,
+        "name": "Ref. Error"
+      }
+    ],
+    "dnp3_al_2bit_vals": [
+      {
+        "code": 0,
+        "name": "Intermediate"
+      },
+      {
+        "code": 1,
+        "name": "Determined Off"
+      },
+      {
+        "code": 2,
+        "name": "Determined On"
+      },
+      {
+        "code": 3,
+        "name": "Indeterminate"
+      }
+    ],
+    "dnp3_al_file_mode_vals": [
+      {
+        "code": 0,
+        "name": "NULL"
+      },
+      {
+        "code": 1,
+        "name": "READ"
+      },
+      {
+        "code": 2,
+        "name": "WRITE"
+      },
+      {
+        "code": 3,
+        "name": "APPEND"
+      }
+    ],
+    "dnp3_al_file_status_vals": [
+      {
+        "code": 0,
+        "name": "SUCCESS"
+      },
+      {
+        "code": 1,
+        "name": "PERMISSION DENIED"
+      },
+      {
+        "code": 2,
+        "name": "INVALID MODE"
+      },
+      {
+        "code": 3,
+        "name": "FILE NOT FOUND"
+      },
+      {
+        "code": 4,
+        "name": "FILE LOCKED"
+      },
+      {
+        "code": 5,
+        "name": "TOO MANY OPEN"
+      },
+      {
+        "code": 6,
+        "name": "INVALID HANDLE"
+      },
+      {
+        "code": 7,
+        "name": "WRITE BLOCK SIZE"
+      },
+      {
+        "code": 8,
+        "name": "COMM LOST"
+      },
+      {
+        "code": 9,
+        "name": "CANNOT ABORT"
+      },
+      {
+        "code": 16,
+        "name": "NOT OPENED"
+      },
+      {
+        "code": 17,
+        "name": "HANDLE EXPIRED"
+      },
+      {
+        "code": 18,
+        "name": "BUFFER OVERRUN"
+      },
+      {
+        "code": 19,
+        "name": "FATAL"
+      },
+      {
+        "code": 20,
+        "name": "BLOCK SEQUENCE"
+      },
+      {
+        "code": 255,
+        "name": "UNDEFINED"
+      }
+    ],
+    "dnp3_al_data_type_vals": [
+      {
+        "code": 0,
+        "name": "NONE (Placeholder)"
+      },
+      {
+        "code": 1,
+        "name": "VSTR (Visible ASCII String)"
+      },
+      {
+        "code": 2,
+        "name": "UINT (Unsigned Integer)"
+      },
+      {
+        "code": 3,
+        "name": "INT (Signed Integer)"
+      },
+      {
+        "code": 4,
+        "name": "FLT (Floating Point)"
+      },
+      {
+        "code": 5,
+        "name": "OSTR (Octet String)"
+      },
+      {
+        "code": 6,
+        "name": "BSTR (Bit String)"
+      },
+      {
+        "code": 7,
+        "name": "TIME (DNP3 Time UINT48)"
+      },
+      {
+        "code": 8,
+        "name": "UNCD (Unicode String)"
+      },
+      {
+        "code": 254,
+        "name": "U8BS8LIST (List of UINT8 - BSTR8 pairs)"
+      },
+      {
+        "code": 255,
+        "name": "U8BS8EXLIST (Extended List of UINT8 - BSTR8 pairs)"
+      }
+    ],
+    "dnp3_al_sa_kwa_vals": [
+      {
+        "code": 0,
+        "name": "Unused"
+      },
+      {
+        "code": 1,
+        "name": "AES-128"
+      },
+      {
+        "code": 2,
+        "name": "AES-256"
+      }
+    ],
+    "dnp3_al_sa_ks_vals": [
+      {
+        "code": 0,
+        "name": "Not Used"
+      },
+      {
+        "code": 1,
+        "name": "OK"
+      },
+      {
+        "code": 2,
+        "name": "NOT_INIT"
+      },
+      {
+        "code": 3,
+        "name": "COMM_FAIL"
+      },
+      {
+        "code": 4,
+        "name": "AUTH_FAIL"
+      }
+    ],
+    "dnp3_al_sa_mal_vals": [
+      {
+        "code": 0,
+        "name": "No MAC value in this message"
+      },
+      {
+        "code": 1,
+        "name": "HMAC SHA-1 truncated to 4 octets (serial)"
+      },
+      {
+        "code": 2,
+        "name": "HMAC SHA-1 truncated to 10 octets (networked)"
+      },
+      {
+        "code": 3,
+        "name": "HMAC SHA-256 truncated to 8 octets (serial)"
+      },
+      {
+        "code": 4,
+        "name": "HMAC SHA-256 truncated to 16 octets (networked)"
+      },
+      {
+        "code": 5,
+        "name": "HMAC SHA-1 truncated to 8 octets (serial)"
+      },
+      {
+        "code": 6,
+        "name": "AES-GMAC (output is 12 octets)"
+      }
+    ],
+    "dnp3_al_sa_err_vals": [
+      {
+        "code": 0,
+        "name": "Not used"
+      },
+      {
+        "code": 1,
+        "name": "Authentication failed"
+      },
+      {
+        "code": 2,
+        "name": "Unexpected Response"
+      },
+      {
+        "code": 3,
+        "name": "No response"
+      },
+      {
+        "code": 4,
+        "name": "Aggressive Mode not supported"
+      },
+      {
+        "code": 5,
+        "name": "MAC Algorithm not supported"
+      },
+      {
+        "code": 6,
+        "name": "Key Wrap Algorithm not supported"
+      },
+      {
+        "code": 7,
+        "name": "Authorization failed"
+      },
+      {
+        "code": 8,
+        "name": "Update Key Change Method not permitted"
+      },
+      {
+        "code": 9,
+        "name": "Invalid Signature"
+      },
+      {
+        "code": 10,
+        "name": "Invalid Certification Data"
+      },
+      {
+        "code": 11,
+        "name": "Unknown User"
+      },
+      {
+        "code": 12,
+        "name": "Max Session Key Status Requests Exceeded"
+      }
+    ],
+    "dnp3_al_sa_kcm_vals": [
+      {
+        "code": 0,
+        "name": "Not used"
+      },
+      {
+        "code": 1,
+        "name": "Obsolete. Do Not Use"
+      },
+      {
+        "code": 2,
+        "name": "Obsolete. Do Not Use"
+      },
+      {
+        "code": 3,
+        "name": "Symmetric AES-128 / SHA-1-HMAC"
+      },
+      {
+        "code": 4,
+        "name": "Symmetric AES-256 / SHA-256-HMAC"
+      },
+      {
+        "code": 5,
+        "name": "Symmetric AES-256 / AES-GMAC"
+      },
+      {
+        "code": 64,
+        "name": "Obsolete. Do Not Use"
+      },
+      {
+        "code": 65,
+        "name": "Obsolete. Do Not Use"
+      },
+      {
+        "code": 66,
+        "name": "Obsolete. Do Not Use"
+      },
+      {
+        "code": 67,
+        "name": "Asymmetric RSA-1024 / DSA SHA-1 / SHA-1-HMAC"
+      },
+      {
+        "code": 68,
+        "name": "Asymmetric RSA-2048 / DSA SHA-256 / SHA-256-HMAC"
+      },
+      {
+        "code": 69,
+        "name": "Asymmetric RSA-3072 / DSA SHA-256 / SHA-256-HMAC"
+      },
+      {
+        "code": 70,
+        "name": "Asymmetric RSA-2048 / DSA SHA-256 / AES-GMAC"
+      },
+      {
+        "code": 71,
+        "name": "Asymmetric RSA-3072 / DSA SHA-256 / AES-GMAC"
+      }
+    ],
+    "dnp3_al_sa_rfc_vals": [
+      {
+        "code": 0,
+        "name": "Not Used"
+      },
+      {
+        "code": 1,
+        "name": "CRITICAL"
+      }
+    ],
+    "dnp3_al_sa_secstat_vals": [
+      {
+        "code": 0,
+        "name": "(Unexpected Messages)"
+      },
+      {
+        "code": 1,
+        "name": "(Authorization Failures)"
+      },
+      {
+        "code": 2,
+        "name": "(Authentication Failures)"
+      },
+      {
+        "code": 3,
+        "name": "(Reply Timeouts)"
+      },
+      {
+        "code": 4,
+        "name": "(Rekeys Due to Authentication Failure)"
+      },
+      {
+        "code": 5,
+        "name": "(Total Messages Sent)"
+      },
+      {
+        "code": 6,
+        "name": "(Total Messages Received)"
+      },
+      {
+        "code": 7,
+        "name": "(Critical Messages Sent)"
+      },
+      {
+        "code": 8,
+        "name": "(Critical Messages Received)"
+      },
+      {
+        "code": 9,
+        "name": "(Discarded Messages)"
+      },
+      {
+        "code": 10,
+        "name": "(Error Messages Sent)"
+      },
+      {
+        "code": 11,
+        "name": "(Error Messages Rxed)"
+      },
+      {
+        "code": 12,
+        "name": "(Successful Authentications)"
+      },
+      {
+        "code": 13,
+        "name": "(Session Key Changes)"
+      },
+      {
+        "code": 14,
+        "name": "(Failed Session Key Changes)"
+      },
+      {
+        "code": 15,
+        "name": "(Update Key Changes)"
+      },
+      {
+        "code": 16,
+        "name": "(Failed Update Key Changes)"
+      },
+      {
+        "code": 17,
+        "name": "(Rekeys Due to Restarts)"
+      }
+    ]
+  }
+}
